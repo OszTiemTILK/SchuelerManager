@@ -1,2 +1,2 @@
 # SchuelerManager
-Prorgramm zur Verwaltung neuer Schüler
+Programm zur Verwaltung neuer Schüler
