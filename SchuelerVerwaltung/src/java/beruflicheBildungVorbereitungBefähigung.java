@@ -1,5 +1,5 @@
 package java;
 
-public class beruflicheBildungVorbereitungBefähigung {
+public class BeruflicheBildungVorbereitungBefÃ¤higung {
 
 }
