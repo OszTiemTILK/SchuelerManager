@@ -6,16 +6,16 @@ public class ErziehungsberechtigteR
 	private String vorname;
 	private String nachname;
 	private boolean vormund;
-	Adresse AdresseVonErziehungsberechtigteR = new Adresse();
+	private Adresse AdresseVonErziehungsberechtigteR = new Adresse();
 
 //Nur set- und get-Methoden ab hier
 
-	public Vormund getTyp() 
+	public Vormund getTyp()
 	{
 		return typ;
 	}
 
-	public void setTyp(Vormund pTyp) 
+	public void setTyp(Vormund pTyp)
 	{
 		this.typ = pTyp;
 	}
@@ -48,6 +48,16 @@ public class ErziehungsberechtigteR
 	public void setVormund(boolean vormund)
 	{
 		this.vormund = vormund;
+	}
+
+	public Adresse getAdresseVonErziehungsberechtigteR()
+	{
+		return AdresseVonErziehungsberechtigteR;
+	}
+
+	public void setAdresseVonErziehungsberechtigteR(Adresse pAdresseVonErziehungsberechtigteR)
+	{
+		AdresseVonErziehungsberechtigteR = pAdresseVonErziehungsberechtigteR;
 	}
 }
 
