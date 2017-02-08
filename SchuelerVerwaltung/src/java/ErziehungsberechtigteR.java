@@ -10,11 +10,13 @@ public class ErziehungsberechtigteR
 
 //Nur set- und get-Methoden ab hier
 
-	public Vormund getTyp() {
+	public Vormund getTyp() 
+	{
 		return typ;
 	}
 
-	public void setTyp(Vormund pTyp) {
+	public void setTyp(Vormund pTyp) 
+	{
 		this.typ = pTyp;
 	}
 
