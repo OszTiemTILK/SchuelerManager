@@ -7,7 +7,7 @@ public class AngabenZurPerson
 private String vorname;
 private String nachname;
 private LocalDate geburtsDatum;
-private Boolean geschlecht;
+private Geschlecht geschlecht;
 
 /** legt Angaben zur Person an
  *
@@ -56,7 +56,7 @@ public String getVorname()
 
 public void setVorname(String pVorname)
 {
-	this.vorname = vorname;
+	this.vorname = pVorname;
 }
 
 
@@ -68,7 +68,7 @@ public String getNachname()
 
 public void setNachname(String pNachname)
 {
-	this.nachname = nachname;
+	this.nachname = pNachname;
 }
 
 
@@ -80,19 +80,19 @@ public LocalDate getGeburtsDatum()
 
 public void setGeburtsDatum(LocalDate pGeburtsDatum)
 {
-	this.geburtsDatum = geburtsDatum;
+	this.geburtsDatum = pGeburtsDatum;
 }
 
 
-public boolean isGeschlecht()
+public Geschlecht getGeschlecht()
 {
 	return geschlecht;
 }
 
 
-public void setGeschlecht(boolean pGeschlecht)
+public void setGeschlecht(Geschlecht pGeschlecht)
 {
-	this.geschlecht = geschlecht;
+	this.geschlecht = pGeschlecht;
 }
 
 
