@@ -1,1 +1,0 @@
-Hier kommen alle Klassen der Java-Gruppe rein!
