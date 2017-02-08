@@ -1,20 +1,21 @@
 package java;
 
-public class ErziehungsberechtigteR extends Adresse
+public class ErziehungsberechtigteR
 {
-	private int typ;
+	private Vormund typ;
 	private String vorname;
 	private String nachname;
 	private boolean vormund;
+	Adresse AdresseVonErziehungsberechtigteR = new Adresse();
 
-	public int getTyp()
-	{
+//Nur set- und get-Methoden ab hier
+
+	public Vormund getTyp() {
 		return typ;
 	}
 
-	public void setTyp(int ptyp)
-	{
-		this.typ = ptyp;
+	public void setTyp(Vormund pTyp) {
+		this.typ = pTyp;
 	}
 
 	public String getVorname()
@@ -22,9 +23,9 @@ public class ErziehungsberechtigteR extends Adresse
 		return vorname;
 	}
 
-	public void setVorname(String pvorname)
+	public void setVorname(String pVorname)
 	{
-		this.vorname = pvorname;
+		this.vorname = pVorname;
 	}
 
 	public String getNachname()
@@ -32,9 +33,9 @@ public class ErziehungsberechtigteR extends Adresse
 		return nachname;
 	}
 
-	public void setNachname(String pnachname)
+	public void setNachname(String pNachname)
 	{
-		this.nachname = pnachname;
+		this.nachname = pNachname;
 	}
 
 	public boolean isVormund()
@@ -42,9 +43,9 @@ public class ErziehungsberechtigteR extends Adresse
 		return vormund;
 	}
 
-	public void setVormund(boolean pvormund)
+	public void setVormund(boolean vormund)
 	{
-		this.vormund = pvormund;
+		this.vormund = vormund;
 	}
 }
 
