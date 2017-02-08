@@ -8,6 +8,7 @@ private String wohnort;
 private int plz;
 
 //Nur set- und get-Methoden ab hier 
+  
 public String getStrasse()
 {
 	return strasse;
