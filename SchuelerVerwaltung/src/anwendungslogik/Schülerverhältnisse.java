@@ -1,4 +1,4 @@
-package java;
+package anwendungslogik;
 
 import java.time.LocalDate;
 

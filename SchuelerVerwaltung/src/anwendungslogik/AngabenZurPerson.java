@@ -1,4 +1,4 @@
-package java;
+package anwendungslogik;
 
 import java.time.LocalDate;
 
@@ -33,12 +33,13 @@ public void loeschenAngabenZurPerson()
 /** speichert Angaben zur Person
  *
  */
-public void speichernAngabenZurPerson()
+
+public void ausgebenKonsoleTest()
 {
-
+	System.out.println("Name: " + vorname + " " + nachname);
+	System.out.println("Geburtsdatum: " + getGeburtsDatum() );
+	System.out.print("Geschlecht: " + geschlecht);
 }
-
-
 
 
 
