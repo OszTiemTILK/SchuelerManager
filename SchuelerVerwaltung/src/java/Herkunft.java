@@ -1,6 +1,7 @@
 package java;
 
-public class Herkunft {
+public class Herkunft
+{
 private String staatsangehörigkeit;
 private String volksgruppe;
 private String geburtsort;
@@ -11,34 +12,34 @@ public String getStaatsangehörigkeit()
 
 	return staatsangehörigkeit;
 }
-public void setStaatsangehörigkeit(String staatsangehörigkeit)
+public void setStaatsangehörigkeit(String pStaatsangehörigkeit)
 {
 
-	this.staatsangehörigkeit = staatsangehörigkeit;
+	this.staatsangehörigkeit = pStaatsangehörigkeit;
 }
 public String getVolksgruppe()
 {
 	return volksgruppe;
 }
-public void setVolksgruppe(String volksgruppe)
+public void setVolksgruppe(String pVolksgruppe)
 {
-	this.volksgruppe = volksgruppe;
+	this.volksgruppe = pVolksgruppe;
 }
 public String getGeburtsort()
 {
 	return geburtsort;
 }
-public void setGeburtsort(String geburtsort)
+public void setGeburtsort(String pGeburtsort)
 {
-	this.geburtsort = geburtsort;
+	this.geburtsort = pGeburtsort;
 }
 public String getGeburtsland()
 {
 	return geburtsland;
 }
-public void setGeburtsland(String geburtsland)
+public void setGeburtsland(String pGeburtsland)
 {
-	this.geburtsland = geburtsland;
+	this.geburtsland = pGeburtsland;
 }
 
 }

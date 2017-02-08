@@ -11,33 +11,33 @@ public String getStrasse()
 {
 	return strasse;
 }
-public void setStrasse(String strasse)
+public void setStrasse(String pStrasse)
 {
-	this.strasse = strasse;
+	this.strasse = pStrasse;
 }
 public int getHausNummer()
 {
 	return hausNummer;
 }
-public void setHausNummer(int hausNummer)
+public void setHausNummer(int pHausNummer)
 {
-	this.hausNummer = hausNummer;
+	this.hausNummer = pHausNummer;
 }
 public String getWohnort()
 {
 	return wohnort;
 }
-public void setWohnort(String wohnort)
+public void setWohnort(String pWohnort)
 {
-	this.wohnort = wohnort;
+	this.wohnort = pWohnort;
 }
 public int getPlz()
 {
 	return plz;
 }
-public void setPlz(int plz)
+public void setPlz(int pPlz)
 {
-	this.plz = plz;
+	this.plz = pPlz;
 }
 
 }

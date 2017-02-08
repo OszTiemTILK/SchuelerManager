@@ -2,45 +2,42 @@ package java;
 
 public class Kontaktdaten
 {
-
-private int festnetzNummer;
-private int mobilNummer;
+private String festnetzNummer;
+private String mobilNummer;
 private String email;
-private int fax;
-
-public int getFestnetzNummer()
+private String fax;
+public String getFestnetzNummer()
 {
 	return festnetzNummer;
 }
-
-public void setFestnetzNummer(int festnetzNummer)
+public void setFestnetzNummer(String pFestnetzNummer)
 {
-	this.festnetzNummer = festnetzNummer;
+	this.festnetzNummer = pFestnetzNummer;
 }
-public int getMobilNummer()
+public String getMobilNummer()
 {
 	return mobilNummer;
 }
-
-public void setMobilNummer(int mobilNummer)
+public void setMobilNummer(String pMobilNummer)
 {
-	this.mobilNummer = mobilNummer;
+	this.mobilNummer = pMobilNummer;
 }
-public String getEmail() {
+public String getEmail()
+{
 	return email;
 }
-
-public void setEmail(String email)
+public void setEmail(String pEmail)
 {
-	this.email = email;
+	this.email = pEmail;
 }
-public int getFax() {
+public String getFax()
+{
 	return fax;
 }
-
-public void setFax(int fax)
+public void setFax(String pFax)
 {
-	this.fax = fax;
+	this.fax = pFax;
 }
+
 
 }
