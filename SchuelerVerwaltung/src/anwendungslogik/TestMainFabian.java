@@ -6,7 +6,7 @@ public class TestMainFabian {
 		 * auszuführen. Feel free to delete it
 		 */
 		public static void main(String[] args) {
-			AngabenZurPerson Fritzchen=new AngabenZurPerson();
+			AngabenZurPerson Fritzchen = new AngabenZurPerson();
 			Fritzchen.ausgebenKonsoleTest();
 			// TODO Auto-generated method stub
 

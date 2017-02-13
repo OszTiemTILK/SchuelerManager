@@ -1,18 +1,18 @@
 package anwendungslogik;
 
-public class SchülerIn
+public class SchÃ¼lerIn
 {
-private SchülerID schülerInID = new SchülerID();
+private SchÃ¼lerID schÃ¼lerInID = new SchÃ¼lerID();
 private AngabenZurPerson person = new AngabenZurPerson();
 private Sprachen sprachen = new Sprachen();
-private Kontaktdaten kontaktSchüler = new Kontaktdaten();
+private Kontaktdaten kontaktSchÃ¼ler = new Kontaktdaten();
 private Kontaktdaten kontaktVater = new Kontaktdaten();
 private Kontaktdaten kontaktMutter = new Kontaktdaten();
 private Kontaktdaten kontaktAndere = new Kontaktdaten();
-private Schülerverhältnisse schülerverhältnisse = new Schülerverhältnisse();
+private SchÃ¼lerverhÃ¤ltnisse schÃ¼lerverhÃ¤ltnisse = new SchÃ¼lerverhÃ¤ltnisse();
 private Herkunft herkunft = new Herkunft();
 private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
-private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
+private BeruflicheBildungVorbereitungBefÃ¤higung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefÃ¤higung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
 private Adresse adresse = new Adresse();
 
@@ -32,13 +32,13 @@ public void setSprachen(Sprachen pSprachen)
 {
 	this.sprachen = pSprachen;
 }
-public Kontaktdaten getKontaktschüler()
+public Kontaktdaten getKontaktschÃ¼ler()
 {
-	return kontaktSchüler;
+	return kontaktSchÃ¼ler;
 }
-public void setKontaktschüler(Kontaktdaten pKontaktschüler)
+public void setKontaktschÃ¼ler(Kontaktdaten pKontaktschÃ¼ler)
 {
-	this.kontaktSchüler = pKontaktschüler;
+	this.kontaktSchÃ¼ler = pKontaktschÃ¼ler;
 }
 public Kontaktdaten getKontaktvater()
 {
@@ -64,13 +64,13 @@ public void setKontaktandere(Kontaktdaten pKontaktandere)
 {
 	this.kontaktAndere = pKontaktandere;
 }
-public Schülerverhältnisse getSchülerverhalten()
+public SchÃ¼lerverhÃ¤ltnisse getSchÃ¼lerverhalten()
 {
-	return schülerverhältnisse;
+	return schÃ¼lerverhÃ¤ltnisse;
 }
-public void setSchülerverhalten(Schülerverhältnisse pSchülerverhalten)
+public void setSchÃ¼lerverhalten(SchÃ¼lerverhÃ¤ltnisse pSchÃ¼lerverhalten)
 {
-	this.schülerverhältnisse = pSchülerverhalten;
+	this.schÃ¼lerverhÃ¤ltnisse = pSchÃ¼lerverhalten;
 }
 public Herkunft getHerkunft()
 {
@@ -88,11 +88,11 @@ public void setVormund(ErziehungsberechtigteR pVormund)
 {
 	this.vormund = pVormund;
 }
-public BeruflicheBildungVorbereitungBefähigung getBerufichevorbereitung()
+public BeruflicheBildungVorbereitungBefÃ¤higung getBerufichevorbereitung()
 {
 	return beruficheVorbereitung;
 }
-public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBerufichevorbereitung)
+public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefÃ¤higung pBerufichevorbereitung)
 {
 	this.beruficheVorbereitung = pBerufichevorbereitung;
 }
@@ -112,14 +112,13 @@ public void setAdresse(Adresse pAdresse)
 {
 	this.adresse = pAdresse;
 }
-public SchülerID getSchülerInID()
+public SchÃ¼lerID getSchÃ¼lerInID()
 {
-	return schülerInID;
+	return schÃ¼lerInID;
 }
-public void setSchülerID(SchülerID pSchülerID)
+public void setSchÃ¼lerID(SchÃ¼lerID pSchÃ¼lerID)
 {
-	this.schülerInID = pSchülerID;
+	this.schÃ¼lerInID = pSchÃ¼lerID;
 }
 
 }
-
