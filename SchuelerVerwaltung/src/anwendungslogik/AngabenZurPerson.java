@@ -38,7 +38,11 @@ public void ausgebenKonsoleTest()
 {
 	System.out.println("Name: " + vorname + " " + nachname);
 	System.out.println("Geburtsdatum: " + getGeburtsDatum() );
-	System.out.print("Geschlecht: " + geschlecht);
+	System.out.println("Geschlecht: " + geschlecht);
+
+public void speichernAngabenZurPerson()
+{
+
 }
 
 
