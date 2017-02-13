@@ -25,11 +25,5 @@ public class SchülerID {
 	{
 
 	}
-	/** speichert SchuelerID
-	 *
-	 */
-	public void speichernSchuelerID()
-	{
 
-	}
 }
