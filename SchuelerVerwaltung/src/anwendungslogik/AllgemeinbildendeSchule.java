@@ -17,15 +17,12 @@ public class AllgemeinbildendeSchule
 
 	public void anlegenAllgemeinbildendeSchule()
 	{
-
 	}
 	public void aendernAllgemeinbildendeSchule()
 	{
-
 	}
 	public void loeschenAllgemeinbildendeSchule()
 	{
-
 	}
 	public void ausgeben()
 	{
