@@ -33,12 +33,17 @@ public void loeschenAngabenZurPerson()
 /** speichert Angaben zur Person
  *
  */
+
+public void ausgebenKonsoleTest()
+{
+	System.out.println("Name: " + vorname + " " + nachname);
+	System.out.println("Geburtsdatum: " + getGeburtsDatum() );
+	System.out.println("Geschlecht: " + geschlecht);
+
 public void speichernAngabenZurPerson()
 {
 
 }
-
-
 
 
 
