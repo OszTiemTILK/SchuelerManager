@@ -39,5 +39,4 @@ public void setFax(String pFax)
 	this.fax = pFax;
 }
 
-
 }

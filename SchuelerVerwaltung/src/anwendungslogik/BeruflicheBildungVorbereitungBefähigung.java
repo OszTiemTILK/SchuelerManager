@@ -1,5 +1,6 @@
 package anwendungslogik;
 
-public class BeruflicheBildungVorbereitungBefähigung {
+public class BeruflicheBildungVorbereitungBefähigung
+{
 
 }

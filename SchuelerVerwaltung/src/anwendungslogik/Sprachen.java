@@ -1,7 +1,7 @@
 package anwendungslogik;
 
-public class Sprachen {
-
+public class Sprachen
+{
 	private String muttersprache;
 	private String sprachen;
 	private String sprachniveau;

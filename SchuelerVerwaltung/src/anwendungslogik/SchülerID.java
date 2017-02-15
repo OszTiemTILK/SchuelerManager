@@ -1,6 +1,7 @@
 package anwendungslogik;
 
-public class SchülerID {
+public class SchülerID
+{
 
 	private int schülerID;
 
@@ -25,5 +26,4 @@ public class SchülerID {
 	{
 
 	}
-
 }
