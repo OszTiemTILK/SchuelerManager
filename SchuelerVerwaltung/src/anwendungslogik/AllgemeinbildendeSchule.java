@@ -1,5 +1,7 @@
 package anwendungslogik;
 
+import java.time.LocalDate;
+
 public class AllgemeinbildendeSchule
 {
 	private LocalDate ausgeschiedenAm;
