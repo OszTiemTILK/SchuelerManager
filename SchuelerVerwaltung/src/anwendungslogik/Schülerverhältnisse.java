@@ -2,7 +2,7 @@ package anwendungslogik;
 
 import java.time.LocalDate;
 
-public class Schülerverhältnisse
+public class SchÃ¼lerverhÃ¤ltnisse
 {
 	private AllgemeinbildendeSchule schule = new AllgemeinbildendeSchule();
 
