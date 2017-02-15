@@ -18,6 +18,10 @@ public void anlegenAdresse()
 
 }
 
+/**
+ * Nur set- und get-Methoden ab hier
+ */
+
 public String getStrasse()
 {
 	return strasse;
@@ -53,7 +57,7 @@ public void setPlz(int pPlz)
 
 public void ausgeben()
 {
-	System.out.print("Straﬂe: " + getStrasse());
+	System.out.print("Stra√üe: " + getStrasse());
 	System.out.print("Nr. " + getHausNummer());
 	System.out.println();
 	System.out.print("Wohnort: " + getWohnort());

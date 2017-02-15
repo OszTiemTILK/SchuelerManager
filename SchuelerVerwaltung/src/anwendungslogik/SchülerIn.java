@@ -16,7 +16,6 @@ private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new Ber
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
 private Adresse adresse = new Adresse();
 
-
 public void ausgeben()
 {
 adresse.ausgeben();
@@ -32,6 +31,7 @@ person.ausgeben();
 //beruflicheVorbereitung.ausgeben();
 aktuelleSchule.ausgeben();
 }
+
 public AngabenZurPerson getPerson()
 {
 	return person;
