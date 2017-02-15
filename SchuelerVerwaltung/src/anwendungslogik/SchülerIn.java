@@ -5,6 +5,7 @@ public class SchülerIn
 private SchülerID schülerInID = new SchülerID();
 private AngabenZurPerson person = new AngabenZurPerson();
 private Sprachen sprachen = new Sprachen();
+private Kontaktdaten kontakt = new Kontaktdaten();
 private Kontaktdaten kontaktSchüler = new Kontaktdaten();
 private Kontaktdaten kontaktVater = new Kontaktdaten();
 private Kontaktdaten kontaktMutter = new Kontaktdaten();
@@ -15,6 +16,22 @@ private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
 private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
 private Adresse adresse = new Adresse();
+
+public void ausgeben()
+{
+adresse.ausgeben();
+person.ausgeben();
+//sprachen.ausgeben();
+//kontaktSchüler.ausgeben();
+//kontaktVater.ausgeben();
+//kontaktMutter.ausgeben();
+//kontaktAndere.ausgeben();
+//schülerverhältnisse.ausgeben();
+//herkunft.ausgeben();
+//vormund.ausgeben();
+//beruflicheVorbereitung.ausgeben();
+aktuelleSchule.ausgeben();
+}
 
 public AngabenZurPerson getPerson()
 {

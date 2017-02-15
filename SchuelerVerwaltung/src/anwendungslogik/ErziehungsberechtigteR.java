@@ -7,9 +7,28 @@ public class ErziehungsberechtigteR
 	private String nachname;
 	private boolean vormund;
 	private Adresse AdresseVonErziehungsberechtigteR = new Adresse();
+	private Kontaktdaten KontaktdatenVonErziehungsberechtigteR = new Kontaktdaten();
 
-//Nur set- und get-Methoden ab hier
+/**
+ * Ausgabe von Angaben zur Kontrolle für JavaFx
+ */
+	public void ausgebenZusammenfassungErziehungsberrechtigteRAngaben()
+	{
+		System.out.println("Erziehungsberechtigter:	");
+		System.out.println("Vorname:			"+getVorname());
+		System.out.println("Nachname:			"+getNachname());
+		System.out.println("Strasse:			"+AdresseVonErziehungsberechtigteR.getStrasse());
+		System.out.println("Hausnummer:			"+AdresseVonErziehungsberechtigteR.getHausNummer());
+		System.out.println("PLZ:				"+AdresseVonErziehungsberechtigteR.getPlz());
+		System.out.println("Wohnort:			"+AdresseVonErziehungsberechtigteR.getWohnort());
+		System.out.println("Festnetznummer:			"+KontaktdatenVonErziehungsberechtigteR.getFestnetzNummer());
+		System.out.println("Mobilnummer:			"+KontaktdatenVonErziehungsberechtigteR.getMobilNummer());
+	}
 
+
+/**
+ * Nur set- und get-Methoden ab hier
+ */
 	public Vormund getTyp()
 	{
 		return typ;

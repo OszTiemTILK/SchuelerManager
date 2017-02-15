@@ -1,8 +1,10 @@
 package anwendungslogik;
 
+import java.time.LocalDate;
+
 public class AllgemeinbildendeSchule
 {
-	private int[] ausgeschiedenAm = {0, 0, 0};
+	private LocalDate ausgeschiedenAm;
 	private int ausgeschiedenAusJahrgang;
 	private boolean sonderschule;
 	private boolean hauptschule;
@@ -12,7 +14,7 @@ public class AllgemeinbildendeSchule
 	private boolean gymnasium;
 	private String nameDerSchule;
 	private String bezirkVonBerlinOderAnderesBundesland;
-	private int erreichterAbschluss;
+	private String erreichterAbschluss;
 	private String bemerkungen;
 
 	public void anlegenAllgemeinbildendeSchule()
@@ -26,7 +28,7 @@ public class AllgemeinbildendeSchule
 	}
 	public void ausgeben()
 	{
-		System.out.println(ausgeschiedenAm[0] + ". " + ausgeschiedenAm[1] + ". " + ausgeschiedenAm[2]);
+		System.out.println(ausgeschiedenAm.toString());
 		System.out.println(ausgeschiedenAusJahrgang);
 		System.out.println(sonderschule);
 		System.out.println(hauptschule);
@@ -39,15 +41,13 @@ public class AllgemeinbildendeSchule
 		System.out.println(erreichterAbschluss);
 		System.out.println(bemerkungen);
 	}
-	public int[] getAusgeschiedenAm()
+	public LocalDate getAusgeschiedenAm()
 	{
 		return ausgeschiedenAm;
 	}
-	public void setAusgeschiedenAm(int pTag, int pMonat, int pJahr)
+	public void setAusgeschiedenAm(LocalDate pDatum)
 	{
-		this.ausgeschiedenAm[0] = pTag;
-		this.ausgeschiedenAm[1] = pMonat;
-		this.ausgeschiedenAm[2] = pJahr;
+		this.ausgeschiedenAm = pDatum;
 	}
 	public int getAusgeschiedenAusJahrgang()
 	{
@@ -121,19 +121,13 @@ public class AllgemeinbildendeSchule
 	{
 		this.bezirkVonBerlinOderAnderesBundesland = pBezirkVonBerlinOderAnderesBundesland;
 	}
-	public int getErreichterAbschluss()
+	public String getErreichterAbschluss()
 	{
 		return erreichterAbschluss;
 	}
-	public boolean setErreichterAbschluss(int pErreichterAbschluss)
+	public void setErreichterAbschluss(String pErreichterAbschluss)
 	{
-		if(pErreichterAbschluss == 1 || pErreichterAbschluss == 2)
-		{
-			this.erreichterAbschluss = pErreichterAbschluss;
-			return true;
-		}
-		else
-			return false;
+		this.erreichterAbschluss = pErreichterAbschluss;
 
 	}
 	public String getBemerkungen()
