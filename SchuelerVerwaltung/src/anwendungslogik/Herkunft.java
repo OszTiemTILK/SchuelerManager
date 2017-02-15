@@ -7,15 +7,23 @@ private String volksgruppe;
 private String geburtsort;
 private String geburtsland;
 
+/**
+ * Ausgabe von Angaben zur Kontrolle für JavaFx
+ */
+	public void ausgebenZusammenfassungHerkunft()
+	{
+		System.out.println("Nationalitaet:			"+getStaatsangehörigkeit());
+	}
+
 public String getStaatsangehörigkeit()
 {
 
 	return staatsangehörigkeit;
 }
-public void setstaatsangehörigkeit(String pstaatsangehörigkeit)
+public void setstaatsangehörigkeit(String pStaatsangehörigkeit)
 {
 
-	this.staatsangehörigkeit = pstaatsangehörigkeit;
+	this.staatsangehörigkeit = pStaatsangehörigkeit;
 }
 public String getVolksgruppe()
 {

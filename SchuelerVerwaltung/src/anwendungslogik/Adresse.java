@@ -7,8 +7,20 @@ private int hausNummer;
 private String wohnort;
 private int plz;
 
-//Nur set- und get-Methoden ab hier 
-  
+
+public void ausgebenAdresse()
+{
+	System.out.println("Straße:				"+getStrasse());
+	System.out.println("Hausnummer:			"+getHausNummer());
+	System.out.println("PLZ:				"+getPlz());
+	System.out.println("Wohnort:			"+getStrasse());
+}
+
+
+/**
+ * Nur set- und get-Methoden ab hier
+ */
+
 public String getStrasse()
 {
 	return strasse;
