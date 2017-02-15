@@ -8,18 +8,18 @@ private String vorname;
 private String nachname;
 private LocalDate geburtsDatum;
 private Geschlecht geschlecht;
+  
 
-/**
- * Ausgabe von Angaben zur Kontrolle f�r JavaFx
+ /** 
+ * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
  */
-public void ausgebenZusammenfassungAngabenzurPerson()
-{
-	System.out.println("Vorname:			"+getVorname());
-	System.out.println("Nachname:			"+getNachname());
-	System.out.println("Geburtsdatum:			"+getGeburtsDatum());
-}
-
-
+ public void ausgebenZusammenfassungAngabenzurPerson()
+ { 
+   System.out.println("Vorname:   "+getVorname()); 
+   System.out.println("Nachname:   "+getNachname()); 
+   System.out.println("Geburtsdatum:   "+getGeburtsDatum());
+ }
+  
 /** legt Angaben zur Person an
  *
  */
@@ -44,18 +44,19 @@ public void loeschenAngabenZurPerson()
 /** speichert Angaben zur Person
  *
  */
+
+public void ausgebenKonsoleTest()
+{
+	System.out.println("Name: " + vorname + " " + nachname);
+	System.out.println("Geburtsdatum: " + getGeburtsDatum() );
+	System.out.println("Geschlecht: " + geschlecht);
+}
+
 public void speichernAngabenZurPerson()
 {
 
 }
-
-public void ausgebenAngaben()
-{
-	System.out.println("Vorname:				"+getVorname());
-	System.out.println("Nachname:			"+getNachname());
-	System.out.println("Geburtsdatum:				"+getGeburtsDatum());
-}
-
+  
 public String getVorname()
 {
 	return vorname;
