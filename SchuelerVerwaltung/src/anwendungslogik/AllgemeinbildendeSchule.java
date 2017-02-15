@@ -14,7 +14,7 @@ public class AllgemeinbildendeSchule
 	private boolean gymnasium;
 	private String nameDerSchule;
 	private String bezirkVonBerlinOderAnderesBundesland;
-	private int erreichterAbschluss;
+	private String erreichterAbschluss;
 	private String bemerkungen;
 
 	public void anlegenAllgemeinbildendeSchule()
@@ -121,21 +121,13 @@ public class AllgemeinbildendeSchule
 	{
 		this.bezirkVonBerlinOderAnderesBundesland = pBezirkVonBerlinOderAnderesBundesland;
 	}
-	public int getErreichterAbschluss()
+	public String getErreichterAbschluss()
 	{
 		return erreichterAbschluss;
 	}
-	public boolean setErreichterAbschluss(int pErreichterAbschluss)
+	public void setErreichterAbschluss(String pErreichterAbschluss)
 	{
-		if(pErreichterAbschluss == 1 || pErreichterAbschluss == 2)
-		{
-			this.erreichterAbschluss = pErreichterAbschluss;
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		this.erreichterAbschluss = pErreichterAbschluss;
 
 	}
 	public String getBemerkungen()
