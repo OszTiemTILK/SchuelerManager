@@ -1,4 +1,4 @@
-package anwendungslogik;
+﻿package anwendungslogik;
 
 public class Adresse
 {
@@ -9,8 +9,12 @@ private int plz;
 
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 {
-
+	this.strasse = pStrasse;
+	this.hausNummer = pHausnummer;
+	this.wohnort = pWohnort;
+	this.plz = pPlz;
 }
+
 //Nur set- und get-Methoden ab hier  ... und ausgeben
 
 public void anlegenAdresse()
