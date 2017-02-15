@@ -46,6 +46,14 @@ public void speichernAngabenZurPerson()
 
 }
 
+
+
+
+
+
+
+
+
 public String getVorname()
 {
 	return vorname;
@@ -92,5 +100,6 @@ public void setGeschlecht(Geschlecht pGeschlecht)
 {
 	this.geschlecht = pGeschlecht;
 }
+
 
 }

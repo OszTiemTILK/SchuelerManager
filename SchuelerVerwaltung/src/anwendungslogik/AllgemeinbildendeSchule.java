@@ -128,6 +128,7 @@ public class AllgemeinbildendeSchule
 	public void setErreichterAbschluss(String pErreichterAbschluss)
 	{
 		this.erreichterAbschluss = pErreichterAbschluss;
+
 	}
 	public String getBemerkungen()
 	{

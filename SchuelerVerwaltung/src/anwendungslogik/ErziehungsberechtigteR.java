@@ -60,3 +60,6 @@ public class ErziehungsberechtigteR
 		AdresseVonErziehungsberechtigteR = pAdresseVonErziehungsberechtigteR;
 	}
 }
+
+
+

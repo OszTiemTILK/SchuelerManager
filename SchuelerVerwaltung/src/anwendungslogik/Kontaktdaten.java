@@ -6,6 +6,7 @@ private String festnetzNummer;
 private String mobilNummer;
 private String email;
 private String fax;
+
 public String getFestnetzNummer()
 {
 	return festnetzNummer;
@@ -38,5 +39,6 @@ public void setFax(String pFax)
 {
 	this.fax = pFax;
 }
+
 
 }
