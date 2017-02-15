@@ -7,8 +7,24 @@ private int hausNummer;
 private String wohnort;
 private int plz;
 
-//Nur set- und get-Methoden ab hier 
-  
+public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
+{
+	this.strasse = pStrasse;
+	this.hausNummer = pHausnummer;
+	this.wohnort = pWohnort;
+	this.plz = pPlz;
+}
+//Nur set- und get-Methoden ab hier  ... und ausgeben
+
+public void anlegenAdresse()
+{
+
+}
+
+/**
+ * Nur set- und get-Methoden ab hier
+ */
+
 public String getStrasse()
 {
 	return strasse;
@@ -40,6 +56,16 @@ public int getPlz()
 public void setPlz(int pPlz)
 {
 	this.plz = pPlz;
+}
+
+public void ausgeben()
+{
+	System.out.print("Straße: " + getStrasse());
+	System.out.print("Nr. " + getHausNummer());
+	System.out.println();
+	System.out.print("Wohnort: " + getWohnort());
+	System.out.print("PLZ: " + getPlz());
+	System.out.println();
 }
 
 }
