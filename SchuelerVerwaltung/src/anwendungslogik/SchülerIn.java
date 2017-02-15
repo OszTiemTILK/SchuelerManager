@@ -5,6 +5,7 @@ public class SchülerIn
 private SchülerID schülerInID = new SchülerID();
 private AngabenZurPerson person = new AngabenZurPerson();
 private Sprachen sprachen = new Sprachen();
+private Kontaktdaten kontakt = new Kontaktdaten();
 private Kontaktdaten kontaktSchüler = new Kontaktdaten();
 private Kontaktdaten kontaktVater = new Kontaktdaten();
 private Kontaktdaten kontaktMutter = new Kontaktdaten();

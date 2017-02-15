@@ -3,7 +3,7 @@ public class TestMainFabian {
 
 		/*
 		 * Diese Klasse ist nur Notwendig um den "ausgeben"-Befehl aus "AngabenZurPerson"
-		 * auszuführen. Feel free to delete it
+		 * auszufÃ¼hren. Feel free to delete it
 		 */
 		public static void main(String[] args) {
 			AngabenZurPerson Fritzchen = new AngabenZurPerson();
