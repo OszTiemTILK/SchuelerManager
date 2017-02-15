@@ -1,5 +1,6 @@
 package fx;
 
+import anwendungslogik.Adresse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 public class TestMaskeAdresseController {
 
     @FXML
-    private TextField tfStraﬂe;
+    private TextField tfStrasse;
 
     @FXML
     private Button speichernAdresse;
@@ -17,13 +18,10 @@ public class TestMaskeAdresseController {
     private TextField tfFestnetz;
 
     @FXML
-    private TextField tfFax;
-
-    @FXML
     private TextField tfEmail;
 
     @FXML
-    private TextField tfOrt;
+    private TextField tfWohnort;
 
     @FXML
     private TextField tfHandy;
@@ -32,12 +30,16 @@ public class TestMaskeAdresseController {
     private TextField tfPlz;
 
     @FXML
-    private TextField tfStraﬂe1;
+    private TextField tfHausnummer;
 
     @FXML
-    void anlegenAdresse(ActionEvent event) 
+    void anlegenAdresse(ActionEvent event)
     {
+    	//1. Adress Objekt erzeugen
+    	Adresse lAdresseTest = new Adresse(tfStrasse.getText(), Integer.parseInt(tfHausnummer.getText()), tfWohnort.getText(), Integer.parseInt(tfPlz.getText());
 
+    	//2. An Adress Objekt Methode anlegen aufrufen
+    	lAdresseTest
     }
 
 }//end
