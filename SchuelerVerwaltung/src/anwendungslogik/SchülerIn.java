@@ -1,6 +1,6 @@
 package anwendungslogik;
 
-public class SchülerIn
+public class SchÃ¼lerIn
 {
 private AngabenZurPerson person = new AngabenZurPerson();
 private Sprachen sprachen = new Sprachen();

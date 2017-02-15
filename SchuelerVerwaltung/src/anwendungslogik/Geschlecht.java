@@ -2,5 +2,5 @@ package anwendungslogik;
 
 public enum Geschlecht
 {
-	MÄNNLICH, WEIBLICH
+	MÃ„NNLICH, WEIBLICH
 }

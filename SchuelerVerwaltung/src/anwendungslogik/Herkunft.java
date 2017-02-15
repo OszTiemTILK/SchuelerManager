@@ -2,20 +2,20 @@ package anwendungslogik;
 
 public class Herkunft
 {
-private String staatsangehörigkeit;
+private String staatsangehÃ¶rigkeit;
 private String volksgruppe;
 private String geburtsort;
 private String geburtsland;
 
-public String getStaatsangehörigkeit()
+public String getStaatsangehÃ¶rigkeit()
 {
 
-	return staatsangehörigkeit;
+	return staatsangehÃ¶rigkeit;
 }
-public void setStaatsangehörigkeit(String pStaatsangehörigkeit)
+public void setStaatsangehÃ¶rigkeit(String pStaatsangehÃ¶rigkeit)
 {
 
-	this.staatsangehörigkeit = pStaatsangehörigkeit;
+	this.staatsangehÃ¶rigkeit = pStaatsangehÃ¶rigkeit;
 }
 public String getVolksgruppe()
 {

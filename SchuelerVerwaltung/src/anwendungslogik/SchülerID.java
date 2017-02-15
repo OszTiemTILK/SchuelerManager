@@ -1,17 +1,17 @@
 package anwendungslogik;
 
-public class SchülerID {
+public class SchÃ¼lerID {
 
-	private int schülerID;
+	private int schÃ¼lerID;
 
-	/** legt schülerID an
+	/** legt schÃ¼lerID an
 	 *
 	 */
 	public void anlegenSchuelerID()
 	{
 
 	}
-	/** aendert SchülerID
+	/** aendert SchÃ¼lerID
 	 *
 	 */
 	public void aendernSchuelerID()
