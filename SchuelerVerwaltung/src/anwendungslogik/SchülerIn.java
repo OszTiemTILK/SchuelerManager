@@ -15,7 +15,7 @@ private Herkunft herkunft = new Herkunft();
 private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
 private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
-//private Adresse adresse = new Adresse();
+private Adresse adresse = new Adresse();
 
 public void ausgeben()
 {
@@ -107,11 +107,11 @@ public void setVormund(ErziehungsberechtigteR pVormund)
 }
 public BeruflicheBildungVorbereitungBefähigung getBerufichevorbereitung()
 {
-	return beruficheVorbereitung;
+	return beruflicheVorbereitung;
 }
 public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBerufichevorbereitung)
 {
-	this.beruficheVorbereitung = pBerufichevorbereitung;
+	this.beruflicheVorbereitung = pBerufichevorbereitung;
 }
 public AllgemeinbildendeSchule getAktuelleschule()
 {

@@ -22,6 +22,11 @@ public void anlegenAdresse()
 
 }
 
+public void speichernAdresse()
+{
+	ausgeben();
+}
+
 /**
  * Nur set- und get-Methoden ab hier
  */

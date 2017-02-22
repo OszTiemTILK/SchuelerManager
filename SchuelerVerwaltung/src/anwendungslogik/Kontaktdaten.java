@@ -12,12 +12,6 @@ private String fax;
  */
 public void ausgeben()
 {
-	System.out.println("FestnetzNummer:			"+getFestnetzNummer());
-	System.out.println("MobilNummer:			"+getMobilNummer());
-}
-
-public void ausgeben()
-{
 	System.out.println("Festnetznummer:			"+getFestnetzNummer());
 	System.out.println("Mobilniummer:			"+getMobilNummer());
 	System.out.println("E-Mail:					"+getEmail());
