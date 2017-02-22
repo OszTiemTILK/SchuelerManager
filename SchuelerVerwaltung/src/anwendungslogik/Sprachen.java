@@ -3,7 +3,7 @@ package anwendungslogik;
 public class Sprachen {
 
 	private boolean muttersprache;
-	private String sprachen;
+	private String spname;
 	private String sprachniveau;
 
 	/** legt Sprachen an
@@ -49,17 +49,16 @@ public class Sprachen {
 			System.out.print(" ist auf dem Sprachniveau " + getSprachniveau() );
 		}
 
-	}
 
 
 	public String getSprachen()
 	{
-		return sprachen;
+		return spname;
 	}
 
 	public void setSprachen(String pSprachen, boolean pMutterprache)
 	{
-		this.sprachen = pSprachen;
+		this.spname = pSprachen;
 		this.muttersprache = pMuttersprache;
 	}
 
@@ -72,4 +71,5 @@ public class Sprachen {
 	{
 		this.sprachniveau = pSprachniveau;
 	}
+
 }

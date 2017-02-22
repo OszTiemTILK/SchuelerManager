@@ -16,6 +16,14 @@ public void ausgeben()
 	System.out.println("MobilNummer:			"+getMobilNummer());
 }
 
+public void ausgeben()
+{
+	System.out.println("Festnetznummer:			"+getFestnetzNummer());
+	System.out.println("Mobilniummer:			"+getMobilNummer());
+	System.out.println("E-Mail:					"+getEmail());
+	System.out.println("Fax:					"+getFax());
+}
+
 public String getFestnetzNummer()
 {
 	return festnetzNummer;
