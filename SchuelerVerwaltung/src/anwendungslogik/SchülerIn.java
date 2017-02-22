@@ -15,20 +15,20 @@ private Herkunft herkunft = new Herkunft();
 private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
 private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
-private Adresse adresse = new Adresse();
+//private Adresse adresse = new Adresse();
 
 public void ausgeben()
 {
-adresse.ausgeben();
+//adresse.ausgeben();
 person.ausgeben();
-//sprachen.ausgeben();
-//kontaktSchüler.ausgeben();
-//kontaktVater.ausgeben();
-//kontaktMutter.ausgeben();
-//kontaktAndere.ausgeben();
-//schülerverhältnisse.ausgeben();
-//herkunft.ausgeben();
-//vormund.ausgeben();
+sprachen.ausgeben();
+kontaktSchüler.ausgeben();
+kontaktVater.ausgeben();
+kontaktMutter.ausgeben();
+kontaktAndere.ausgeben();
+schülerverhältnisse.getAllgemeinbildendeSchule().ausgeben();
+herkunft.ausgeben();
+vormund.ausgeben();
 //beruflicheVorbereitung.ausgeben();
 aktuelleSchule.ausgeben();
 }

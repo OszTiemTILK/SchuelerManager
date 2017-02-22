@@ -35,14 +35,20 @@ public class Sprachen {
 
 	}
 	/**
-	 * Ausgabe von Angaben zur Kontrolle für JavaFx
+	 * Ausgabe von Angaben zur Kontrolle fï¿½r JavaFx
 	 */
 	public void ausgebenZusammenfassungSprachen()
 	{
 		System.out.println("Muttersprache:			"+getMuttersprache());
 	}
-
-
+	
+	public void ausgeben()
+	{
+		System.out.println("Muttersprache:			"+getMuttersprache());
+		System.out.println("Sprache:				"+getSprachen());
+		System.out.println("Sprachniveau:			"+getSprachniveau());
+	}
+	
 	public String getMuttersprache()
 	{
 		return muttersprache;
@@ -72,4 +78,5 @@ public class Sprachen {
 	{
 		this.sprachniveau = pSprachniveau;
 	}
+
 }
