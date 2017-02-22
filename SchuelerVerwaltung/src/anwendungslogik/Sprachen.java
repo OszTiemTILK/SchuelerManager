@@ -2,7 +2,7 @@ package anwendungslogik;
 
 public class Sprachen {
 
-	private String muttersprache;
+	private boolean muttersprache;
 	private String sprachen;
 	private String sprachniveau;
 
@@ -39,28 +39,28 @@ public class Sprachen {
 	 */
 	public void ausgeben()
 	{
-		System.out.println("Muttersprache:			"+getMuttersprache());
+		System.out.print("Die Sprache " + getSprachen());
+		if(muttersprache == true)
+		{
+			System.out.print(" ist die Muttersprache der Person und ist auf dem Sprachniveau " + getSprachniveau() );
+		}
+		else
+		{
+			System.out.print(" ist auf dem Sprachniveau " + getSprachniveau() );
+		}
+
 	}
 
-
-	public String getMuttersprache()
-	{
-		return muttersprache;
-	}
-
-	public void setMuttersprache(String pMuttersprache)
-	{
-		this.muttersprache = pMuttersprache;
-	}
 
 	public String getSprachen()
 	{
 		return sprachen;
 	}
 
-	public void setSprachen(String pSprachen)
+	public void setSprachen(String pSprachen, boolean pMutterprache)
 	{
 		this.sprachen = pSprachen;
+		this.muttersprache = pMuttersprache;
 	}
 
 	public String getSprachniveau()
