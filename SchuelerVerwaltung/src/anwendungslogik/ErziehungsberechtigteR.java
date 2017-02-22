@@ -12,7 +12,7 @@ public class ErziehungsberechtigteR
 /**
  * Ausgabe von Angaben zur Kontrolle f�r JavaFx
  */
-	public void ausgebenZusammenfassungErziehungsberrechtigteRAngaben()
+	public void ausgeben()
 	{
 		System.out.println("Erziehungsberechtigter:	");
 		System.out.println("Vorname:			"+getVorname());

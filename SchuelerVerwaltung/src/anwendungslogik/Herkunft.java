@@ -10,7 +10,7 @@ private String geburtsland;
 /**
  * Ausgabe von Angaben zur Kontrolle für JavaFx
  */
-	public void ausgebenZusammenfassungHerkunft()
+	public void ausgeben()
 	{
 		System.out.println("Nationalitaet:			"+getStaatsangehörigkeit());
 	}

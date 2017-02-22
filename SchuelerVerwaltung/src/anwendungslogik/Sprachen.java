@@ -2,8 +2,8 @@ package anwendungslogik;
 
 public class Sprachen {
 
-	private String muttersprache;
-	private String sprachen;
+	private boolean muttersprache;
+	private String spname;
 	private String sprachniveau;
 
 	/** legt Sprachen an
@@ -37,36 +37,29 @@ public class Sprachen {
 	/**
 	 * Ausgabe von Angaben zur Kontrolle f�r JavaFx
 	 */
-	public void ausgebenZusammenfassungSprachen()
-	{
-		System.out.println("Muttersprache:			"+getMuttersprache());
-	}
-	
 	public void ausgeben()
 	{
-		System.out.println("Muttersprache:			"+getMuttersprache());
-		System.out.println("Sprache:				"+getSprachen());
-		System.out.println("Sprachniveau:			"+getSprachniveau());
-	}
-	
-	public String getMuttersprache()
-	{
-		return muttersprache;
-	}
+		System.out.print("Die Sprache " + getSprachen());
+		if(muttersprache == true)
+		{
+			System.out.print(" ist die Muttersprache der Person und ist auf dem Sprachniveau " + getSprachniveau() );
+		}
+		else
+		{
+			System.out.print(" ist auf dem Sprachniveau " + getSprachniveau() );
+		}
 
-	public void setMuttersprache(String pMuttersprache)
-	{
-		this.muttersprache = pMuttersprache;
-	}
+
 
 	public String getSprachen()
 	{
-		return sprachen;
+		return spname;
 	}
 
-	public void setSprachen(String pSprachen)
+	public void setSprachen(String pSprachen, boolean pMutterprache)
 	{
-		this.sprachen = pSprachen;
+		this.spname = pSprachen;
+		this.muttersprache = pMuttersprache;
 	}
 
 	public String getSprachniveau()
