@@ -12,10 +12,6 @@ private String geburtsland;
  */
 	public void ausgeben()
 	{
-		System.out.println("Nationalitaet:			"+getStaatsangehörigkeit());
-	}
-	public void ausgeben() 
-	{
 		System.out.println("Staatsangehörigkeit:"+getStaatsangehörigkeit());
 		System.out.println("Volksgruppe"+getVolksgruppe());
 		System.out.println("Geburtsort:"+getGeburtsort());

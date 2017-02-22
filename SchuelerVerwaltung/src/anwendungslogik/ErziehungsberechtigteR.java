@@ -24,14 +24,6 @@ public class ErziehungsberechtigteR
 		System.out.println("Festnetznummer:			"+KontaktdatenVonErziehungsberechtigteR.getFestnetzNummer());
 		System.out.println("Mobilnummer:			"+KontaktdatenVonErziehungsberechtigteR.getMobilNummer());
 	}
-	
-	public void ausgeben()
-	{
-		System.out.println("Typ:				"+getTyp());
-		System.out.println("Vorname:			"+getVorname());
-		System.out.println("Nachname:			"+getNachname());
-		System.out.println("Vormund:			"+getVormund());
-	}
 
 
 /**
@@ -76,7 +68,7 @@ public class ErziehungsberechtigteR
 	{
 		this.vormund = vormund;
 	}
-	
+
 
 	public Adresse getAdresseVonErziehungsberechtigteR()
 	{

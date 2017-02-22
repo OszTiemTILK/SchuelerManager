@@ -48,7 +48,7 @@ public class Sprachen {
 		{
 			System.out.print(" ist auf dem Sprachniveau " + getSprachniveau() );
 		}
-
+	}
 
 
 	public String getSprachen()
@@ -56,7 +56,7 @@ public class Sprachen {
 		return spname;
 	}
 
-	public void setSprachen(String pSprachen, boolean pMutterprache)
+	public void setSprachen(String pSprachen, boolean pMuttersprache)
 	{
 		this.spname = pSprachen;
 		this.muttersprache = pMuttersprache;
