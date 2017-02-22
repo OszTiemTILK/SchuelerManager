@@ -35,9 +35,9 @@ public class Sprachen {
 
 	}
 	/**
-	 * Ausgabe von Angaben zur Kontrolle für JavaFx
+	 * Ausgabe von Angaben zur Kontrolle fï¿½r JavaFx
 	 */
-	public void ausgebenZusammenfassungSprachen()
+	public void ausgeben()
 	{
 		System.out.println("Muttersprache:			"+getMuttersprache());
 	}

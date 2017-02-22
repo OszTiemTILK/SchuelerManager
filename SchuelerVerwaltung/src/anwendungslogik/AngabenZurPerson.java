@@ -13,7 +13,7 @@ private Geschlecht geschlecht;
  /** 
  * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
  */
- public void ausgebenZusammenfassungAngabenzurPerson()
+ public void ausgeben()
  {
    System.out.println("Vorname:   "+getVorname());
    System.out.println("Nachname:   "+getNachname());

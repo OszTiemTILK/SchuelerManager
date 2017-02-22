@@ -14,4 +14,8 @@ public class Schülerverhältnisse
 	{
 		this.schule = pSchule;
 	}
+	public void ausgeben()
+	{
+		System.out.println("Schülerverhältnisse: Auch hier musst du dich in geduld üben");
+	}
 }

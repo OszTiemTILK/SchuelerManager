@@ -13,23 +13,25 @@ private Kontaktdaten kontaktAndere = new Kontaktdaten();
 private Schülerverhältnisse schülerverhältnisse = new Schülerverhältnisse();
 private Herkunft herkunft = new Herkunft();
 private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
-private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
+private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
 private Adresse adresse = new Adresse();
+private SchülerID schülerID = new SchülerID();
 
 public void ausgeben()
 {
+schülerID.ausgeben();
 adresse.ausgeben();
 person.ausgeben();
-//sprachen.ausgeben();
-//kontaktSchüler.ausgeben();
-//kontaktVater.ausgeben();
-//kontaktMutter.ausgeben();
-//kontaktAndere.ausgeben();
-//schülerverhältnisse.ausgeben();
-//herkunft.ausgeben();
-//vormund.ausgeben();
-//beruflicheVorbereitung.ausgeben();
+sprachen.ausgeben();
+kontaktSchüler.ausgeben();
+kontaktVater.ausgeben();
+kontaktMutter.ausgeben();
+kontaktAndere.ausgeben();
+schülerverhältnisse.ausgeben();
+herkunft.ausgeben();
+vormund.ausgeben();
+beruflicheVorbereitung.ausgeben();
 aktuelleSchule.ausgeben();
 }
 
