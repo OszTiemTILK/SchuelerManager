@@ -10,6 +10,13 @@ private LocalDate geburtsDatum;
 private Geschlecht geschlecht;
 
 
+public AngabenZurPerson(String pVorname, String pNachname, LocalDate pGeburtsDatum, Geschlecht pGeschlecht)
+{
+	this.vorname = pVorname;
+	this.nachname = pNachname;
+	this.geburtsDatum = pGeburtsDatum;
+	this.geschlecht = pGeschlecht;
+}
  /** 
  * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
  */
