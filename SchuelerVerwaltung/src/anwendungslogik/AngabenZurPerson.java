@@ -9,7 +9,6 @@ private String nachname;
 private LocalDate geburtsDatum;
 private Geschlecht geschlecht;
 
-
 public AngabenZurPerson(String pVorname, String pNachname, LocalDate pGeburtsDatum, Geschlecht pGeschlecht)
 {
 	this.vorname = pVorname;
@@ -105,11 +104,9 @@ public Geschlecht getGeschlecht()
 	return geschlecht;
 }
 
-
 public void setGeschlecht(Geschlecht pGeschlecht)
 {
 	this.geschlecht = pGeschlecht;
 }
-
 
 }
