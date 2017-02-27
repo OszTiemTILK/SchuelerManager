@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class BeruflicheBildungVorbereitungBefähigung
 {
+
 	private LocalDate ausgeschiedenAm;
 	private int ausgeschiedenAusJahrgang;
 	private String nameDerSchule;
@@ -110,5 +111,10 @@ public class BeruflicheBildungVorbereitungBefähigung
 	public void setBezirk(String pBezirk)
 	{
 		this.bezirk = pBezirk;
+
+	public void ausgeben()
+	{
+		System.out.println("Berufliche Vorbereitung: Übe dich in geduld");
+
 	}
 }

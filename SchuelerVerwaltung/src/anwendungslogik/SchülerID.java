@@ -2,6 +2,10 @@ package anwendungslogik;
 
 public class SchülerID
 {
+	public void ausgeben()
+	{
+		System.out.println("SchülerID: " + schülerID);
+	}
 	private int schülerID;
 
 	/** legt SchülerID an
@@ -11,7 +15,7 @@ public class SchülerID
 	{
 
 	}
-  
+
 	/** aendert SchülerID
 	 *
 	 */
@@ -19,7 +23,7 @@ public class SchülerID
 	{
 
 	}
-  
+
 	/** loescht SchuelerID
 	 *
 	 */

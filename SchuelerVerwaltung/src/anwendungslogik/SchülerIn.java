@@ -13,24 +13,24 @@ private Kontaktdaten kontaktAndere = new Kontaktdaten();
 private Schülerverhältnisse schülerverhältnisse = new Schülerverhältnisse();
 private Herkunft herkunft = new Herkunft();
 private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
-private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
+private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
 private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
 private Adresse adresse = new Adresse();
 
 public void ausgeben()
 {
-adresse.ausgeben();
-person.ausgeben();
-//sprachen.ausgeben();
-//kontaktSchüler.ausgeben();
-//kontaktVater.ausgeben();
-//kontaktMutter.ausgeben();
-//kontaktAndere.ausgeben();
-//schülerverhältnisse.ausgeben();
-//herkunft.ausgeben();
-//vormund.ausgeben();
-//beruflicheVorbereitung.ausgeben();
-aktuelleSchule.ausgeben();
+  //adresse.ausgeben();
+  person.ausgeben();
+  sprachen.ausgeben();
+  kontaktSchüler.ausgeben();
+  kontaktVater.ausgeben();
+  kontaktMutter.ausgeben();
+  kontaktAndere.ausgeben();
+  schülerverhältnisse.getAllgemeinbildendeSchule().ausgeben();
+  herkunft.ausgeben();
+  vormund.ausgeben();
+  beruflicheVorbereitung.ausgeben();
+  aktuelleSchule.ausgeben();
 }
 
 public AngabenZurPerson getPerson()
@@ -107,11 +107,11 @@ public void setVormund(ErziehungsberechtigteR pVormund)
 }
 public BeruflicheBildungVorbereitungBefähigung getBerufichevorbereitung()
 {
-	return beruficheVorbereitung;
+	return beruflicheVorbereitung;
 }
 public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBerufichevorbereitung)
 {
-	this.beruficheVorbereitung = pBerufichevorbereitung;
+	this.beruflicheVorbereitung = pBerufichevorbereitung;
 }
 public AllgemeinbildendeSchule getAktuelleschule()
 {

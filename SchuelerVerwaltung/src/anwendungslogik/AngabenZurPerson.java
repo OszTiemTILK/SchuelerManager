@@ -19,11 +19,12 @@ public AngabenZurPerson(String pVorname, String pNachname, LocalDate pGeburtsDat
  /** 
  * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
  */
- public void ausgebenZusammenfassungAngabenzurPerson()
+ public void ausgeben()
  {
    System.out.println("Vorname:   "+getVorname());
    System.out.println("Nachname:   "+getNachname());
    System.out.println("Geburtsdatum:   "+getGeburtsDatum());
+   System.out.println("Geschlecht:	"+getGeschlecht());
  }
 
 /** legt Angaben zur Person an
