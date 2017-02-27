@@ -12,7 +12,7 @@ private Kontaktdaten kontaktAndere;
 private Schülerverhältnisse schülerverhältnisse;
 private Herkunft herkunft;
 private ErziehungsberechtigteR vormund;
-private BeruflicheBildungVorbereitungBefähigung beruficheVorbereitung;
+private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung;
 private AllgemeinbildendeSchule aktuelleSchule;
 private Adresse adresse;
 
@@ -42,7 +42,7 @@ public SchülerIn()
  * @param pAdresse
  */
 
-public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflichVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
+public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
 {
 
 	this.person = pPerson;
@@ -54,7 +54,7 @@ public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSp
 	this.schülerverhältnisse = pSchülerverhältnisse;
 	this.herkunft = pHerkunft;
 	this.vormund = pVormund;
-	this.beruficheVorbereitung = pBeruflichVorbereitung;
+	this.beruflicheVorbereitung = pBeruflicheVorbereitung;
 	this.aktuelleSchule = pAktuelleSchule;
 	this.adresse = pAdresse;
 }
@@ -149,13 +149,13 @@ public void setVormund(ErziehungsberechtigteR pVormund)
 {
 	this.vormund = pVormund;
 }
-public BeruflicheBildungVorbereitungBefähigung getBerufichevorbereitung()
+public BeruflicheBildungVorbereitungBefähigung getBeruflichevorbereitung()
 {
-	return beruficheVorbereitung;
+	return beruflicheVorbereitung;
 }
-public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBerufichevorbereitung)
+public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBeruflichevorbereitung)
 {
-	this.beruficheVorbereitung = pBerufichevorbereitung;
+	this.beruflicheVorbereitung = pBeruflichevorbereitung;
 }
 public AllgemeinbildendeSchule getAktuelleschule()
 {

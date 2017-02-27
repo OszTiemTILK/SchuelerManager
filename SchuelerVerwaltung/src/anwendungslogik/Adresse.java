@@ -35,7 +35,7 @@ public void anlegenAdresse()
 /**
  * Nur set- und get-Methoden ab hier
  */
-
+  
 public String getStrasse()
 {
 	return strasse;
