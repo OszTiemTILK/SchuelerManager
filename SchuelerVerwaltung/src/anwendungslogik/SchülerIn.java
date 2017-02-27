@@ -2,35 +2,79 @@ package anwendungslogik;
 
 public class SchülerIn
 {
-private SchülerID schülerInID = new SchülerID();
-private AngabenZurPerson person = new AngabenZurPerson();
-private Sprachen sprachen = new Sprachen();
-private Kontaktdaten kontakt = new Kontaktdaten();
-private Kontaktdaten kontaktSchüler = new Kontaktdaten();
-private Kontaktdaten kontaktVater = new Kontaktdaten();
-private Kontaktdaten kontaktMutter = new Kontaktdaten();
-private Kontaktdaten kontaktAndere = new Kontaktdaten();
-private Schülerverhältnisse schülerverhältnisse = new Schülerverhältnisse();
-private Herkunft herkunft = new Herkunft();
-private ErziehungsberechtigteR vormund = new ErziehungsberechtigteR();
-private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung = new BeruflicheBildungVorbereitungBefähigung();
-private AllgemeinbildendeSchule aktuelleSchule = new AllgemeinbildendeSchule();
-private Adresse adresse = new Adresse();
+private SchülerID schülerInID;
+private AngabenZurPerson person;
+private Sprachen sprachen;
+private Kontaktdaten kontaktSchüler;
+private Kontaktdaten kontaktVater;
+private Kontaktdaten kontaktMutter;
+private Kontaktdaten kontaktAndere;
+private Schülerverhältnisse schülerverhältnisse;
+private Herkunft herkunft;
+private ErziehungsberechtigteR vormund;
+private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung;
+private AllgemeinbildendeSchule aktuelleSchule;
+private Adresse adresse;
 
+/**
+ * Konstrukter erstellt ein leeres Objekt
+ */
+
+public SchülerIn()
+{
+	this.schülerInID = new SchülerID();
+}
+
+/**
+ * Konstruktor mit Parametern erstelt neues Objekt, weist Attributen Objekten zu.
+ * @param pSchülerID
+ * @param pPerson
+ * @param pSprachen
+ * @param pKontaktSchüler
+ * @param pKontaktVater
+ * @param pKontaktMutter
+ * @param pKontaktAndere
+ * @param pSchülerverhältnisse
+ * @param pHerkunft
+ * @param pVormund
+ * @param pBeruflichVorbereitung
+ * @param pAktuelleSchule
+ * @param pAdresse
+ */
+
+public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
+{
+
+	this.person = pPerson;
+	this.sprachen = pSprachen;
+	this.kontaktSchüler = pKontaktSchüler;
+	this.kontaktVater = pKontaktVater;
+	this.kontaktMutter = pKontaktMutter;
+	this.kontaktAndere = pKontaktAndere;
+	this.schülerverhältnisse = pSchülerverhältnisse;
+	this.herkunft = pHerkunft;
+	this.vormund = pVormund;
+	this.beruflicheVorbereitung = pBeruflicheVorbereitung;
+	this.aktuelleSchule = pAktuelleSchule;
+	this.adresse = pAdresse;
+}
+/**
+ * Gibt Objekt aus
+ */
 public void ausgeben()
 {
-  //adresse.ausgeben();
-  person.ausgeben();
-  sprachen.ausgeben();
-  kontaktSchüler.ausgeben();
-  kontaktVater.ausgeben();
-  kontaktMutter.ausgeben();
-  kontaktAndere.ausgeben();
-  schülerverhältnisse.getAllgemeinbildendeSchule().ausgeben();
-  herkunft.ausgeben();
-  vormund.ausgeben();
-  beruflicheVorbereitung.ausgeben();
-  aktuelleSchule.ausgeben();
+adresse.ausgeben();
+person.ausgeben();
+//sprachen.ausgeben();
+//kontaktSchüler.ausgeben();
+//kontaktVater.ausgeben();
+//kontaktMutter.ausgeben();
+//kontaktAndere.ausgeben();
+//schülerverhältnisse.ausgeben();
+//herkunft.ausgeben();
+//vormund.ausgeben();
+//beruflicheVorbereitung.ausgeben();
+aktuelleSchule.ausgeben();
 }
 
 public AngabenZurPerson getPerson()
@@ -105,13 +149,13 @@ public void setVormund(ErziehungsberechtigteR pVormund)
 {
 	this.vormund = pVormund;
 }
-public BeruflicheBildungVorbereitungBefähigung getBerufichevorbereitung()
+public BeruflicheBildungVorbereitungBefähigung getBeruflichevorbereitung()
 {
 	return beruflicheVorbereitung;
 }
-public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBerufichevorbereitung)
+public void setBerufichevorbereitung(BeruflicheBildungVorbereitungBefähigung pBeruflichevorbereitung)
 {
-	this.beruflicheVorbereitung = pBerufichevorbereitung;
+	this.beruflicheVorbereitung = pBeruflichevorbereitung;
 }
 public AllgemeinbildendeSchule getAktuelleschule()
 {

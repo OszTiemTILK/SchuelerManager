@@ -16,10 +16,11 @@ public AngabenZurPerson(String pVorname, String pNachname, LocalDate pGeburtsDat
 	this.geburtsDatum = pGeburtsDatum;
 	this.geschlecht = pGeschlecht;
 }
+
  /** 
  * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
  */
- public void ausgeben()
+ public void ausgebenZusammenfassungAngabenzurPerson()
  {
    System.out.println("Vorname:   "+getVorname());
    System.out.println("Nachname:   "+getNachname());
@@ -63,7 +64,7 @@ public void speichernAngabenZurPerson()
 {
 
 }
-//Ab hier folgen nur Get/Set Methoden.
+
 public String getVorname()
 {
 	return vorname;
@@ -83,7 +84,7 @@ public void setNachname(String pNachname)
 {
 	this.nachname = pNachname;
 }
-
+  
 public LocalDate getGeburtsDatum()
 {
 	return geburtsDatum;
@@ -104,5 +105,4 @@ public void setGeschlecht(Geschlecht pGeschlecht)
 {
 	this.geschlecht = pGeschlecht;
 }
-
 }
