@@ -16,6 +16,7 @@ public class BeruflicheBildungVorbereitungBefähigung
 	private String ausbildungsberuf;
 
 	public BeruflicheBildungVorbereitungBefähigung(LocalDate pAusgeschiedenAm, int pAusgeschiedenAusJahrgang, String pNameDerSchule, String pLand, String pStadt, String pBezirk, String pBildungsgang, boolean pSchonmalBegonnen, boolean pMitAbschluss, String pAusbildungsBeruf)
+
 	{
 		this.ausgeschiedenAm = pAusgeschiedenAm;
 		this.ausgeschiedenAusJahrgang = pAusgeschiedenAusJahrgang;
@@ -110,5 +111,4 @@ public class BeruflicheBildungVorbereitungBefähigung
 	{
 		this.bezirk = pBezirk;
 	}
-
 }

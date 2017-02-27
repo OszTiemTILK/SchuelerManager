@@ -68,24 +68,20 @@ public String getVorname()
 	return vorname;
 }
 
-
 public void setVorname(String pVorname)
 {
 	this.vorname = pVorname;
 }
-
 
 public String getNachname()
 {
 	return nachname;
 }
 
-
 public void setNachname(String pNachname)
 {
 	this.nachname = pNachname;
 }
-
 
 public LocalDate getGeburtsDatum()
 {
@@ -97,7 +93,6 @@ public void setGeburtsDatum(LocalDate pGeburtsDatum)
 {
 	this.geburtsDatum = pGeburtsDatum;
 }
-
 
 public Geschlecht getGeschlecht()
 {
