@@ -28,6 +28,24 @@ public class BeruflicheBildungVorbereitungBefähigung
 		this.mitAbschluss = pMitAbschluss;
 		this.ausbildungsberuf = pAusbildungsBeruf;
 	}
+	//Ob Schüler an der jeweiligen Schule schon tätig war.
+	public boolean istSchonmalBegonnen()
+	{
+		return schonmalBegonnen;
+	}
+	public void setSchonmalBegonnen(boolean pSchonmalBegonnen)
+	{
+		this.schonmalBegonnen = pSchonmalBegonnen;
+	}
+	public boolean istMitAbschluss()
+	{
+		return mitAbschluss;
+	}
+	public void setMitAbschluss(boolean pMitAbschluss)
+	{
+		this.mitAbschluss = pMitAbschluss;
+	}
+	//Ab hier folgen nur Get/Set Methoden.
 	public LocalDate getAusgeschiedenAm()
 	{
 		return ausgeschiedenAm;
@@ -59,22 +77,6 @@ public class BeruflicheBildungVorbereitungBefähigung
 	public void setBildungsgang(String pBildungsgang)
 	{
 		this.bildungsgang = pBildungsgang;
-	}
-	public boolean isSchonmalBegonnen()
-	{
-		return schonmalBegonnen;
-	}
-	public void setSchonmalBegonnen(boolean pSchonmalBegonnen)
-	{
-		this.schonmalBegonnen = pSchonmalBegonnen;
-	}
-	public boolean isMitAbschluss()
-	{
-		return mitAbschluss;
-	}
-	public void setMitAbschluss(boolean pMitAbschluss)
-	{
-		this.mitAbschluss = pMitAbschluss;
 	}
 	public String getAusbildungsberuf()
 	{

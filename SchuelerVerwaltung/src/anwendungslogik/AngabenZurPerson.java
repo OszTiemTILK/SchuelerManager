@@ -62,7 +62,7 @@ public void speichernAngabenZurPerson()
 {
 
 }
-
+//Ab hier folgen nur Get/Set Methoden.
 public String getVorname()
 {
 	return vorname;
