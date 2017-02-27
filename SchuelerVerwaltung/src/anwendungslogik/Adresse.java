@@ -19,7 +19,7 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 
 public void anlegenAdresse()
 {
-
+	speichernAdresse();
 }
 
 public void speichernAdresse()
