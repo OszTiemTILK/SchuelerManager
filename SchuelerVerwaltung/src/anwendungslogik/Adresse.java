@@ -25,6 +25,18 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 	this.plz = pPlz;
 }
 
+/**
+ * Konstruktor mit Strings
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
+public Adresse(String pStrasse, String pHausnummer, String pWohnort, String pPlz)
+{
+	this(pStrasse, Integer.parseInt(pHausnummer), pWohnort, Integer.parseInt(pPlz));
+}
+
 //Nur set- und get-Methoden ab hier  ... und ausgeben
 
 public void anlegenAdresse()
