@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
+      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfFestnetz" layoutX="520.0" layoutY="150.0" prefHeight="22.0" prefWidth="134.0" />
+      <Label layoutX="267.0" layoutY="70.0" prefHeight="14.0" prefWidth="134.0" text="Kontaktdaten" />
+      <Label layoutX="55.0" layoutY="136.0" text="Strasse" />
+      <TextField fx:id="tfStrasse" layoutX="55.0" layoutY="150.0" prefHeight="22.0" prefWidth="103.0" />
+      <Label layoutX="242.0" layoutY="136.0" text="PLZ" />
+      <TextField fx:id="tfPlz" layoutX="242.0" layoutY="150.0" prefHeight="22.0" prefWidth="58.0" />
+      <TextField fx:id="tfWohnort" layoutX="334.0" layoutY="150.0" />
+      <Label layoutX="329.0" layoutY="136.0" text="Wohnort" />
+      <Label layoutX="520.0" layoutY="136.0" text="Festnetznummer" />
+      <TextField fx:id="tfEmail" layoutX="520.0" layoutY="228.0" />
+      <Label layoutX="522.0" layoutY="214.0" text="E-Mail" />
+      <Button fx:id="speichernAdresse" layoutX="211.0" layoutY="346.0" mnemonicParsing="false" onAction="#anlegenAdresse" prefHeight="93.0" prefWidth="269.0" text="Daten speichern" />
+      <TextField layoutX="197.0" layoutY="289.0" prefHeight="25.0" prefWidth="222.0" promptText="fx:id = speichernAdresse" />
+      <TextField layoutX="197.0" layoutY="263.0" prefHeight="25.0" prefWidth="222.0" promptText="onAction = anlegenAdresse" />
+      <TextField fx:id="tfHausnummer" layoutX="182.0" layoutY="150.0" prefHeight="22.0" prefWidth="30.0" />
+      <Label layoutX="165.0" layoutY="136.0" text="Hausnummer" />
+      <TextField fx:id="tfHandy" layoutX="520.0" layoutY="192.0" prefHeight="22.0" prefWidth="134.0" />
+      <Label layoutX="520.0" layoutY="178.0" text="Handynummer" />
+   </children>
+</AnchorPane>
