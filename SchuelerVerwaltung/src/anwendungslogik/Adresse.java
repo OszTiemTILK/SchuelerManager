@@ -24,7 +24,7 @@ public void anlegenAdresse()
 
 public void speichernAdresse()
 {
-	ausgeben();
+ 	ausgeben();
 }
 
 /**
