@@ -29,17 +29,17 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 
 public void anlegenAdresse()
 {
-
+	speichernAdresse();
 }
 
 public void speichernAdresse()
 {
-
+	ausgeben();
 }
 /**
  * Nur set- und get-Methoden ab hier
  */
-  
+
 public String getStrasse()
 {
 	return strasse;
