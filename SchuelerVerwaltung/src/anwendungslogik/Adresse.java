@@ -21,7 +21,10 @@ public void anlegenAdresse()
 {
 
 }
+public void speichernAdresse()
+{
 
+}
 /**
  * Nur set- und get-Methoden ab hier
  */
