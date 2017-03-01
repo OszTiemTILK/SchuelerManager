@@ -6,7 +6,17 @@ private String strasse;
 private int hausNummer;
 private String wohnort;
 private int plz;
-
+/**
+ * Konstruktor ohne Parameter erstellt ein leeres Objekt
+ */
+public Adresse() {}
+/**
+ * Konstrukter
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 {
 	this.strasse = pStrasse;
@@ -19,14 +29,13 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 
 public void anlegenAdresse()
 {
-	speichernAdresse();
+speichernAdresse();
 }
 
 public void speichernAdresse()
 {
- 	ausgeben();
+ausgeben();
 }
-
 /**
  * Nur set- und get-Methoden ab hier
  */
