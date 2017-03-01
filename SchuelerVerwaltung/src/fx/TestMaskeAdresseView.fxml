@@ -27,7 +27,7 @@
       <Label layoutX="520.0" layoutY="136.0" text="Festnetznummer" />
       <TextField fx:id="tfEmail" layoutX="520.0" layoutY="228.0" />
       <Label layoutX="522.0" layoutY="214.0" text="E-Mail" />
-      <Button fx:id="speichernAdresse" layoutX="211.0" layoutY="346.0" mnemonicParsing="false" onAction="#anlegenAdresse" prefHeight="93.0" prefWidth="269.0" text="Daten speichern" />
+      <Button fx:id="speichernAdresse" layoutX="211.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#anlegenAdresse" prefHeight="93.0" prefWidth="269.0" text="Daten speichern" />
       <TextField layoutX="197.0" layoutY="289.0" prefHeight="25.0" prefWidth="222.0" promptText="fx:id = speichernAdresse" />
       <TextField layoutX="197.0" layoutY="263.0" prefHeight="25.0" prefWidth="222.0" promptText="onAction = anlegenAdresse" />
       <TextField fx:id="tfHausnummer" layoutX="182.0" layoutY="150.0" prefHeight="22.0" prefWidth="30.0" />
