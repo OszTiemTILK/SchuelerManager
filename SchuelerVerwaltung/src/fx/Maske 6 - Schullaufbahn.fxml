@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="267.0" layoutY="83.0" text="Titel" />
+      <TextArea layoutX="181.0" layoutY="126.0" prefHeight="74.0" prefWidth="323.0" text="Beschreibung" />
+      <TextField layoutX="520.0" layoutY="83.0" text="Sprachen" />
+      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
+      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="208.0" prefHeight="25.0" prefWidth="222.0" text="Schulabschlüsse/Ausbildungsabschluss:" />
+      <TextField layoutX="180.0" layoutY="241.0" promptText="Schulname" />
+      <ChoiceBox layoutX="422.0" layoutY="241.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="463.0" layoutY="241.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="503.0" layoutY="241.0" prefHeight="25.0" prefWidth="62.0" />
+      <TextField layoutX="180.0" layoutY="286.0" promptText="Schulname" />
+      <ChoiceBox layoutX="463.0" layoutY="286.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="422.0" layoutY="286.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="503.0" layoutY="286.0" prefHeight="25.0" prefWidth="62.0" />
+      <TextField layoutX="180.0" layoutY="377.0" promptText="Schulname" />
+      <TextField layoutX="180.0" layoutY="331.0" promptText="Schulname" />
+      <ChoiceBox layoutX="463.0" layoutY="331.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="423.0" layoutY="331.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="463.0" layoutY="377.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="423.0" layoutY="377.0" prefHeight="25.0" prefWidth="40.0" />
+      <ChoiceBox layoutX="503.0" layoutY="331.0" prefHeight="25.0" prefWidth="62.0" />
+      <ChoiceBox layoutX="502.0" layoutY="377.0" prefHeight="25.0" prefWidth="62.0" />
+      <Label layoutX="14.0" layoutY="415.0" prefHeight="25.0" prefWidth="200.0" text="Zuletzt besuchte Bildungsstätte:" />
+      <Label layoutX="106.0" layoutY="482.0" prefHeight="25.0" prefWidth="53.0" text="Jahrgang:" />
+      <TextField layoutX="180.0" layoutY="441.0" prefHeight="25.0" prefWidth="232.0" promptText="Einrichtungsname" />
+      <TextField layoutX="180.0" layoutY="482.0" promptText="Beschäftigungsjahr" />
+      <TextField layoutX="429.0" layoutY="441.0" promptText="Schulart/Tätigkeit" />
+      <Label layoutX="54.0" layoutY="520.0" prefHeight="25.0" prefWidth="105.0" text="Ort der Ausbildung:" />
+      <TextField layoutX="180.0" layoutY="520.0" promptText="Land" />
+      <TextField layoutX="342.0" layoutY="520.0" prefHeight="25.0" prefWidth="95.0" promptText="Bezirk" />
+      <Label layoutX="49.0" layoutY="557.0" prefHeight="25.0" prefWidth="115.0" text="Erreichter Abschluss:" />
+      <TextField layoutX="180.0" layoutY="557.0" promptText="BBR, eBBR usw." />
+      <Label layoutX="355.0" layoutY="241.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
+      <Label layoutX="355.0" layoutY="286.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
+      <Label layoutX="355.0" layoutY="331.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
+      <Label layoutX="355.0" layoutY="377.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
+      <Label layoutX="81.0" layoutY="591.0" prefHeight="25.0" prefWidth="88.0" text="Anmerkungen:" />
+      <TextArea layoutX="180.0" layoutY="591.0" prefHeight="74.0" prefWidth="330.0" promptText="Sonstiges" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
