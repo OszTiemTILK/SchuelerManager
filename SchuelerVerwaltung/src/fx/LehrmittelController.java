@@ -1,5 +1,7 @@
 package fx;
 
+import anwendungslogik.Lehrmittel;
+import anwendungslogik.SchülerIn;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -9,35 +11,37 @@ import javafx.scene.control.TextArea;
 
 public class LehrmittelController
 {
-    @FXML
-    private ChoiceBox<?> cbArt4;
+	private SchülerIn schülerin;
 
     @FXML
-    private ChoiceBox<?> cbArt5;
+    private ChoiceBox<String> cbArt4;
 
     @FXML
-    private ChoiceBox<?> cbName2;
+    private ChoiceBox<String> cbArt5;
 
     @FXML
-    private ChoiceBox<?> cbName3;
+    private ChoiceBox<String> cbName2;
 
     @FXML
-    private ChoiceBox<?> cbName4;
+    private ChoiceBox<String> cbName3;
 
     @FXML
-    private ChoiceBox<?> cbName5;
+    private ChoiceBox<String> cbName4;
 
     @FXML
-    private ChoiceBox<?> cbArt1;
+    private ChoiceBox<String> cbName5;
 
     @FXML
-    private ChoiceBox<?> cbArt2;
+    private ChoiceBox<String> cbArt1;
 
     @FXML
-    private ChoiceBox<?> cbArt3;
+    private ChoiceBox<String> cbArt2;
 
     @FXML
-    private ChoiceBox<?> cbName1;
+    private ChoiceBox<String> cbArt3;
+
+    @FXML
+    private ChoiceBox<String> cbName1;
 
     @FXML
     private DatePicker dpAusgegeben1;
@@ -52,7 +56,7 @@ public class LehrmittelController
     private Button btSpeichern;
 
     @FXML
-    private ChoiceBox<?> chFach3;
+    private ChoiceBox<String> cbFach3;
 
     @FXML
     private Button btZuruecksetzen;
@@ -67,39 +71,66 @@ public class LehrmittelController
     private TextArea taName;
 
     @FXML
-    private ChoiceBox<?> cbFach2;
+    private ChoiceBox<String> cbFach2;
 
     @FXML
-    private ChoiceBox<?> cbFach1;
+    private ChoiceBox<String> cbFach1;
 
     @FXML
-    private CheckBox cbRückgabe1;
+    private CheckBox ckRückgabe1;
 
     @FXML
-    private CheckBox cbRückgabe4;
+    private CheckBox ckRückgabe4;
 
     @FXML
-    private ChoiceBox<?> cbFach5;
+    private ChoiceBox<String> cbFach5;
 
     @FXML
-    private CheckBox cbRückgabe5;
+    private CheckBox ckRückgabe5;
 
     @FXML
-    private ChoiceBox<?> cbFach4;
+    private ChoiceBox<String> cbFach4;
 
     @FXML
-    private CheckBox cbRückgabe2;
+    private CheckBox ckRückgabe2;
 
     @FXML
-    private CheckBox cbRückgabe3;
+    private CheckBox ckRückgabe3;
 
 
-    public void drückenSpeichern()
+    public void drueckenSpeichern()
     {
+    	Lehrmittel[] lLehrmittel = new Lehrmittel[5];
 
+    	if(cbFach1 != null && cbArt1 != null && cbName1 != null && dpAusgegeben1 != null)
+    	{
+    		lLehrmittel[0] = new Lehrmittel(cbFach1.getValue(), cbArt1.getValue(), cbName1.getValue(), dpAusgegeben1.getValue(), ckRückgabe1.isSelected());
+    	}
+
+    	if(cbFach2 != null && cbArt2 != null && cbName2 != null && dpAusgegeben2 != null)
+    	{
+    		lLehrmittel[1] = new Lehrmittel(cbFach2.getValue(), cbArt2.getValue(), cbName2.getValue(), dpAusgegeben2.getValue(), ckRückgabe2.isSelected());
+    	}
+
+    	if(cbFach3 != null && cbArt3 != null && cbName3 != null && dpAusgegeben3 != null)
+    	{
+    		lLehrmittel[2] = new Lehrmittel(cbFach3.getValue(), cbArt3.getValue(), cbName3.getValue(), dpAusgegeben3.getValue(), ckRückgabe3.isSelected());
+    	}
+
+    	if(cbFach4 != null && cbArt4 != null && cbName4 != null && dpAusgegeben4 != null)
+    	{
+    		lLehrmittel[3] = new Lehrmittel(cbFach4.getValue(), cbArt4.getValue(), cbName4.getValue(), dpAusgegeben4.getValue(), ckRückgabe4.isSelected());
+    	}
+
+    	if(cbFach5 != null && cbArt5 != null && cbName5 != null && dpAusgegeben5 != null)
+    	{
+    		lLehrmittel[4] = new Lehrmittel(cbFach5.getValue(), cbArt5.getValue(), cbName5.getValue(), dpAusgegeben5.getValue(), ckRückgabe5.isSelected());
+    	}
+
+    	schülerin.setLehrmittel(lLehrmittel);
     }
 
-    public void drückenZuruecksetzen()
+    public void drueckenZuruecksetzen()
     {
 
     }
