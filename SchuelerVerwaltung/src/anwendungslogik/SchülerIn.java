@@ -68,7 +68,7 @@ public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSp
 public void ausgeben()
 {
 adresse.ausgeben();
-person.ausgeben();
+//person.ausgeben();
 //sprachen.ausgeben();
 //kontaktSchüler.ausgeben();
 //kontaktVater.ausgeben();
@@ -184,6 +184,14 @@ public SchülerID getSchülerInID()
 public void setSchülerID(SchülerID pSchülerID)
 {
 	this.schülerInID = pSchülerID;
+}
+
+public Lehrmittel[] getLehrmittel() {
+	return lehrmittel;
+}
+
+public void setLehrmittel(Lehrmittel[] lehrmittel) {
+	this.lehrmittel = lehrmittel;
 }
 
 }
