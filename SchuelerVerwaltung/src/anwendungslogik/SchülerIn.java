@@ -11,6 +11,7 @@ private Kontaktdaten kontaktMutter;
 private Kontaktdaten kontaktAndere;
 private Schülerverhältnisse schülerverhältnisse;
 private Herkunft herkunft;
+private Lehrmittel[] lehrmittel;
 private ErziehungsberechtigteR vormund;
 private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung;
 private AllgemeinbildendeSchule aktuelleSchule;
@@ -36,13 +37,15 @@ public SchülerIn()
  * @param pKontaktAndere
  * @param pSchülerverhältnisse
  * @param pHerkunft
+ * @param pLehrmittel
  * @param pVormund
  * @param pBeruflichVorbereitung
  * @param pAktuelleSchule
  * @param pAdresse
+ *
  */
 
-public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
+public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft, Lehrmittel[] pLehrmittel,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
 {
 
 	this.person = pPerson;
@@ -53,6 +56,7 @@ public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSp
 	this.kontaktAndere = pKontaktAndere;
 	this.schülerverhältnisse = pSchülerverhältnisse;
 	this.herkunft = pHerkunft;
+	this.lehrmittel = pLehrmittel;
 	this.vormund = pVormund;
 	this.beruflicheVorbereitung = pBeruflicheVorbereitung;
 	this.aktuelleSchule = pAktuelleSchule;
