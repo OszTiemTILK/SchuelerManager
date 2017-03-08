@@ -7,6 +7,7 @@ private	String fach;
 private	String art;
 private	String name;
 private LocalDate ausgegeben;
+private boolean rückgabe;
 private	int lehrmittelID;
 
 	/**
@@ -23,14 +24,15 @@ public Lehrmittel()
  * @param pArt
  * @param pName
  * @param pAusgegeben
+ * @param pRückgabe
  */
-public Lehrmittel(String pFach, String pArt, String pName, LocalDate pAusgegeben)
+public Lehrmittel(String pFach, String pArt, String pName, LocalDate pAusgegeben, boolean pRückgabe)
 {
 	this.fach = pFach;
 	this.art = pArt;
 	this.name = pName;
 	this.ausgegeben = pAusgegeben;
-
+	this.rückgabe = pRückgabe;
 }
 /**
  * Lehrmittel anlegen
@@ -79,5 +81,13 @@ public int getLehrmittelID() {
 
 public void setLehrmittelID(int lehrmittelID) {
 	this.lehrmittelID = lehrmittelID;
+}
+
+public boolean isRückgabe() {
+	return rückgabe;
+}
+
+public void setRückgabe(boolean rückgabe) {
+	this.rückgabe = rückgabe;
 }
 }
