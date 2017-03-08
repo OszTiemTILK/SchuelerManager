@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="267.0" layoutY="83.0" text="Titel" />
+      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
+      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="193.0" layoutY="167.0" promptText="Klassenzuordnung" />
+      <Label layoutX="58.0" layoutY="167.0" prefHeight="25.0" prefWidth="122.0" text="Klasse der Aufnahme:" />
+      <ChoiceBox layoutX="462.0" layoutY="167.0" prefHeight="25.0" prefWidth="41.0" />
+      <ChoiceBox layoutX="503.0" layoutY="167.0" prefHeight="25.0" prefWidth="41.0" />
+      <ChoiceBox layoutX="543.0" layoutY="167.0" prefHeight="25.0" prefWidth="69.0" />
+      <Label layoutX="361.0" layoutY="167.0" prefHeight="25.0" prefWidth="97.0" text="Aufnahmedatum:" />
+      <Label layoutX="149.0" layoutY="297.0" prefHeight="25.0" prefWidth="88.0" text="Klassenwechsel:" />
+      <TextField layoutX="193.0" layoutY="341.0" promptText="Zugewechselte Klasse" />
+      <TextField layoutX="193.0" layoutY="451.0" promptText="Zugewechselte Klasse" />
+      <TextArea layoutX="378.0" layoutY="341.0" prefHeight="83.0" prefWidth="200.0" promptText="Grund des Wechsels" />
+      <TextArea layoutX="378.0" layoutY="451.0" prefHeight="83.0" prefWidth="200.0" promptText="Grund des Wechsels" />
+      <Label layoutX="58.0" layoutY="213.0" prefHeight="25.0" prefWidth="113.0" text="Zuständige Lehrkraft:" />
+      <CheckBox layoutX="201.0" layoutY="217.0" mnemonicParsing="false" text="Herr" />
+      <CheckBox layoutX="281.0" layoutY="217.0" mnemonicParsing="false" text="Frau" />
+      <TextField layoutX="361.0" layoutY="213.0" promptText="Nachname" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
