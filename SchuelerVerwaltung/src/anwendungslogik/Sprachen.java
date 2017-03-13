@@ -1,9 +1,12 @@
+/*
+ * Jose 08.03.2017 angelegt
+ */
 package anwendungslogik;
 
 public class Sprachen {
 
 	private Boolean sprachenName;
-	private String sprachNiveau;
+	private String sprachenNiveau;
 	/**
 	 * Leerer Kontruktor
 	 */
@@ -13,13 +16,13 @@ public class Sprachen {
 	}
 	/**
 	 * Konstruktor mit Strings
-	 * @param pSprachen
-	 * @param pSprachniveau
+	 * @param pSprachenName
+	 * @param pSprachenNiveau
 	 */
-	public Sprachen(Boolean pSprachenName, String pSprachNiveau)
+	public Sprachen(Boolean pSprachenName, String pSprachenNiveau)
 	{
 		this.sprachenName = pSprachenName;
-		this.sprachNiveau = pSprachNiveau;
+		this.sprachenNiveau = pSprachenNiveau;
 	}
 	/** legt Sprachen an
 	 *
@@ -49,7 +52,7 @@ public class Sprachen {
 	{
 
 	}
-
+// Ab hier folgen nur Get/Set Methoden
 	public Boolean getSprachName()
 	{
 		return sprachenName;
@@ -58,12 +61,12 @@ public class Sprachen {
 	{
 		this.sprachenName = pSprachenName;
 	}
-	public String getSprachNiveau()
+	public String getSprachenNiveau()
 	{
-		return sprachNiveau;
+		return sprachenNiveau;
 	}
-	public void setSprachNiveau(String pSprachNiveau)
+	public void setSprachenNiveau(String pSprachenNiveau)
 	{
-		this.sprachNiveau = pSprachNiveau;
+		this.sprachenNiveau = pSprachenNiveau;
 	}
 }
