@@ -4,7 +4,6 @@
 package anwendungslogik;
 
 public class Sprachen {
-
 	private Boolean sprachenName;
 	private String sprachenNiveau;
 	/**
@@ -53,11 +52,11 @@ public class Sprachen {
 
 	}
 // Ab hier folgen nur Get/Set Methoden
-	public Boolean getSprachName()
+	public Boolean getSprachenName()
 	{
 		return sprachenName;
 	}
-	public void setSprachName(Boolean pSprachenName)
+	public void setSprachenName(Boolean pSprachenName)
 	{
 		this.sprachenName = pSprachenName;
 	}
