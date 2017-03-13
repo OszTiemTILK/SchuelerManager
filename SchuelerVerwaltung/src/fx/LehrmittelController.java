@@ -1,5 +1,7 @@
 package fx;
 
+import java.time.LocalDate;
+
 import anwendungslogik.Lehrmittel;
 import anwendungslogik.SchülerIn;
 import javafx.fxml.FXML;
@@ -132,6 +134,31 @@ public class LehrmittelController
 
     public void drueckenZuruecksetzen()
     {
-
+    	cbFach1.setValue("");
+    	cbFach2.setValue("");
+    	cbFach3.setValue("");
+    	cbFach4.setValue("");
+    	cbFach5.setValue("");
+    	cbArt1.setValue("");
+    	cbArt2.setValue("");
+    	cbArt3.setValue("");
+    	cbArt4.setValue("");
+    	cbArt5.setValue("");
+    	cbName1.setValue("");
+    	cbName2.setValue("");
+    	cbName3.setValue("");
+    	cbName4.setValue("");
+    	cbName5.setValue("");
+    	dpAusgegeben1.setValue(LocalDate.now());
+    	dpAusgegeben2.setValue(LocalDate.now());
+    	dpAusgegeben3.setValue(LocalDate.now());
+    	dpAusgegeben4.setValue(LocalDate.now());
+    	dpAusgegeben5.setValue(LocalDate.now());
+    	ckRückgabe1.setSelected(false);
+    	ckRückgabe2.setSelected(false);
+    	ckRückgabe3.setSelected(false);
+    	ckRückgabe4.setSelected(false);
+    	ckRückgabe5.setSelected(false);
+    	taName.setText("");
     }
 }
