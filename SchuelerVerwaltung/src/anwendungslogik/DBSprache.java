@@ -29,7 +29,6 @@ public class DBSprache {
 	 }
 	}
 
-
 	public void loadCustomers(String table) {
 		Statement stmt = null;
 		ResultSet result = null;
