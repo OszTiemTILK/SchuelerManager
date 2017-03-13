@@ -2,10 +2,25 @@ package anwendungslogik;
 
 public class Sprachen {
 
-	private boolean muttersprache;
-	private String spname;
-	private String sprachniveau;
+	private Boolean sprachenName;
+	private String sprachNiveau;
+	/**
+	 * Leerer Kontruktor
+	 */
+	public Sprachen()
+	{
 
+	}
+	/**
+	 * Konstruktor mit Strings
+	 * @param pSprachen
+	 * @param pSprachniveau
+	 */
+	public Sprachen(Boolean pSprachenName, String pSprachNiveau)
+	{
+		this.sprachenName = pSprachenName;
+		this.sprachNiveau = pSprachNiveau;
+	}
 	/** legt Sprachen an
 	 *
 	 */
@@ -34,42 +49,21 @@ public class Sprachen {
 	{
 
 	}
-	/**
-	 * Ausgabe von Angaben zur Kontrolle f�r JavaFx
-	 */
-	public void ausgeben()
+
+	public Boolean getSprachName()
 	{
-		System.out.print("Die Sprache " + getSprachen());
-		if(muttersprache == true)
-		{
-			System.out.print(" ist die Muttersprache der Person und ist auf dem Sprachniveau " + getSprachniveau() );
-		}
-		else
-		{
-			System.out.print(" ist auf dem Sprachniveau " + getSprachniveau() );
-		}
+		return sprachenName;
 	}
-
-
-	public String getSprachen()
+	public void setSprachName(Boolean pSprachenName)
 	{
-		return spname;
+		this.sprachenName = pSprachenName;
 	}
-
-	public void setSprachen(String pSprachen, boolean pMuttersprache)
+	public String getSprachNiveau()
 	{
-		this.spname = pSprachen;
-		this.muttersprache = pMuttersprache;
+		return sprachNiveau;
 	}
-
-	public String getSprachniveau()
+	public void setSprachNiveau(String pSprachNiveau)
 	{
-		return sprachniveau;
+		this.sprachNiveau = pSprachNiveau;
 	}
-
-	public void setSprachniveau(String pSprachniveau)
-	{
-		this.sprachniveau = pSprachniveau;
-	}
-
 }
