@@ -41,6 +41,14 @@ public void anlegen()
 {
 
 }
+/**
+ * Lehrmittel speichern
+ */
+public void speichern()
+{
+
+}
+
 
 
 public String getFach() {
