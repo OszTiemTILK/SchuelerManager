@@ -9,11 +9,10 @@ import javafx.stage.Stage;
 public class SprachenProgramm extends Application
 {
 
-	public static void main(String[] pArgs)
+    public static void main(String[] pArgs)
     {
-		// TODO Auto-generated method stub
       launch(pArgs);
-	}
+    }
 
     private Stage grundStage;
     private AnchorPane grundPane;
