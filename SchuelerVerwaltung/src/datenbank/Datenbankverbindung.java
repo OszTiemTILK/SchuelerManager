@@ -1,9 +1,9 @@
-package anwendungslogik;
+package datenbank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBVerbindungSprache
+public class Datenbankverbindung
 {
   private static Connection connection;
   private static String     hostrechner = "dbserver";
