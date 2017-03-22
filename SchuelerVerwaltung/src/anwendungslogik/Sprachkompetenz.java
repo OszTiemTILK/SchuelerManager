@@ -139,4 +139,5 @@ public class Sprachkompetenz {
 	{
 		this.sprachkompetenzID = pSprachkompetenzID;
 	}
+
 }

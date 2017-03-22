@@ -28,5 +28,6 @@ public class SprachkompetenzMain extends Application
     	grundStage.setScene(lScene);
     	grundStage.show();
     }
+
 }
 
