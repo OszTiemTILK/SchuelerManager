@@ -68,4 +68,5 @@ public class Sprachen {
 	{
 		this.sprachenNiveau = pSprachenNiveau;
 	}
+
 }
