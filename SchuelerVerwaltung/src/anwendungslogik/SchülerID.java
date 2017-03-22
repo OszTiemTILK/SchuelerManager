@@ -1,7 +1,11 @@
 package anwendungslogik;
 
-public class SchülerID {
-
+public class SchülerID
+{
+	public void ausgeben()
+	{
+		System.out.println("SchülerID: " + schülerID);
+	}
 	private int schülerID;
 
 	/** legt SchülerID an
@@ -11,13 +15,15 @@ public class SchülerID {
 	{
 
 	}
-	/** aendert schülerID
+
+	/** aendert SchülerID
 	 *
 	 */
 	public void aendernSchuelerID()
 	{
 
 	}
+
 	/** loescht SchuelerID
 	 *
 	 */
@@ -25,5 +31,4 @@ public class SchülerID {
 	{
 
 	}
-
 }

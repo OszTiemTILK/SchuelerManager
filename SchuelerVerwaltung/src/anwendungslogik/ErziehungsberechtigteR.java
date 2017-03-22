@@ -10,9 +10,9 @@ public class ErziehungsberechtigteR
 	private Kontaktdaten KontaktdatenVonErziehungsberechtigteR = new Kontaktdaten();
 
 /**
- * Ausgabe von Angaben zur Kontrolle für JavaFx
+ * Ausgabe von Angaben zur Kontrolle fï¿½r JavaFx
  */
-	public void ausgebenZusammenfassungErziehungsberrechtigteRAngaben()
+	public void ausgeben()
 	{
 		System.out.println("Erziehungsberechtigter:	");
 		System.out.println("Vorname:			"+getVorname());
@@ -59,7 +59,7 @@ public class ErziehungsberechtigteR
 		this.nachname = pNachname;
 	}
 
-	public boolean isVormund()
+	public boolean getVormund()
 	{
 		return vormund;
 	}
@@ -68,6 +68,7 @@ public class ErziehungsberechtigteR
 	{
 		this.vormund = vormund;
 	}
+
 
 	public Adresse getAdresseVonErziehungsberechtigteR()
 	{

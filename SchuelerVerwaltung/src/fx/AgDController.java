@@ -1,7 +1,6 @@
-package fx;
+import anwendungslogik.AngabenZurPerson;
 
-import java.awt.event.ActionEvent;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -49,13 +48,14 @@ public class AgDController {
     private DatePicker dateGebutrstag;
 
     @FXML
-    void speichernWeiter(ActionEvent event) {
-    	Button bt = new Button("Klick mich!!!");
-    	btNext.setOnAction(e-> bt.setText("Wohuuu!!!"));
+    void speichernWeiter(ActionEvent event)
+    {
+    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGebutrstag.getValue(), tfGeschlecht.getText())
     }
 
     @FXML
-    void speichernZurück(ActionEvent event) {
+    void speichernZurück(ActionEvent event)
+    {
 
     }
 

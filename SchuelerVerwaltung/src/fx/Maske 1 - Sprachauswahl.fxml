@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SprachauswahlController">
+   <children>
+      <TextField layoutX="223.0" layoutY="79.0" prefHeight="25.0" prefWidth="156.0" text="Wilkommen am OSZ-TIEM" />
+      <TextField layoutX="198.0" layoutY="304.0" prefHeight="25.0" prefWidth="206.0" text="Bitte wählen Sie ihre Sprache aus." />
+      <Button layoutX="140.0" layoutY="339.0" mnemonicParsing="false" text="Sprache 1" />
+      <Button layoutX="282.0" layoutY="339.0" mnemonicParsing="false" text="Sprache 2" />
+      <Button layoutX="420.0" layoutY="339.0" mnemonicParsing="false" text="Sprache 3" />
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="125.0" layoutY="398.0">
+         <image>
+            <Image url="@src/Lang_German.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="266.0" layoutY="398.0">
+         <image>
+            <Image url="@src/Lang_English.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="404.0" layoutY="398.0">
+         <image>
+            <Image url="@src/Lang_Arabisch.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <TextArea layoutX="167.0" layoutY="118.0" prefHeight="170.0" prefWidth="300.0" text="Wir begrüßen Sie ganz herzlich auf dem &#10;Anmeldeformular des OSZ-TIEM.&#10;&#10;Über Ihr Interesse freuen wir uns sehr.&#10;&#10;Wir möchten&#10;Sie bitten, auf dem nachfolgendem Formular Ihre&#10;persöhnlichen Daten einzugeben, damit wir Sie am&#10;OSZ-TIEM aufnehmen können." />
+   </children>
+</AnchorPane>

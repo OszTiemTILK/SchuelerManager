@@ -6,17 +6,48 @@ private String strasse;
 private int hausNummer;
 private String wohnort;
 private int plz;
-
-
-public void ausgebenAdresse()
+/**
+ * Konstruktor ohne Parameter erstellt ein leeres Objekt
+ */
+public Adresse() {}
+/**
+ * Konstrukter
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
+public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 {
-	System.out.println("Straﬂe:				"+getStrasse());
-	System.out.println("Hausnummer:			"+getHausNummer());
-	System.out.println("PLZ:				"+getPlz());
-	System.out.println("Wohnort:			"+getStrasse());
+	this.strasse = pStrasse;
+	this.hausNummer = pHausnummer;
+	this.wohnort = pWohnort;
+	this.plz = pPlz;
 }
 
+/**
+ * Konstruktor mit Strings
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
+public Adresse(String pStrasse, String pHausnummer, String pWohnort, String pPlz)
+{
+	this(pStrasse, Integer.parseInt(pHausnummer), pWohnort, Integer.parseInt(pPlz));
+}
 
+//Nur set- und get-Methoden ab hier  ... und ausgeben
+
+public void anlegenAdresse()
+{
+	speichernAdresse();
+}
+
+public void speichernAdresse()
+{
+	ausgeben();
+}
 /**
  * Nur set- und get-Methoden ab hier
  */
@@ -52,6 +83,16 @@ public int getPlz()
 public void setPlz(int pPlz)
 {
 	this.plz = pPlz;
+}
+
+public void ausgeben()
+{
+	System.out.print("Stra√üe: " + getStrasse());
+	System.out.print("Nr. " + getHausNummer());
+	System.out.println();
+	System.out.print("Wohnort: " + getWohnort());
+	System.out.print("PLZ: " + getPlz());
+	System.out.println();
 }
 
 }

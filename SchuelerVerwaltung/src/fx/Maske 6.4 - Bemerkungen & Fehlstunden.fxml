@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField alignment="TOP_CENTER" editable="false" layoutX="189.0" layoutY="77.0" prefHeight="25.0" prefWidth="305.0" text="Bemerkungen &amp; Fehlstunden" />
+      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
+      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="305.0" layoutY="610.0" mnemonicParsing="false" text="Speichern">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text layoutX="367.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name des Schülers:" />
+      <TextArea editable="false" layoutX="490.0" layoutY="14.0" prefHeight="25.0" prefWidth="180.0" promptText="Kein Schüler..." />
+      <Text layoutX="225.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Es müssen nicht alle Felder ausgefüllt werden.)" />
+      <Text layoutX="140.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bemerkungen 1. Halbjahr" />
+      <Text layoutX="423.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bemerkungen 2. Halbjahr" />
+      <TextArea layoutX="100.0" layoutY="185.0" prefHeight="200.0" prefWidth="250.0" />
+      <TextArea layoutX="378.0" layoutY="185.0" prefHeight="200.0" prefWidth="250.0" />
+      <Text layoutX="159.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fehltage:" />
+      <Text layoutX="124.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unentschuldigt:" />
+      <TextField layoutX="218.0" layoutY="404.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField layoutX="218.0" layoutY="440.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField layoutX="458.0" layoutY="441.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField layoutX="458.0" layoutY="405.0" prefHeight="25.0" prefWidth="83.0" />
+      <Text layoutX="364.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unentschuldigt:" />
+      <Text layoutX="377.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fehlstunden:" />
+      <Text layoutX="128.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verspätungen:" />
+      <TextField layoutX="217.0" layoutY="473.0" prefHeight="25.0" prefWidth="83.0" />
+      <Text layoutX="373.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zeugnissdatum:" />
+      <DatePicker layoutX="459.0" layoutY="473.0" />
+      <CheckBox layoutX="277.0" layoutY="581.0" mnemonicParsing="false" text="Zeugnis unterschrieben" />
+   </children>
+</AnchorPane>

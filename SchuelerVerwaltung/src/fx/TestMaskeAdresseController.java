@@ -7,39 +7,40 @@ import javafx.scene.control.TextField;
 
 public class TestMaskeAdresseController {
 
-    @FXML
-    private TextField tfStraﬂe;
+	    @FXML
+	    private TextField tfStrasse;
 
-    @FXML
-    private Button speichernAdresse;
+	    @FXML
+	    private Button speichernAdresse;
 
-    @FXML
-    private TextField tfFestnetz;
+	    //@FXML
+	    //private TextField tfFestnetz;
 
-    @FXML
-    private TextField tfFax;
+	    //@FXML
+	    //private TextField tfEmail;
 
-    @FXML
-    private TextField tfEmail;
+	    @FXML
+	    private TextField tfWohnort;
 
-    @FXML
-    private TextField tfOrt;
+	    //@FXML
+	    //private TextField tfHandy;
 
-    @FXML
-    private TextField tfHandy;
+	    @FXML
+	    private TextField tfPlz;
 
-    @FXML
-    private TextField tfPlz;
+	    @FXML
+	    private TextField tfHausnummer;
 
-    @FXML
-    private TextField tfStraﬂe1;
 
-    @FXML
-    void anlegenAdresse(ActionEvent event) 
-    {
 
-    }
+	    @FXML
+	    void anlegenAdresse(ActionEvent event) {
 
-}//end
+	    }//1. Adress anlegen
+    	Adresse lAdresseTest = new Adresse (tfStrasse.getText(), tfHausnummer.getText(), tfWohnort.getText(), tfPlz.getText());
+
+    	//2. An ADress Objekt Methode anlegen aufrufen
+
+    	}//end
 
 

@@ -1,8 +1,10 @@
 package anwendungslogik;
 
+import java.time.LocalDate;
+
 public class AllgemeinbildendeSchule
 {
-	private int[] ausgeschiedenAm = {0, 0, 0};
+	private LocalDate ausgeschiedenAm;
 	private int ausgeschiedenAusJahrgang;
 	private boolean sonderschule;
 	private boolean hauptschule;
@@ -11,10 +13,51 @@ public class AllgemeinbildendeSchule
 	private boolean gesamtschule;
 	private boolean gymnasium;
 	private String nameDerSchule;
-	private String bezirkVonBerlinOderAnderesBundesland;
-	private int erreichterAbschluss;
+	private String bezirk;
+	private String stadt;
+	private String land;
+	private String erreichterAbschluss;
 	private String bemerkungen;
 
+	/**
+	 * Konstruktor ohne Parameter erstellt ein leeres Objekt
+	 */
+	public AllgemeinbildendeSchule() {}
+
+	/**
+	 * Konstruktor
+	 * @param pAusgeschiedenAm
+	 * @param pAusgeschiedenAusJahrgang
+	 * @param pSonderschule
+	 * @param pHauptschule
+	 * @param pRealschule
+	 * @param pSekundarschule
+	 * @param pGesamtschule
+	 * @param pGymnasium
+	 * @param pNameDerSchule
+	 * @param pBezirk
+	 * @param pStadt
+	 * @param pLand
+	 * @param pErreichterAbschluss
+	 * @param pBemerkung
+	 */
+	public AllgemeinbildendeSchule(LocalDate pAusgeschiedenAm, int pAusgeschiedenAusJahrgang, boolean pSonderschule, boolean pHauptschule, boolean pRealschule,boolean pSekundarschule, boolean pGesamtschule, boolean pGymnasium, String pNameDerSchule, String pBezirk, String pStadt, String pLand, String pErreichterAbschluss, String pBemerkung)
+	{
+			this.ausgeschiedenAm = pAusgeschiedenAm;
+			this.ausgeschiedenAusJahrgang = pAusgeschiedenAusJahrgang;
+			this.sonderschule = pSonderschule;
+			this.hauptschule = pHauptschule;
+			this.realschule = pRealschule;
+			this.sekundarschule = pSekundarschule;
+			this.gesamtschule = pGesamtschule;
+			this.gymnasium = pGymnasium;
+			this.nameDerSchule = pNameDerSchule;
+			this.bezirk = pBezirk;
+			this.stadt = pStadt;
+			this.land = pLand;
+			this.erreichterAbschluss = pErreichterAbschluss;
+			this.bemerkungen = pBemerkung;
+	}
 	public void anlegenAllgemeinbildendeSchule()
 	{
 	}
@@ -26,7 +69,7 @@ public class AllgemeinbildendeSchule
 	}
 	public void ausgeben()
 	{
-		System.out.println(ausgeschiedenAm[0] + ". " + ausgeschiedenAm[1] + ". " + ausgeschiedenAm[2]);
+		System.out.println(ausgeschiedenAm.toString());
 		System.out.println(ausgeschiedenAusJahrgang);
 		System.out.println(sonderschule);
 		System.out.println(hauptschule);
@@ -35,19 +78,19 @@ public class AllgemeinbildendeSchule
 		System.out.println(gesamtschule);
 		System.out.println(gymnasium);
 		System.out.println(nameDerSchule);
-		System.out.println(bezirkVonBerlinOderAnderesBundesland);
+		System.out.println(bezirk);
+		System.out.println(stadt);
+		System.out.println(land);
 		System.out.println(erreichterAbschluss);
 		System.out.println(bemerkungen);
 	}
-	public int[] getAusgeschiedenAm()
+	public LocalDate getAusgeschiedenAm()
 	{
 		return ausgeschiedenAm;
 	}
-	public void setAusgeschiedenAm(int pTag, int pMonat, int pJahr)
+	public void setAusgeschiedenAm(LocalDate pDatum)
 	{
-		this.ausgeschiedenAm[0] = pTag;
-		this.ausgeschiedenAm[1] = pMonat;
-		this.ausgeschiedenAm[2] = pJahr;
+		this.ausgeschiedenAm = pDatum;
 	}
 	public int getAusgeschiedenAusJahrgang()
 	{
@@ -113,28 +156,13 @@ public class AllgemeinbildendeSchule
 	{
 		this.nameDerSchule = pNameDerSchule;
 	}
-	public String getBezirkVonBerlinOderAnderesBundesland()
-	{
-		return bezirkVonBerlinOderAnderesBundesland;
-	}
-	public void setBezirkVonBerlinOderAnderesBundesland(String pBezirkVonBerlinOderAnderesBundesland)
-	{
-		this.bezirkVonBerlinOderAnderesBundesland = pBezirkVonBerlinOderAnderesBundesland;
-	}
-	public int getErreichterAbschluss()
+	public String getErreichterAbschluss()
 	{
 		return erreichterAbschluss;
 	}
-	public boolean setErreichterAbschluss(int pErreichterAbschluss)
+	public void setErreichterAbschluss(String pErreichterAbschluss)
 	{
-		if(pErreichterAbschluss == 1 || pErreichterAbschluss == 2)
-		{
-			this.erreichterAbschluss = pErreichterAbschluss;
-			return true;
-		}
-		else
-			return false;
-
+		this.erreichterAbschluss = pErreichterAbschluss;
 	}
 	public String getBemerkungen()
 	{
@@ -143,5 +171,29 @@ public class AllgemeinbildendeSchule
 	public void setBemerkungen(String pBemerkungen)
 	{
 		this.bemerkungen = pBemerkungen;
+	}
+	public String getBezirk()
+	{
+		return bezirk;
+	}
+	public void setBezirk(String pBezirk)
+	{
+		this.bezirk = pBezirk;
+	}
+	public String getStadt()
+	{
+		return stadt;
+	}
+	public void setStadt(String pStadt)
+	{
+		this.stadt = pStadt;
+	}
+	public String getLand()
+	{
+		return land;
+	}
+	public void setLand(String pLand)
+	{
+		this.land = pLand;
 	}
 }

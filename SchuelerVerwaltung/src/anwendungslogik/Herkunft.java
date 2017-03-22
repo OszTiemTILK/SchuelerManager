@@ -10,9 +10,12 @@ private String geburtsland;
 /**
  * Ausgabe von Angaben zur Kontrolle für JavaFx
  */
-	public void ausgebenZusammenfassungHerkunft()
+	public void ausgeben()
 	{
-		System.out.println("Nationalitaet:			"+getStaatsangehörigkeit());
+		System.out.println("Staatsangehörigkeit:"+getStaatsangehörigkeit());
+		System.out.println("Volksgruppe"+getVolksgruppe());
+		System.out.println("Geburtsort:"+getGeburtsort());
+		System.out.println("Geburtsland:"+getGeburtsland());
 	}
 
 public String getStaatsangehörigkeit()
@@ -49,5 +52,7 @@ public void setGeburtsland(String pGeburtsland)
 {
 	this.geburtsland = pGeburtsland;
 }
+
+
 
 }
