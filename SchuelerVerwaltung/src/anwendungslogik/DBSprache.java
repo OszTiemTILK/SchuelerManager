@@ -50,6 +50,7 @@ public class DBSprache {
 	    System.out.println("Fehler bei der Verarbeitung + " + table + "n" + ex.getMessage());
 
 	}
+
 	  }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
