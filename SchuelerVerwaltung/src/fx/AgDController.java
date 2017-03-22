@@ -1,5 +1,7 @@
-import anwendungslogik.AngabenZurPerson;
+package fx;
 
+import anwendungslogik.AngabenZurPerson;
+import anwendungslogik.Geschlecht;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,7 +52,7 @@ public class AgDController {
     @FXML
     void speichernWeiter(ActionEvent event)
     {
-    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGebutrstag.getValue(), tfGeschlecht.getText())
+    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGebutrstag.getValue(), Geschlecht.fromString(tfGeschlecht.getText()));
     }
 
     @FXML

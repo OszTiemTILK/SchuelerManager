@@ -1,3 +1,4 @@
+
 package anwendungslogik;
 
 import java.time.LocalDate;
@@ -9,18 +10,23 @@ private String nachname;
 private LocalDate geburtsDatum;
 private Geschlecht geschlecht;
 
-public AngabenZurPerson(String pVorname, String pNachname, LocalDate pGeburtsDatum, Geschlecht pGeschlecht)
-{
-	this.vorname = pVorname;
-	this.nachname = pNachname;
-	this.geburtsDatum = pGeburtsDatum;
-	this.geschlecht = pGeschlecht;
-}
 
+
+public AngabenZurPerson(String pVorname , String pNachname , LocalDate pGeburtsdatum, Geschlecht pGeschlecht)
+{
+	super();
+	this.vorname=pVorname;
+	this.nachname=pNachname;
+	this.geburtsDatum=pGeburtsdatum;
+	this.geschlecht=pGeschlecht;
+
+
+}
  /** 
- * Ausgabe von Angaben zur Kontrolle f�r JavaFx 
+ * Ausgabe von Angaben zur Kontrolle für FX
  */
- public void ausgebenZusammenfassungAngabenzurPerson()
+
+ public void ausgeben()
  {
    System.out.println("Vorname:   "+getVorname());
    System.out.println("Nachname:   "+getNachname());
@@ -65,26 +71,33 @@ public void speichernAngabenZurPerson()
 
 }
 
+
+
+// getter und setter
 public String getVorname()
 {
 	return vorname;
 }
+
 
 public void setVorname(String pVorname)
 {
 	this.vorname = pVorname;
 }
 
+
 public String getNachname()
 {
 	return nachname;
 }
 
+
 public void setNachname(String pNachname)
 {
 	this.nachname = pNachname;
 }
-  
+
+
 public LocalDate getGeburtsDatum()
 {
 	return geburtsDatum;
@@ -96,10 +109,12 @@ public void setGeburtsDatum(LocalDate pGeburtsDatum)
 	this.geburtsDatum = pGeburtsDatum;
 }
 
+
 public Geschlecht getGeschlecht()
 {
 	return geschlecht;
 }
+
 
 public void setGeschlecht(Geschlecht pGeschlecht)
 {
