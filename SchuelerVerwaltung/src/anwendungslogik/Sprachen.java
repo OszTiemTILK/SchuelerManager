@@ -6,6 +6,7 @@ package anwendungslogik;
 public class Sprachen {
 	private Boolean sprachenName;
 	private String sprachenNiveau;
+
 	/**
 	 * Leerer Kontruktor
 	 */
