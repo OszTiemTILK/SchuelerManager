@@ -2,10 +2,11 @@ package fx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control. ChoiceBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control. TextArea;
-import javafx.scene.control. CheckBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.CheckBox;
+import javafx.collections.FXCollections;
 
 
 public class SprachenController {
@@ -48,6 +49,20 @@ public class SprachenController {
 
 	    @FXML
 	    private ChoiceBox cbSonstigesNiveau;
+
+	    public void ladenChoiceBox()
+	    {
+	    	cbDeutschNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbEnglischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbTürkischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbArabischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbSonstigesNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    }
+	    @FXML
+	    public void initialize()
+	    {
+	    	LadenChoiceBox();
+	    }
 
 }
 
