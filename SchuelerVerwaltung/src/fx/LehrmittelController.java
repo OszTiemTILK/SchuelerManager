@@ -1,7 +1,10 @@
 package fx;
 
+import java.time.LocalDate;
+
 import anwendungslogik.Lehrmittel;
 import anwendungslogik.SchülerIn;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -132,6 +135,68 @@ public class LehrmittelController
 
     public void drueckenZuruecksetzen()
     {
+    	setzenAnfangswerte();
+    }
 
+    public void ladenChoiceboxen()
+    {
+    	cbFach1.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach2.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach3.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach4.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach5.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbArt1.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt2.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt3.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt4.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt5.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbName1.setItems(FXCollections.observableArrayList("", "Buch 1", "Buch 2"));
+    	cbName2.setItems(FXCollections.observableArrayList("", "Buch 1", "Buch 2"));
+    	cbName3.setItems(FXCollections.observableArrayList("", "Buch 1", "Buch 2"));
+    	cbName4.setItems(FXCollections.observableArrayList("", "Buch 1", "Buch 2"));
+    	cbName5.setItems(FXCollections.observableArrayList("", "Buch 1", "Buch 2"));
+    }
+
+    public void setzenAnfangswerte()
+    {
+    	cbFach1.setValue("");
+    	cbFach2.setValue("");
+    	cbFach3.setValue("");
+    	cbFach4.setValue("");
+    	cbFach5.setValue("");
+    	cbArt1.setValue("");
+    	cbArt2.setValue("");
+    	cbArt3.setValue("");
+    	cbArt4.setValue("");
+    	cbArt5.setValue("");
+    	cbName1.setValue("");
+    	cbName2.setValue("");
+    	cbName3.setValue("");
+    	cbName4.setValue("");
+    	cbName5.setValue("");
+    	dpAusgegeben1.setValue(LocalDate.now());
+    	dpAusgegeben2.setValue(LocalDate.now());
+    	dpAusgegeben3.setValue(LocalDate.now());
+    	dpAusgegeben4.setValue(LocalDate.now());
+    	dpAusgegeben5.setValue(LocalDate.now());
+    	ckRückgabe1.setSelected(false);
+    	ckRückgabe2.setSelected(false);
+    	ckRückgabe3.setSelected(false);
+    	ckRückgabe4.setSelected(false);
+    	ckRückgabe5.setSelected(false);
+    	taName.setText("");
+    }
+
+    public void laden()
+    {
+    	ladenChoiceboxen();
+
+    	setzenAnfangswerte();
+    }
+
+    @FXML
+    public void initialize()
+    {
+    	laden();
     }
 }
