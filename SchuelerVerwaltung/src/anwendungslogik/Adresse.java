@@ -1,4 +1,4 @@
-﻿package anwendungslogik;
+package anwendungslogik;
 
 public class Adresse
 {
@@ -6,7 +6,17 @@ private String strasse;
 private int hausNummer;
 private String wohnort;
 private int plz;
-
+/**
+ * Konstruktor ohne Parameter erstellt ein leeres Objekt
+ */
+public Adresse() {}
+/**
+ * Konstrukter
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 {
 	this.strasse = pStrasse;
@@ -15,15 +25,28 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 	this.plz = pPlz;
 }
 
+/**
+ * Konstruktor mit Strings
+ * @param pStrasse
+ * @param pHausnummer
+ * @param pWohnort
+ * @param pPlz
+ */
+public Adresse(String pStrasse, String pHausnummer, String pWohnort, String pPlz)
+{
+	this(pStrasse, Integer.parseInt(pHausnummer), pWohnort, Integer.parseInt(pPlz));
+}
+
 //Nur set- und get-Methoden ab hier  ... und ausgeben
 
 public void anlegenAdresse()
 {
-
+	speichernAdresse();
 }
+
 public void speichernAdresse()
 {
-
+	ausgeben();
 }
 /**
  * Nur set- und get-Methoden ab hier

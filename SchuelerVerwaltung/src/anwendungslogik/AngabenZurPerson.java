@@ -1,3 +1,4 @@
+
 package anwendungslogik;
 
 import java.time.LocalDate;
@@ -119,7 +120,4 @@ public void setGeschlecht(Geschlecht pGeschlecht)
 {
 	this.geschlecht = pGeschlecht;
 }
-
-
-
 }

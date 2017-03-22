@@ -6,6 +6,18 @@ private String festnetzNummer;
 private String mobilNummer;
 private String email;
 private String fax;
+
+/**
+ * Ausgabe von Angaben zur Kontrolle f�r JavaFx
+ */
+public void ausgeben()
+{
+	System.out.println("Festnetznummer:			"+getFestnetzNummer());
+	System.out.println("Mobilniummer:			"+getMobilNummer());
+	System.out.println("E-Mail:					"+getEmail());
+	System.out.println("Fax:					"+getFax());
+}
+
 public String getFestnetzNummer()
 {
 	return festnetzNummer;

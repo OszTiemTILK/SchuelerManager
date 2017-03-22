@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea fx:id="tfBeschreibung" layoutX="180.0" layoutY="125.0" prefHeight="74.0" prefWidth="323.0" text="Bitte geben Sie hier Ihre allgemeinen Daten ein.&#10;" />
+      <Button fx:id="btNext" layoutX="452.0" layoutY="684.0" mnemonicParsing="false" onAction="#speichernWeiter" text="Weiter" />
+      <Button fx:id="btBack" layoutX="180.0" layoutY="684.0" mnemonicParsing="false" onAction="#speichernZurück" text="Zurück" />
+      <ProgressBar fx:id="processbar" layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@src/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="65.0" layoutY="287.0" text="Vorname" />
+      <Label layoutX="61.0" layoutY="233.0" text="Nachname" />
+      <Label layoutX="61.0" layoutY="433.0" text="Geburtsort" />
+      <Label layoutX="61.0" layoutY="336.0" text="Geschlecht" />
+      <Label layoutX="36.0" layoutY="482.0" text="Staatsangehörigtkeit" />
+      <Label layoutX="52.0" layoutY="528.0" text="Muttersprache" />
+      <TextField fx:id="tfNachname" layoutX="267.0" layoutY="229.0" />
+      <TextField fx:id="tfVorname" layoutX="267.0" layoutY="283.0" />
+      <TextField fx:id="tfGeschlecht" layoutX="267.0" layoutY="332.0" />
+      <TextField fx:id="tfGeburtsort" layoutX="267.0" layoutY="429.0" />
+      <TextField fx:id="tfStaatsangehörigkeit" layoutX="267.0" layoutY="478.0" />
+      <DatePicker fx:id="dateGebutrstag" layoutX="269.0" layoutY="380.0" prefHeight="25.0" prefWidth="149.0" promptText="DD.MM.YYYY" />
+      <Label layoutX="52.0" layoutY="384.0" text="Geburtsdatum" />
+      <Label fx:id="textTitel" layoutX="295.0" layoutY="85.0" text="Allgemeine Daten" />
+      <TextField fx:id="tfMuttersprache" layoutX="267.0" layoutY="524.0" />
+   </children>
+</AnchorPane>

@@ -2,20 +2,31 @@ package anwendungslogik;
 
 public class Herkunft
 {
-private String staatsangehörigkeit;
+private String staatsangehÃ¶rigkeit;
 private String volksgruppe;
 private String geburtsort;
 private String geburtsland;
 
-public String getStaatsangehörigkeit()
+/**
+ * Ausgabe von Angaben zur Kontrolle fÃ¼r JavaFx
+ */
+	public void ausgeben()
+	{
+		System.out.println("StaatsangehÃ¶rigkeit:"+getStaatsangehÃ¶rigkeit());
+		System.out.println("Volksgruppe"+getVolksgruppe());
+		System.out.println("Geburtsort:"+getGeburtsort());
+		System.out.println("Geburtsland:"+getGeburtsland());
+	}
+
+public String getStaatsangehÃ¶rigkeit()
 {
 
-	return staatsangehörigkeit;
+	return staatsangehÃ¶rigkeit;
 }
-public void setStaatsangehörigkeit(String pStaatsangehörigkeit)
+public void setstaatsangehÃ¶rigkeit(String pStaatsangehÃ¶rigkeit)
 {
 
-	this.staatsangehörigkeit = pStaatsangehörigkeit;
+	this.staatsangehÃ¶rigkeit = pStaatsangehÃ¶rigkeit;
 }
 public String getVolksgruppe()
 {
@@ -41,5 +52,7 @@ public void setGeburtsland(String pGeburtsland)
 {
 	this.geburtsland = pGeburtsland;
 }
+
+
 
 }

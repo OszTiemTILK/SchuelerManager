@@ -1,11 +1,29 @@
+/*
+ * Jose 08.03.2017 angelegt
+ */
 package anwendungslogik;
 
 public class Sprachen {
+	private Boolean sprachenName;
+	private String sprachenNiveau;
 
-	private String muttersprache;
-	private String sprachen;
-	private String sprachniveau;
+	/**
+	 * Leerer Kontruktor
+	 */
+	public Sprachen()
+	{
 
+	}
+	/**
+	 * Konstruktor mit Strings
+	 * @param pSprachenName
+	 * @param pSprachenNiveau
+	 */
+	public Sprachen(Boolean pSprachenName, String pSprachenNiveau)
+	{
+		this.sprachenName = pSprachenName;
+		this.sprachenNiveau = pSprachenNiveau;
+	}
 	/** legt Sprachen an
 	 *
 	 */
@@ -34,34 +52,21 @@ public class Sprachen {
 	{
 
 	}
-
-	public String getMuttersprache()
+// Ab hier folgen nur Get/Set Methoden
+	public Boolean getSprachenName()
 	{
-		return muttersprache;
+		return sprachenName;
 	}
-
-	public void setMuttersprache(String pMuttersprache)
+	public void setSprachenName(Boolean pSprachenName)
 	{
-		this.muttersprache = pMuttersprache;
+		this.sprachenName = pSprachenName;
 	}
-
-	public String getSprachen()
+	public String getSprachenNiveau()
 	{
-		return sprachen;
+		return sprachenNiveau;
 	}
-
-	public void setSprachen(String pSprachen)
+	public void setSprachenNiveau(String pSprachenNiveau)
 	{
-		this.sprachen = pSprachen;
-	}
-
-	public String getSprachniveau()
-	{
-		return sprachniveau;
-	}
-
-	public void setSprachniveau(String pSprachniveau)
-	{
-		this.sprachniveau = pSprachniveau;
+		this.sprachenNiveau = pSprachenNiveau;
 	}
 }
