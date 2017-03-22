@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import anwendungslogik.Lehrmittel;
 import anwendungslogik.SchülerIn;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -160,5 +161,45 @@ public class LehrmittelController
     	ckRückgabe4.setSelected(false);
     	ckRückgabe5.setSelected(false);
     	taName.setText("");
+    }
+
+    public void ladenChoiceboxen()
+    {
+    	cbFach1.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach2.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach3.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach4.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbFach5.setItems(FXCollections.observableArrayList("", "Mathe", "Deutsch", "Englisch", "Sport"));
+    	cbArt1.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt2.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt3.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt4.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbArt5.setItems(FXCollections.observableArrayList("", "Fachbuch", "Formelbuch"));
+    	cbName1.setItems(FXCollections.observableArrayList(""));
+    	cbName2.setItems(FXCollections.observableArrayList(""));
+    	cbName3.setItems(FXCollections.observableArrayList(""));
+    	cbName4.setItems(FXCollections.observableArrayList(""));
+    	cbName5.setItems(FXCollections.observableArrayList(""));
+    }
+
+    public void setzenAnfangswerte()
+    {
+    	dpAusgegeben1.setValue(LocalDate.now());
+    	dpAusgegeben2.setValue(LocalDate.now());
+    	dpAusgegeben3.setValue(LocalDate.now());
+    	dpAusgegeben4.setValue(LocalDate.now());
+    	dpAusgegeben5.setValue(LocalDate.now());
+    	ckRückgabe1.setSelected(false);
+    	ckRückgabe2.setSelected(false);
+    	ckRückgabe3.setSelected(false);
+    	ckRückgabe4.setSelected(false);
+    	ckRückgabe5.setSelected(false);
+    }
+
+    public void laden()
+    {
+    	ladenChoiceboxen();
+
+    	setzenAnfangswerte();
     }
 }
