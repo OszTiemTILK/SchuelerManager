@@ -80,6 +80,21 @@ adresse.ausgeben();
 //beruflicheVorbereitung.ausgeben();
 aktuelleSchule.ausgeben();
 }
+/**
+ * speichern schülerIn
+ */
+public void speichern()
+{
+	speichernLehrmittel();
+}
+
+public void speichernLehrmittel()
+{
+	for(Lehrmittel lLehrmittel : lehrmittel)
+	{
+		lLehrmittel.speichern();
+	}
+}
 
 public AngabenZurPerson getPerson()
 {
