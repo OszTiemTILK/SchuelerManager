@@ -18,7 +18,6 @@ public class SprachkompetenzID
 	{
 		setID(pIDFest);
 	}
-
 //  Getter Setter Methoden
 
 	public int getID()
