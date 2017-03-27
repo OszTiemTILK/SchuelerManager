@@ -1,9 +1,16 @@
 package anwendungslogik;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
+
+
+import datenbank.Datenbankverbindung;
 
 public class AngabenZurPerson
 {
+private SchülerInID schülerInID;
 private String vorname;
 private String nachname;
 private LocalDate geburtsDatum;
@@ -14,6 +21,7 @@ private Geschlecht geschlecht;
 public AngabenZurPerson(String pVorname , String pNachname , LocalDate pGeburtsdatum, Geschlecht pGeschlecht)
 {
 	super();
+	this.schülerInID=new SchülerInID();
 	this.vorname=pVorname;
 	this.nachname=pNachname;
 	this.geburtsDatum=pGeburtsdatum;
@@ -33,13 +41,7 @@ public AngabenZurPerson(String pVorname , String pNachname , LocalDate pGeburtsd
    System.out.println("Geschlecht:	"+getGeschlecht());
  }
 
-/** legt Angaben zur Person an
- *
- */
-public void anlegenAngabenZurPerson()
-{
 
-}
 /** aendert Angaben zur Person
  *
  */
@@ -65,8 +67,27 @@ public void ausgebenKonsoleTest()
 	System.out.println("Geschlecht: " + geschlecht);
 }
 
-public void speichernAngabenZurPerson()
+public void anlegenAngabenZurPerson()
 {
+   speichernDB(vorname , nachname , geburtsDatum, geschlecht);
+}
+
+//Datenbankmethoden
+public void speichernDB(String pVorname , String pNachname , LocalDate pGeburtsdatum, Geschlecht pGeschlecht)
+{
+  Connection lConnection = Datenbankverbindung.holen();
+  Statement lBefehl;
+
+
+
+  try {
+	lBefehl = lConnection.createStatement();
+	lBefehl.execute("INSERT INTO schülerin(SchülerInID,Vorname,Nachname,GbDatum,Geschlecht) VALUES("+schülerInID.getID()+","+pVorname+","+pNachname+","+pGeburtsdatum+","+pGeschlecht+")");
+
+  } catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 
 }
 

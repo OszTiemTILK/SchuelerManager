@@ -53,6 +53,7 @@ public class AgDController {
     void speichernWeiter(ActionEvent event)
     {
     	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGebutrstag.getValue(), Geschlecht.fromString(tfGeschlecht.getText()));
+    	lAngabenZurPerson.anlegenAngabenZurPerson();
     }
 
     @FXML
