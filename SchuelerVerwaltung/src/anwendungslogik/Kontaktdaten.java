@@ -104,7 +104,7 @@ public void speichernDB()
   try
   {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO kontaktdaten VALUES ("+/*ID*/ +","+getFestnetzNummer()+","+getMobilNummer()+","+getEmail()+","+getFax() );
+	lBefehl.execute("INSERT INTO kontaktdaten VALUES ("+/*ID*/ +",'"+getFestnetzNummer()+"','"+getMobilNummer()+"','"+getEmail()+"')");
 
   } catch (SQLException e)
   	{
@@ -119,7 +119,7 @@ public static Kontaktdaten auslesenDB(int FahrradausleiheIDWert)
 
       Connection lConnection = VerbindungKontaktdaten.holen();
       Kontaktdaten lKontakdaten;
-	  ArrayList<Kontaktdaten> lKontaktdatenListe = new ArrayList<Kontaktdaten>();
+	 // ArrayList<Kontaktdaten> lKontaktdatenListe = new ArrayList<Kontaktdaten>();
 	  Statement lBefehl;
 	  ResultSet lErgebnis;
 
@@ -131,7 +131,7 @@ public static Kontaktdaten auslesenDB(int FahrradausleiheIDWert)
 	  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 	     {
 		   lKontakdaten = new Kontaktdaten(lErgebnis.getInt(1),lErgebnis.getString(2),lErgebnis.getString(3),lErgebnis.getString(4));
-		   lKontaktdatenListe.add(lKontakdaten);
+		   //lKontaktdatenListe.add(lKontakdaten);
 		   //Spezial für dieses Beispiel springen wir gleich wieder raus.
          // Sonst kann man hier eine Liste füllen.
 		   return lKontakdaten;
