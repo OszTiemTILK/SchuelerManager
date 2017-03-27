@@ -29,25 +29,25 @@ public class SprachenController {
 	    private CheckBox ckTürkisch;
 
 	    @FXML
-	    private CheckBox cbArabisch;
+	    private CheckBox ckArabisch;
 
 	    @FXML
 	    private CheckBox ckSonstiges;
 
 	    @FXML
-	    private ChoiceBox cbDeutschNiveau;
+	    private ChoiceBox<String> cbDeutschNiveau;
 
 	    @FXML
-	    private ChoiceBox cbEnglischNiveau;
+	    private ChoiceBox<String> cbEnglischNiveau;
 
 	    @FXML
-	    private ChoiceBox cbTürkischNiveau;
+	    private ChoiceBox<String> cbTürkischNiveau;
 
 	    @FXML
-	    private ChoiceBox cbArabischNiveau;
+	    private ChoiceBox<String> cbArabischNiveau;
 
 	    @FXML
-	    private ChoiceBox cbSonstigesNiveau;
+	    private TextField tfSonstigesNiveau;
 
 	    public void ladenChoiceBox()
 	    {
@@ -55,7 +55,6 @@ public class SprachenController {
 	    	cbEnglischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbTürkischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbArabischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
-	    	cbSonstigesNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    }
 
 	    @FXML
