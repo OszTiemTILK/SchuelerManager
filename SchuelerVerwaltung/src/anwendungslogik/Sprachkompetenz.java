@@ -69,7 +69,7 @@ public class Sprachkompetenz {
 
 		  try {
 			lBefehl = lConnection.createStatement();
-			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNivea+",\""+name+"\")");
+			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNiveau+",\""+name+"\")");
 
 		  } catch (SQLException e)
 		  {
