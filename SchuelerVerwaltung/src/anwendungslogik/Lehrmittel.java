@@ -2,6 +2,8 @@ package anwendungslogik;
 
 import java.time.LocalDate;
 
+import datenbank.DBVerbindung;
+
 public class Lehrmittel {
 private	String fach;
 private	String art;
@@ -46,7 +48,9 @@ public void anlegen()
  */
 public void speichern(SchülerID pSchülerID)
 {
-
+	DBVerbindung lDB = new DBVerbindung();
+	lDB.speichernLehrmittel(this, pSchülerID.getSchülerID());
+	
 }
 
 

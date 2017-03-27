@@ -81,6 +81,21 @@ public class SprachenController {
 
 	    }
 
+
+
+	    @FXML
+	    private ChoiceBox<String> cbEnglischNiveau;
+
+	    @FXML
+	    private ChoiceBox<String> cbTürkischNiveau;
+
+	    @FXML
+	    private ChoiceBox<String> cbArabischNiveau;
+
+	    @FXML
+	    private TextField tfSonstigesNiveau;
+
+
 	    public void ladenChoiceBox()
 	    {
 	    	cbDeutschNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
