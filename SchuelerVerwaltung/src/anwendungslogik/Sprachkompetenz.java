@@ -69,7 +69,7 @@ public class Sprachkompetenz {
 
 		  try {
 			lBefehl = lConnection.createStatement();
-			lBefehl.execute("INSERT INTO fahrradausleihe VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNivea+",\""+name+"\")");
+			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNivea+",\""+name+"\")");
 
 		  } catch (SQLException e)
 		  {
@@ -77,7 +77,7 @@ public class Sprachkompetenz {
 			e.printStackTrace();
 		  }
 	}
-	 public static Sprachkompetenz auslesenDB(int FahrradausleiheIDWert)
+	 public static Sprachkompetenz auslesenDB()
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -88,7 +88,7 @@ public class Sprachkompetenz {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM fahrradausleihe where id="+ SprachkompetenzID  + ";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where id="+ SprachkompetenzID  + ";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
