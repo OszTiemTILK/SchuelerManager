@@ -4,8 +4,10 @@ package datenbank;
 // DBTest2--> Properties-->Java Build Path -->Add External Jar's-->mysql-connector-java-5.1.40-bin.jar
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import anwendungslogik.Lehrmittel;
+import anwendungslogik.SchülerID;
 
 
 
@@ -34,44 +36,46 @@ public boolean connectToMysql(String host, String database, String user, String 
 }
 
 
-public void holenLehrmittel(String table) {
+public Lehrmittel[] holenLehrmittel(SchülerID pID) {
+	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
+
 	String lSelectWert = "*";
 	String lWhere = "Fach = 'Deutsch'"; // = "Straße = 'Bergstraße'"; //AUFTEILEN!
 
-	if( lWhere != "" ) {
+/*	if( lWhere != "" ) {
 		lWhere = " + " + " WHERE " + lWhere;
 	}
-
+*/
 	Statement stmt = null;
 	ResultSet result = null;
   try {
      stmt = connection.createStatement();
-     result = stmt.executeQuery("SELECT " + lSelectWert + " FROM " + table /* + lWhere  + " WHERE " + lWhere */);
+     result = stmt.executeQuery("SELECT " + lSelectWert + " FROM Lehrmittel WHERE SchülerID=" + pID.getSchülerID() /* + lWhere  + " WHERE " + lWhere */);
      result.first();  //Zeigt auf den ersten Datensatz in result
 
      while(! result.isAfterLast()) { // as long as valid data is in the result set
-       System.out.print(result.getInt(1)+"  "); // wählt das Attribut des aktuellen Datensatzes aus
-       System.out.print(result.getString(2)+"  " );
-       System.out.print(result.getString(3)+"  " );
-       System.out.print(result.getString(4)+"  " );
-       System.out.print(result.getString(5)+"  " );
-       System.out.print(result.getBoolean(6)+"     ");
-       System.out.println(result.getInt(7)+"     ");
+       new Lehrmittel(result.getString("Fach"), result.getString("Art"), result.getString("Name"), LocalDate.parse(result.getString("Ausgegeben")), result.getBoolean("Rückgabe"));
 
 
 //       System.out.println(result.getDate(6));
 
        result.next(); // geht zum nächsten Datensatz in result
-}
+
+     }
 
 
 } catch (Exception ex) {
-    System.out.println("Fehler bei der Verarbeitung + " + table + "n" + ex.getMessage());
+    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + "n" + ex.getMessage());
 
 }
+
+  return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
+
   }
 public void speichernLehrmittel(Lehrmittel pLehrmittel, int pSchülerID)
 {
+	connectToMysql("dbserver", "db_schulprojekt", "dbuser", "benutzer");
+
 	Statement stmt = null;
 
 	try {
@@ -87,11 +91,13 @@ public void speichernLehrmittel(Lehrmittel pLehrmittel, int pSchülerID)
 
 
 public static void main(String[] args) {
-	// TODO Auto-generated method stub
- DBVerbindung dbVerbindung = new DBVerbindung();
+// TODO Auto-generated method stub
+/*
+	DBVerbindung dbVerbindung = new DBVerbindung();
  if (dbVerbindung.connectToMysql("dbserver", "db_schulprojekt", "dbuser", "benutzer")== false)
-	 return;
- dbVerbindung.speichernLehrmittel(new Lehrmittel("testfach", "testart", "testname", LocalDate.now(), true), 1);
+*/
+
+  DBVerbindung.speichernLehrmittel(new Lehrmittel("testfach", "testart", "testname", LocalDate.now(), true), 1);
 	}
 
 }
