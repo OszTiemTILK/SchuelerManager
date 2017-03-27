@@ -9,9 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import fahrradausleihe.Datenbankverbindung;
-import fahrradausleihe.Fahrradausleihe;
-import fahrradausleihe.Sprachkompetenz;
+import datenbank.Datenbankverbindung;
+import anwendungslogik.Sprachkompetenz;
 
 public class Sprachkompetenz {
 	SprachkompetenzID sprachkompetenzID;
@@ -19,7 +18,7 @@ public class Sprachkompetenz {
 	private String sprachenNiveau;
 
 	/**
-	 * Leerer Kontruktor
+	 * Leerer Konstruktor
 	 */
 	public Sprachkompetenz()
 	{
@@ -31,9 +30,9 @@ public class Sprachkompetenz {
 	 * @param pSprachenNiveau
 	 * @param pSprachkompetenzID
 	 */
-	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau)
+	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert)
 	{
-		this.sprachkompetenzID = new SprachkompetenzID();
+		this.sprachkompetenzID = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 	}
@@ -69,7 +68,7 @@ public class Sprachkompetenz {
 
 		  try {
 			lBefehl = lConnection.createStatement();
-			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNiveau+",\""+name+"\")");
+			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
 
 		  } catch (SQLException e)
 		  {
@@ -77,7 +76,7 @@ public class Sprachkompetenz {
 			e.printStackTrace();
 		  }
 	}
-	 public static Sprachkompetenz auslesenDB()
+	 public static Sprachkompetenz auslesenDB(int SprachkompetenzIDWert)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -88,12 +87,12 @@ public class Sprachkompetenz {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where id="+ SprachkompetenzID  + ";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where id="+ SprachkompetenzIDWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 		     {
-			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getInt(1),lErgebnis.getInt(2),lErgebnis.getString(3));
+			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getBoolean(1),lErgebnis.getString(2),lErgebnis.getInt(3));
 			   lSprachkompetenzliste.add(lSprachkompetenz);
 			   //Spezial für dieses Beispiel springen wir gleich wieder raus.
 	           // Sonst kann man hier eine Liste füllen.
@@ -111,8 +110,8 @@ public class Sprachkompetenz {
 	public void ergänzen()
 	{
 	  Sprachkompetenz lSprachkompetenz = auslesenDB(this.sprachkompetenzID.getID());
-	  sprachkompetenz = lSprachkompetenz.sprachkompetenz;
-	  name = lSprachkompetenz.name;
+	  sprachenName = lSprachkompetenz.sprachenName;
+	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
 // Ab hier folgen nur Get/Set Methoden
 	public Boolean getSprachenName()
