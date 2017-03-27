@@ -90,9 +90,10 @@ public void speichern()
 
 public void speichernLehrmittel()
 {
+
 	for(Lehrmittel lLehrmittel : lehrmittel)
 	{
-		lLehrmittel.speichern();
+		lLehrmittel.speichern(getSchülerInID());
 	}
 }
 

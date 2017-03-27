@@ -51,6 +51,7 @@ public class SprachenController {
 	    @FXML
 	    private ChoiceBox<String> cbDeutschNiveau;
 
+
 	    @FXML
 	    private ChoiceBox<String> cbEnglischNiveau;
 
@@ -79,6 +80,20 @@ public class SprachenController {
 	       lSprachen.ergänzen();
 
 	    }
+
+
+	    @FXML
+	    private ChoiceBox<String> cbEnglischNiveau;
+
+	    @FXML
+	    private ChoiceBox<String> cbTürkischNiveau;
+
+	    @FXML
+	    private ChoiceBox<String> cbArabischNiveau;
+
+	    @FXML
+	    private TextField tfSonstigesNiveau;
+
 
 	    public void ladenChoiceBox()
 	    {

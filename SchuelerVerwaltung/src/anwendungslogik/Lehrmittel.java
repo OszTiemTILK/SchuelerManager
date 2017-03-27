@@ -44,7 +44,7 @@ public void anlegen()
 /**
  * Lehrmittel speichern
  */
-public void speichern()
+public void speichern(SchülerID pSchülerID)
 {
 
 }
