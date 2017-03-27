@@ -1,6 +1,5 @@
 package fx;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -58,11 +57,11 @@ public class SprachenController {
 	    	cbArabischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbSonstigesNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    }
+
 	    @FXML
 	    public void initialize()
 	    {
-	    	LadenChoiceBox();
+	    	ladenChoiceBox();
 	    }
-
 }
 

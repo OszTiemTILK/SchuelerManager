@@ -1,13 +1,26 @@
+
 package datenbank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/*
+ * Hr. Jakob 21.03.2017 angelegt
+ */
+package datenbank;
+
+import java.sql.*;
+
+
 public class Datenbankverbindung
 {
   private static Connection connection;
   private static String     hostrechner = "dbserver";
+
   private static String     datenbank = "test";
+
+  private static String     datenbank = "db_schulprojekt";
+
   private static String     benutzer = "dbuser";
   private static String     passwort = "benutzer";
 
@@ -63,4 +76,8 @@ public class Datenbankverbindung
 	return connection;
   }
 
+
 }
+
+}
+

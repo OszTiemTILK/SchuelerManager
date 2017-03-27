@@ -131,6 +131,8 @@ public class LehrmittelController
     	}
 
     	schülerin.setLehrmittel(lLehrmittel);
+
+    	schülerin.speichernLehrmittel();
     }
 
     public void drueckenZuruecksetzen()
