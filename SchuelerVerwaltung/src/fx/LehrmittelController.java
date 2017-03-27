@@ -1,9 +1,12 @@
 package fx;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import anwendungslogik.Lehrmittel;
+import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
+import datenbank.DBVerbindung;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -103,34 +106,34 @@ public class LehrmittelController
 
     public void drueckenSpeichern()
     {
-    	Lehrmittel[] lLehrmittel = new Lehrmittel[5];
+    	ArrayList<Lehrmittel> lLehrmittel = new ArrayList<Lehrmittel>();
 
-    	if(cbFach1 != null && cbArt1 != null && cbName1 != null && dpAusgegeben1 != null)
+    	if(cbFach1.getValue() != "" && cbArt1.getValue() != "" && cbName1.getValue() != "" && dpAusgegeben1 != null)
     	{
-    		lLehrmittel[0] = new Lehrmittel(cbFach1.getValue(), cbArt1.getValue(), cbName1.getValue(), dpAusgegeben1.getValue(), ckRückgabe1.isSelected());
+    		lLehrmittel.add(new Lehrmittel(cbFach1.getValue(), cbArt1.getValue(), cbName1.getValue(), dpAusgegeben1.getValue(), ckRückgabe1.isSelected()));
     	}
 
-    	if(cbFach2 != null && cbArt2 != null && cbName2 != null && dpAusgegeben2 != null)
+    	if(cbFach2.getValue() != "" && cbArt2.getValue() != "" && cbName2.getValue() != "" && dpAusgegeben2 != null)
     	{
-    		lLehrmittel[1] = new Lehrmittel(cbFach2.getValue(), cbArt2.getValue(), cbName2.getValue(), dpAusgegeben2.getValue(), ckRückgabe2.isSelected());
+    		lLehrmittel.add(new Lehrmittel(cbFach2.getValue(), cbArt2.getValue(), cbName2.getValue(), dpAusgegeben2.getValue(), ckRückgabe2.isSelected()));
     	}
 
-    	if(cbFach3 != null && cbArt3 != null && cbName3 != null && dpAusgegeben3 != null)
+    	if(cbFach3.getValue() != "" && cbArt3.getValue() != "" && cbName3.getValue() != "" && dpAusgegeben3 != null)
     	{
-    		lLehrmittel[2] = new Lehrmittel(cbFach3.getValue(), cbArt3.getValue(), cbName3.getValue(), dpAusgegeben3.getValue(), ckRückgabe3.isSelected());
+    		lLehrmittel.add(new Lehrmittel(cbFach3.getValue(), cbArt3.getValue(), cbName3.getValue(), dpAusgegeben3.getValue(), ckRückgabe3.isSelected()));
     	}
 
-    	if(cbFach4 != null && cbArt4 != null && cbName4 != null && dpAusgegeben4 != null)
+    	if(cbFach4.getValue() != "" && cbArt4.getValue() != "" && cbName4.getValue() != "" && dpAusgegeben4 != null)
     	{
-    		lLehrmittel[3] = new Lehrmittel(cbFach4.getValue(), cbArt4.getValue(), cbName4.getValue(), dpAusgegeben4.getValue(), ckRückgabe4.isSelected());
+    		lLehrmittel.add(new Lehrmittel(cbFach4.getValue(), cbArt4.getValue(), cbName4.getValue(), dpAusgegeben4.getValue(), ckRückgabe4.isSelected()));
     	}
 
-    	if(cbFach5 != null && cbArt5 != null && cbName5 != null && dpAusgegeben5 != null)
+    	if(cbFach5.getValue() != "" && cbArt5.getValue() != "" && cbName5.getValue() != "" && dpAusgegeben5 != null)
     	{
-    		lLehrmittel[4] = new Lehrmittel(cbFach5.getValue(), cbArt5.getValue(), cbName5.getValue(), dpAusgegeben5.getValue(), ckRückgabe5.isSelected());
+    		lLehrmittel.add(new Lehrmittel(cbFach5.getValue(), cbArt5.getValue(), cbName5.getValue(), dpAusgegeben5.getValue(), ckRückgabe5.isSelected()));
     	}
 
-    	schülerin.setLehrmittel(lLehrmittel);
+    	schülerin.setLehrmittel(lLehrmittel.toArray(new Lehrmittel[lLehrmittel.size()]));
 
     	schülerin.speichernLehrmittel();
     }
@@ -194,6 +197,23 @@ public class LehrmittelController
     	ladenChoiceboxen();
 
     	setzenAnfangswerte();
+
+    	ladenSchülerIn();
+    }
+
+    public void ladenSchülerIn()
+    {
+    	DBVerbindung lDB = new DBVerbindung();
+
+    	schülerin = new SchülerIn();
+
+    	SchülerID lID = new SchülerID();
+
+    	lID.setSchülerID(111);
+
+    	schülerin.setSchülerID(lID);
+
+    	schülerin.setLehrmittel(lDB.holenLehrmittel(schülerin.getSchülerInID()));
     }
 
     @FXML
