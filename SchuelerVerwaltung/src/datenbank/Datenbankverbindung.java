@@ -13,6 +13,7 @@ public class Datenbankverbindung
   private static String     benutzer = "dbuser";
   private static String     passwort = "benutzer";
 
+
   /**
    * Wenn Ihre Daten für die Datenbankverbindung anders lauten, verwenden Sie diese
    * Methode, um die Parameter zu setzen.

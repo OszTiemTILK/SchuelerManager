@@ -82,7 +82,6 @@ public class SprachenController {
 	    }
 
 
-
 	    @FXML
 	    private TextField tfSonstigesNiveau;
 
