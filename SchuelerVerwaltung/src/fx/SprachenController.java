@@ -138,7 +138,6 @@ public class SprachenController {
 			@Override
 			public void removeItemListener(ItemListener arg0) {
 				// TODO Auto-generated method stub
-
 			}
 	    }
 }
