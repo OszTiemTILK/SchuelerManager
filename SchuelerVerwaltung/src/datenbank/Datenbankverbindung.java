@@ -82,6 +82,7 @@ package datenbank;
 import java.sql.*;
 
 public class Datenbankverbindung
+
 {
   private static Connection connection;
   private static String     hostrechner = "dbserver";
