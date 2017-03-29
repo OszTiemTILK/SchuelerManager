@@ -5,9 +5,9 @@ public class VerbindungKontaktdaten
 {
 	  private static Connection connection;
 	  private static String     hostrechner = "dbserver";
-	  private static String     datenbank = "db_schulprojekt";
-	  private static String     benutzer = "dbuser";
-	  private static String     passwort = "benutzer";
+	  private static String     datenbank 	= "db_schulprojekt";
+	  private static String     benutzer	= "dbuser";
+	  private static String     passwort	= "benutzer";
 
 
 	 protected static boolean herstellen()
