@@ -26,6 +26,7 @@ public class Datenbankverbindung
 	benutzer    = pBenutzer;
 	passwort    = pPasswort;
   }
+
   /**
    * Die Verbindung zur Datenbank wird hergestellt. Verwendet werden dazu die
    * fest initialisierten Parameter. Die Werte der Parameter lassen sich mit der Methode
