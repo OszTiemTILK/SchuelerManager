@@ -1,4 +1,4 @@
-package anwendungslogik;
+package kontaktdaten;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,30 +8,28 @@ import java.sql.Statement;
 import java.time.*;
 import java.util.ArrayList;
 
-import datenbank.VerbindungKontaktdaten;
-
 
 
 public class Kontaktdaten
 {
-//KontaktdatenID	kontakdatenID
+private KontaktdatenID	kontaktdatenID;
 private String festnetzNummer;
 private String mobilNummer;
 private String email;
-private String fax;
+private String fax; //wird erstmal nicht gebraucht
 
 /*
  * Konstruktoren
  */
 public Kontaktdaten (int pKontaktdatenID)
 {
-	//super();
-	//this.kontakdatenID = new KontaktdatenID(pKontaktdatenID);
+
+	this.kontaktdatenID = new KontaktdatenID(pKontaktdatenID);
 }
 public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail)
 {
-	//super();
-	//this.kontakdatenID = new KontaktdatenID();
+
+	this.kontaktdatenID = new KontaktdatenID();
 	this.festnetzNummer = pFestnetznummer;
 	this.mobilNummer = pMobilnummer;
 	this.email =pEmail;
@@ -39,8 +37,8 @@ public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail)
 }
 public Kontaktdaten (int pKontaktdatenID,String pFestnetznummer, String pMobilnummer, String pEmail)
 {
-	//super();
-	//this.kontakdatenID = new KontaktdatenID(pKontaktdatenID);
+
+	this.kontaktdatenID = new KontaktdatenID(pKontaktdatenID);
 	this.festnetzNummer = pFestnetznummer;
 	this.mobilNummer = pMobilnummer;
 	this.email =pEmail;
@@ -55,7 +53,7 @@ public void ausgeben()
 	System.out.println("Festnetznummer:			"+getFestnetzNummer());
 	System.out.println("Mobilniummer:			"+getMobilNummer());
 	System.out.println("E-Mail:					"+getEmail());
-	System.out.println("Fax:					"+getFax());
+	//System.out.println("Fax:					"+getFax());
 }
 
 public String getFestnetzNummer()
@@ -82,6 +80,17 @@ public void setEmail(String pEmail)
 {
 	this.email = pEmail;
 }
+public void setID(KontaktdatenID pID)
+{
+	this.kontaktdatenID = pID;
+}
+public KontaktdatenID getID()
+{
+	return this.kontaktdatenID;
+}
+
+
+/*
 public String getFax()
 {
 	return fax;
@@ -90,7 +99,7 @@ public void setFax(String pFax)
 {
 	this.fax = pFax;
 }
-
+*/
 //Datenbank Methoden
 
 
@@ -104,7 +113,7 @@ public void speichernDB()
   try
   {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO kontaktdaten VALUES ("+/*ID*/ +",'"+getFestnetzNummer()+"','"+getMobilNummer()+"','"+getEmail()+"')");
+	lBefehl.execute("INSERT INTO kontaktdaten VALUES (" + getID() + ",'"+getFestnetzNummer()+"','"+getMobilNummer()+"','"+getEmail()+"')");
 
   } catch (SQLException e)
   	{
