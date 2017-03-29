@@ -111,7 +111,7 @@ public class BeruflicheBildungVorbereitungBefähigung
 	public void setBezirk(String pBezirk)
 	{
 		this.bezirk = pBezirk;
-
+	}
 	public void ausgeben()
 	{
 		System.out.println("Berufliche Vorbereitung: Übe dich in geduld");
