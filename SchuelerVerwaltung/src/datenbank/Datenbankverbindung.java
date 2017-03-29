@@ -56,6 +56,7 @@ public class Datenbankverbindung
    * Wenn noch keine besteht, wird sie neu hergestellt.
    * @return
    */
+
   public static Connection holen()
   {
 	if (connection == null)
