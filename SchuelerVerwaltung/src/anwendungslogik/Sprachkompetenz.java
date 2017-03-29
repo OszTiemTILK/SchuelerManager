@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import datenbank.Datenbankverbindung;
+import javafx.collections.ObservableList;
 import anwendungslogik.Sprachkompetenz;
 
 public class Sprachkompetenz {
@@ -17,13 +18,6 @@ public class Sprachkompetenz {
 	private Boolean sprachenName;
 	private String sprachenNiveau;
 
-	/**
-	 * Leerer Konstruktor
-	 */
-	public Sprachkompetenz()
-	{
-
-	}
 	/**
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
@@ -36,6 +30,11 @@ public class Sprachkompetenz {
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 	}
+
+
+
+
+
 	/** legt Sprachen an
 	 *
 	 */

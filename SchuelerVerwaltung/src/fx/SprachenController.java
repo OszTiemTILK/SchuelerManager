@@ -17,7 +17,7 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.ItemSelectable;
 import java.awt.event.ItemListener;
-
+import java.sql.Connection;
 
 
 
@@ -62,7 +62,7 @@ public class SprachenController {
 	    private ChoiceBox<String> cbArabischNiveau;
 
 	    @FXML
-	    private TextField cbSonstigesNiveau;
+	    private TextField tfSonstigesNiveau;
 
 	    @FXML
 	    private Button    btSpeichern;
@@ -76,14 +76,10 @@ public class SprachenController {
 	    @FXML
 	    void anlegenDatei(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachen = new Sprachkompetenz();
-	       lSprachen.ergänzen();
+	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(tfID.getText(), tfTitel.getText(), tfSprachen.getText(), cbDeutschNiveau.getItems(), cbEnglischNiveau.getItems(), cbTürkischNiveau.getItems(), cbArabischNiveau.getItems(), tfSonstigesNiveau.getText());
+	       lSprachkompetenz.ergänzen();
 
 	    }
-
-
-	    @FXML
-	    private TextField tfSonstigesNiveau;
 
 
 	    public void ladenChoiceBox()
@@ -100,50 +96,5 @@ public class SprachenController {
 	    	ladenChoiceBox();
 	    }
 
-
-	    public class Checkbox
-	    extends Component
-	    implements ItemSelectable, Accessible
-	    {
-	    	@FXML
-	    	public boolean FelderCheckbox()
-	    	{
-	    	 setLayout(new GridLayout(6,1));
-	    	 add(new Checkbox());
-	    	 add(new Checkbox());
-	    	 add(new Checkbox());
-	    	 add(new Checkbox());
-	    	 add(new Checkbox());
-	    	 add(new Checkbox());
-			return false;
-	    	}
-
-			private void add(Checkbox checkbox) {
-				// TODO Auto-generated method stub
-
-			}
-
-			private void setLayout(GridLayout gridLayout) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void addItemListener(ItemListener arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public Object[] getSelectedObjects() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void removeItemListener(ItemListener arg0) {
-				// TODO Auto-generated method stub
-			}
-	    }
 }
 
