@@ -76,21 +76,12 @@ public class SprachenController {
 	    @FXML
 	    void anlegenDatei(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachen = new Sprachkompetenz( Integer.parseInt(tfID.getText()) );
+	       Sprachkompetenz lSprachen = new Sprachkompetenz();
 	       lSprachen.ergänzen();
 
 	    }
 
 
-
-	    @FXML
-	    private ChoiceBox<String> cbEnglischNiveau;
-
-	    @FXML
-	    private ChoiceBox<String> cbTürkischNiveau;
-
-	    @FXML
-	    private ChoiceBox<String> cbArabischNiveau;
 
 	    @FXML
 	    private TextField tfSonstigesNiveau;
