@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import anwendungslogik.Sprachen;
+import anwendungslogik.Sprachkompetenz;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import java.lang.Object;
@@ -76,7 +76,7 @@ public class SprachenController {
 	    @FXML
 	    void anlegenDatei(ActionEvent event)
 	    {
-	       Sprachen lSprachen = new Sprachen( Integer.parseInt(tfID.getText()) );
+	       Sprachkompetenz lSprachen = new Sprachkompetenz( Integer.parseInt(tfID.getText()) );
 	       lSprachen.ergänzen();
 
 	    }
@@ -153,9 +153,7 @@ public class SprachenController {
 			@Override
 			public void removeItemListener(ItemListener arg0) {
 				// TODO Auto-generated method stub
-
 			}
 	    }
-
 }
 

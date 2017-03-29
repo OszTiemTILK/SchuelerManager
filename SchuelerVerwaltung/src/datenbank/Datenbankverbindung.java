@@ -35,7 +35,6 @@ public class Datenbankverbindung
    * setzenParameter überschreiben.
    * @return
    */
-
   protected static boolean herstellen()
   {
 	if (hostrechner==null || hostrechner.isEmpty())
@@ -65,10 +64,5 @@ public class Datenbankverbindung
 	}
 	return connection;
   }
-
-}
-
-
-
 
 
