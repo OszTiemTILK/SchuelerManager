@@ -1,8 +1,9 @@
 /*
  * Hr. Jakob 23.03.2017 angelegt
+
  * Die IDs für Fahrradausleihen werden automatisch vom System vergeben, dazu dient diese Klasse.
  */
-package anwendungslogik;
+package allgemeinedaten;
 
 public class SchülerInID
 {
@@ -12,7 +13,7 @@ public class SchülerInID
 
 //  Konstruktoren
 
-	SchülerInID()
+	 SchülerInID()
 	{
 		ID = aktuelleID + 1;
 		setAktuelleID(ID);
