@@ -1,4 +1,4 @@
-package datenbank;
+package kontaktdaten;
 import java.sql.*;
 
 public class VerbindungKontaktdaten
