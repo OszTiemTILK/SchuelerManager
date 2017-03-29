@@ -1,8 +1,8 @@
-package anwendungslogik;
+package lehrmittel;
 
 import java.time.LocalDate;
 
-import datenbank.DBVerbindung;
+import anwendungslogik.SchülerID;
 
 public class Lehrmittel {
 private	String fach;

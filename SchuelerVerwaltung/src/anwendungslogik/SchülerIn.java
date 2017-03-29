@@ -1,5 +1,7 @@
 package anwendungslogik;
 
+import lehrmittel.Lehrmittel;
+
 public class SchülerIn
 {
 private SchülerID schülerInID;
