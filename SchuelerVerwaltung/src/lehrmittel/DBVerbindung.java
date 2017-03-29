@@ -1,4 +1,4 @@
-package datenbank;
+package lehrmittel;
 // Naasner 9.1.16
 // wichtig vorher Treiber: java-connector in das Projekt einbinden, wenn er nicht unter JRE System Library eingetragen ist:
 // DBTest2--> Properties-->Java Build Path -->Add External Jar's-->mysql-connector-java-5.1.40-bin.jar
@@ -6,7 +6,6 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import anwendungslogik.Lehrmittel;
 import anwendungslogik.SchülerID;
 
 

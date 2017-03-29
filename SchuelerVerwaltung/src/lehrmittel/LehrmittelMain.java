@@ -1,4 +1,4 @@
-package anwendungslogik;
+package lehrmittel;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

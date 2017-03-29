@@ -1,12 +1,10 @@
-package fx;
+package lehrmittel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import anwendungslogik.Lehrmittel;
 import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
-import datenbank.DBVerbindung;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
