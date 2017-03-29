@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.LehrmittelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lehrmittel.LehrmittelController">
    <children>
       <TextField alignment="TOP_CENTER" editable="false" layoutX="189.0" layoutY="77.0" prefHeight="25.0" prefWidth="305.0" text="Ausgegebene Lehrmittel" />
       <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />

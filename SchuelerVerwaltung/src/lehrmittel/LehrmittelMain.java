@@ -21,7 +21,7 @@ public class LehrmittelMain extends Application {
 	{
 		this.grundStage = pPrimaryStage;
 		FXMLLoader lLoader = new FXMLLoader();
-		lLoader.setLocation(LehrmittelMain.class.getClassLoader().getResource("fx/Maske_6_2_LehrmittelView.fxml"));
+		lLoader.setLocation(LehrmittelMain.class.getClassLoader().getResource("lehrmittel/Maske_6_2_LehrmittelView.fxml"));
 		grundPane = lLoader.load();
 
 		Scene lScene = new Scene(grundPane);
