@@ -2,6 +2,7 @@ package fx;
 
 import anwendungslogik.AngabenZurPerson;
 import anwendungslogik.Geschlecht;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,8 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ChoiceBox;
 
-public class AgDController {
+public class AgDController
+{
 
     @FXML
     private TextArea tfBeschreibung;
@@ -38,7 +41,7 @@ public class AgDController {
     private TextField tfGeburtsort;
 
     @FXML
-    private TextField tfGeschlecht;
+    private ChoiceBox<Geschlecht> cbGeschlecht;
 
     @FXML
     private TextField tfMuttersprache;
@@ -47,12 +50,12 @@ public class AgDController {
     private ProgressBar processbar;
 
     @FXML
-    private DatePicker dateGebutrstag;
+    private DatePicker dateGeburtstag;
 
     @FXML
     void speichernWeiter(ActionEvent event)
     {
-    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGebutrstag.getValue(), Geschlecht.fromString(tfGeschlecht.getText()));
+    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText(), dateGeburtstag.getValue(), cbGeschlecht.getValue());
     	lAngabenZurPerson.anlegenAngabenZurPerson();
     }
 
@@ -62,4 +65,9 @@ public class AgDController {
 
     }
 
+    @FXML
+    public void initialize()
+    {
+    	cbGeschlecht.setItems(FXCollections.observableArrayList(Geschlecht.MÄNNLICH, Geschlecht.WEIBLICH));
+    }
 }
