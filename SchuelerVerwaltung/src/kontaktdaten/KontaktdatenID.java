@@ -5,7 +5,7 @@ public class KontaktdatenID
 /*
  *
  */
-    private static int aktuelleID = 2; //letzte vergebene ID
+    private static int aktuelleID = 1; //letzte vergebene ID
 
 	private int ID = 0;
 
