@@ -1,7 +1,5 @@
 package kontaktdaten;
 import javafx.scene.control.Button;
-import anwendungslogik.Kontaktdaten;
-import anwendungslogik.KontaktdatenID;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
