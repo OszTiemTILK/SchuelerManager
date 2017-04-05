@@ -10,20 +10,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import datenbank.Datenbankverbindung;
+import javafx.collections.ObservableList;
 import anwendungslogik.Sprachkompetenz;
 
 public class Sprachkompetenz {
-	SprachkompetenzID sprachkompetenzID;
+	SprachkompetenzID IDSprache;
 	private Boolean sprachenName;
 	private String sprachenNiveau;
 
-	/**
-	 * Leerer Konstruktor
-	 */
-	public Sprachkompetenz()
-	{
-
-	}
 	/**
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
@@ -32,10 +26,15 @@ public class Sprachkompetenz {
 	 */
 	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert)
 	{
-		this.sprachkompetenzID = new SprachkompetenzID(SprachkompetenzIDWert);
+		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 	}
+
+
+
+
+
 	/** legt Sprachen an
 	 *
 	 */
@@ -68,7 +67,7 @@ public class Sprachkompetenz {
 
 		  try {
 			lBefehl = lConnection.createStatement();
-			lBefehl.execute("INSERT INTO sprachkompetenz VALUES ( "+sprachkompetenzID.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
+			lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
 
 		  } catch (SQLException e)
 		  {
@@ -87,7 +86,7 @@ public class Sprachkompetenz {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where id="+ SprachkompetenzIDWert +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where id="+ SprachkompetenzIDWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -109,7 +108,7 @@ public class Sprachkompetenz {
 
 	public void ergänzen()
 	{
-	  Sprachkompetenz lSprachkompetenz = auslesenDB(this.sprachkompetenzID.getID());
+	  Sprachkompetenz lSprachkompetenz = auslesenDB(this.IDSprache.getID());
 	  sprachenName = lSprachkompetenz.sprachenName;
 	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
@@ -132,11 +131,11 @@ public class Sprachkompetenz {
 	}
 	public SprachkompetenzID getSprachkompetenzID()
 	{
-		return sprachkompetenzID;
+		return IDSprache;
 	}
 	public void setSprachkompetenzID(SprachkompetenzID pSprachkompetenzID)
 	{
-		this.sprachkompetenzID = pSprachkompetenzID;
+		this.IDSprache = pSprachkompetenzID;
 	}
 
 }
