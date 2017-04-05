@@ -47,7 +47,7 @@ public class KontaktdatenController {
 	    void anzeigenDetails(ActionEvent event)
 	    {
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( Integer.parseInt(tfKontaktdatenID.getText()));
-	    //hier muss eine entsprechende Methode aus Kontaktdaten rein lKontaktdaten.ergänzen();
+	    	lKontaktdaten.ergänzen();
 	    	tfFestnetz.setText(lKontaktdaten.getFestnetzNummer());
 	    	tfMobilnummer.setText(lKontaktdaten.getMobilNummer());
 	    	tfEmail.setText(lKontaktdaten.getEmail());
