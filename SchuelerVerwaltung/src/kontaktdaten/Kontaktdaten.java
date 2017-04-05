@@ -44,6 +44,7 @@ public Kontaktdaten (int pKontaktdatenID,String pFestnetznummer, String pMobilnu
 	this.mobilNummer = pMobilnummer;
 	this.email =pEmail;
 
+
 }
 
 /**
@@ -106,9 +107,11 @@ public void setFax(String pFax)
 public void ergänzen()
 {
   Kontaktdaten lKontaktdaten = auslesenDB(this.kontaktdatenID.getID());
-  festnetzNummer = lKontaktdaten.festnetzNummer;
-  mobilNummer = lKontaktdaten.mobilNummer;
   email = lKontaktdaten.email ;
+  mobilNummer = lKontaktdaten.mobilNummer;
+  festnetzNummer = lKontaktdaten.festnetzNummer;
+
+
 }
 
 public void speichernDB()
@@ -121,7 +124,7 @@ public void speichernDB()
   try
   {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO kontaktdaten VALUES (" + getID() + ",'"+getFestnetzNummer()+"','"+getMobilNummer()+"','"+getEmail()+"')");
+	lBefehl.execute("INSERT INTO kontaktdaten VALUES (" + kontaktdatenID.getID() + ",'"+getEmail()+"','"+getMobilNummer()+"','"+getFestnetzNummer()+"')");
 
   } catch (SQLException e)
   	{
@@ -142,12 +145,12 @@ public static Kontaktdaten auslesenDB(int pKontaktdatenIDWert)
 
 	  try {
 	  lBefehl = lConnection.createStatement();
-	  lErgebnis = lBefehl.executeQuery("SELECT * FROM kontaktdaten WHERE ID = "+pKontaktdatenIDWert);
+	  lErgebnis = lBefehl.executeQuery("SELECT * FROM kontaktdaten WHERE IDKontaktd = "+pKontaktdatenIDWert);
 	  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 	  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 	     {
-		   lKontakdaten = new Kontaktdaten(lErgebnis.getInt(1),lErgebnis.getString(2),lErgebnis.getString(3),lErgebnis.getString(4));
+		   lKontakdaten = new Kontaktdaten(lErgebnis.getInt(1),lErgebnis.getString(3),lErgebnis.getString(4),lErgebnis.getString(2));
 		   //lKontaktdatenListe.add(lKontakdaten);
 		   //Spezial für dieses Beispiel springen wir gleich wieder raus.
          // Sonst kann man hier eine Liste füllen.
