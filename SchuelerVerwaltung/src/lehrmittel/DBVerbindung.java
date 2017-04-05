@@ -71,32 +71,5 @@ public Lehrmittel[] holenLehrmittel(SchülerID pID) {
   return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
 
   }
-public void speichernLehrmittel(Lehrmittel pLehrmittel, int pSchülerID)
-{
-	connectToMysql("dbserver", "db_schulprojekt", "dbuser", "benutzer");
-
-	Statement stmt = null;
-
-	try {
-	     stmt = connection.createStatement();
-	     stmt.execute("INSERT INTO lehrmittel VALUES ("+pLehrmittel.getLehrmittelID()+", '"+pLehrmittel.getFach()+"', '"+pLehrmittel.getArt()+"', '"+pLehrmittel.getName()+"', '"+pLehrmittel.getAusgegeben().toString()+"', "+pLehrmittel.isRückgabe()+"," +pSchülerID + ")");
-
-
-	} catch (Exception ex) {
-	    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + "n" + ex.getMessage());
-
-	}
-}
-
-
-public static void main(String[] args) {
-// TODO Auto-generated method stub
-/*
-	DBVerbindung dbVerbindung = new DBVerbindung();
- if (dbVerbindung.connectToMysql("dbserver", "db_schulprojekt", "dbuser", "benutzer")== false)
-*/
-
-  DBVerbindung.speichernLehrmittel(new Lehrmittel("testfach", "testart", "testname", LocalDate.now(), true), 1);
-	}
 
 }

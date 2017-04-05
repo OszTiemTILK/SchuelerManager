@@ -1,8 +1,11 @@
 package lehrmittel;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 import anwendungslogik.SchülerID;
+import datenbank.Datenbankverbindung;
 
 public class Lehrmittel {
 private	String fach;
@@ -48,12 +51,19 @@ public void anlegen()
  */
 public void speichern(SchülerID pSchülerID)
 {
-	DBVerbindung lDB = new DBVerbindung();
-	lDB.speichernLehrmittel(this, pSchülerID.getSchülerID());
-	
+	Connection lConnection = Datenbankverbindung.holen();
+
+	Statement stmt = null;
+
+	try {
+	     stmt = lConnection.createStatement();
+	     stmt.execute("INSERT INTO lehrmittel VALUES ("+this.getLehrmittelID()+", '"+this.getFach()+"', '"+this.getArt()+"', '"+this.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+"," +pSchülerID + ")");
+
+
+	} catch (Exception ex) {
+	    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + "n" + ex.getMessage());
+	}
 }
-
-
 
 public String getFach() {
 	return fach;
