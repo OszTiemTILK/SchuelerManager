@@ -1,12 +1,13 @@
 package anwendungslogik;
 
 import lehrmittel.Lehrmittel;
+import kontaktdaten.Kontaktdaten;
 
 public class SchülerIn
 {
 private SchülerID schülerInID;
 private AngabenZurPerson person;
-private Sprachen sprachen;
+private Sprachkompetenz sprachkompetenz;
 private Kontaktdaten kontaktSchüler;
 private Kontaktdaten kontaktVater;
 private Kontaktdaten kontaktMutter;
@@ -47,11 +48,11 @@ public SchülerIn()
  *
  */
 
-public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachen pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft, Lehrmittel[] pLehrmittel,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
+public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachkompetenz pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft, Lehrmittel[] pLehrmittel,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
 {
 
 	this.person = pPerson;
-	this.sprachen = pSprachen;
+	this.sprachkompetenz = pSprachen;
 	this.kontaktSchüler = pKontaktSchüler;
 	this.kontaktVater = pKontaktVater;
 	this.kontaktMutter = pKontaktMutter;
@@ -107,13 +108,13 @@ public void setPerson(AngabenZurPerson pPerson)
 {
 	this.person = pPerson;
 }
-public Sprachen getSprachen()
+public Sprachkompetenz getSprachKompetenz()
 {
-	return sprachen;
+	return sprachkompetenz;
 }
-public void setSprachen(Sprachen pSprachen)
+public void setSprachKompetenz(Sprachkompetenz pSprachen)
 {
-	this.sprachen = pSprachen;
+	this.sprachkompetenz = pSprachen;
 }
 public Kontaktdaten getKontaktschüler()
 {
