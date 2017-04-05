@@ -1,8 +1,10 @@
 package lehrmittel;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import anwendungslogik.SchülerID;
 import datenbank.Datenbankverbindung;
@@ -57,20 +59,67 @@ public void speichern(SchülerID pSchülerID)
 
 	try {
 	     stmt = lConnection.createStatement();
-	     stmt.execute("INSERT INTO lehrmittel VALUES ("+this.getLehrmittelID()+", '"+this.getFach()+"', '"+this.getArt()+"', '"+this.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+"," +pSchülerID + ")");
+	     stmt.execute("INSERT INTO Lernmittel VALUES ("+this.getLehrmittelID()+", '"+this.getArt()+"', '"+this.getFach()+"', '"+this.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
 
 
 	} catch (Exception ex) {
-	    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + "n" + ex.getMessage());
+	    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + " " + ex.getMessage());
 	}
+}
+
+public Lehrmittel[] holen(SchülerID pID) {
+	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
+	Connection lConnection = Datenbankverbindung.holen();
+
+	Statement stmt = null;
+	ResultSet result = null;
+  try {
+     stmt = lConnection.createStatement();
+     result = stmt.executeQuery("SELECT * FROM Lernmittel l, ausgeliehen a WHERE l.IDLernm = a.IDLernm AND IDSchüler = '" + pID.getSchülerID() + "'" /* + pID.getSchülerID() */ /* + lWhere  + " WHERE " + lWhere */);
+     result.first();  //Zeigt auf den ersten Datensatz in result
+
+     while(! result.isAfterLast()) { // as long as valid data is in the result set
+       new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe"));
+
+//       System.out.println(result.getDate(6));
+
+       result.next(); // geht zum nächsten Datensatz in result
+
+     }
+
+
+} catch (Exception ex) {
+    System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
+
+}
+
+  return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
+
+  }
+
+public static Lehrmittel[] holenFürFach(String pFach)
+{
+	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
+	Statement stmt = null;
+	ResultSet result = null;
+	Connection lConnection = Datenbankverbindung.holen();
+	try {
+	     stmt = lConnection.createStatement();
+	     result = stmt.executeQuery("SELECT * FROM Lernmittel l WHERE Fach = '" + pFach + "'" /* + pID.getSchülerID() */ /* + lWhere  + " WHERE " + lWhere */);
+	     result.first();  //Zeigt auf den ersten Datensatz in result
+	}
+    catch (Exception ex) {
+        System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
+}
+	  return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
 }
 
 public String getFach() {
 	return fach;
 }
 
-public void setFach(String fach) {
-	this.fach = fach;
+public void setFach(String pFach) {
+	this.fach = pFach;
 }
 
 public String getArt() {
