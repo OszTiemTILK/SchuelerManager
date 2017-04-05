@@ -3,37 +3,62 @@ package Schullaufbahn;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ChoiceBox;
 
-public class SchullaufbahnController 
-{
+public class SchullaufbahnController {
 
     @FXML
-    private TextField tfSchulname4;
+    private TextField tfArt;
 
     @FXML
     private Button btWeiter;
 
     @FXML
-    private TextField tfSchulname3;
+    private Button btNächsteSchule;
 
     @FXML
-    private TextField tfSchulname2;
+    private TextField tfJahrgang;
 
     @FXML
-    private TextField tfSchulname1;
+    private TableColumn<?, ?> tcSchulname;
 
     @FXML
-    void anlegenSchule(ActionEvent event) 
+    private TextField tfOrt;
+
+    @FXML
+    private TextField tfAbschluss;
+
+    @FXML
+    private TextField tfDatum1;
+
+    @FXML
+    private TextField tfDatum2;
+
+    @FXML
+    private TextField tfSchulname;
+
+    @FXML
+    private TextField tfStraße;
+
+    @FXML
+    private ChoiceBox<?> cbSprachen;
+
+    @FXML
+    private Button btZurück;
+
+    @FXML
+    void anlegenSchule(ActionEvent event)
     {
-    	Schule lSchule = new Schule(SchülerID.getAktuelleSchülerID(), tfSchulname1.getText());
+    	Schule lSchule = new Schule(SchülerID.getAktuelleSchülerID(), tfSchulname.getText());
     	lSchule.anlegen();
     	System.out.print("bla");
     }
 
     @FXML
-    void anlegen(ActionEvent event) 
+    void anlegen(ActionEvent event)
     {
 
     }
