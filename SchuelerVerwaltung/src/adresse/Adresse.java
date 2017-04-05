@@ -1,4 +1,6 @@
-package anwendungslogik;
+package adresse;
+
+import java.util.Scanner;
 
 public class Adresse
 {
@@ -6,6 +8,7 @@ private String strasse;
 private int hausNummer;
 private String wohnort;
 private int plz;
+private String AdresseStraßeMitHausnummer;
 /**
  * Konstruktor ohne Parameter erstellt ein leeres Objekt
  */
@@ -25,6 +28,13 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 	this.plz = pPlz;
 }
 
+public Adresse(String pAdresseStraßeMitHausnummer, String pWohnort, int pPlz)
+{
+	this.AdresseStraßeMitHausnummer = pAdresseStraßeMitHausnummer;
+	this.wohnort = pWohnort;
+	this.plz = pPlz;
+}
+
 /**
  * Konstruktor mit Strings
  * @param pStrasse
@@ -35,6 +45,30 @@ public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 public Adresse(String pStrasse, String pHausnummer, String pWohnort, String pPlz)
 {
 	this(pStrasse, Integer.parseInt(pHausnummer), pWohnort, Integer.parseInt(pPlz));
+}
+
+
+/**
+ * abtrennenHausnummer
+ * Entfernt die Hausnummer aus dem Straßenattribut und fügt sie in das
+ * Attribut Hausnummer ein.
+ */
+public void abtrennenHausnummer()
+{
+	Integer lHausnummer = 0;
+	Scanner lStraßenStringEingescannt = new Scanner(strasse);
+	while (lStraßenStringEingescannt.hasNext())
+	{
+	  if (lStraßenStringEingescannt.hasNextInt())
+		{
+		  lHausnummer = lStraßenStringEingescannt.nextInt();}
+	  else
+	  {
+         lStraßenStringEingescannt.next();
+	  }
+	}
+	this.hausNummer = lHausnummer;
+	this.strasse = this.strasse.replace(lHausnummer.toString(), "").trim();
 }
 
 //Nur set- und get-Methoden ab hier  ... und ausgeben
