@@ -1,6 +1,7 @@
 package anwendungslogik;
 
 import lehrmittel.Lehrmittel;
+import allgemeinedaten.AngabenZurPerson;
 import kontaktdaten.Kontaktdaten;
 
 public class SchülerIn
