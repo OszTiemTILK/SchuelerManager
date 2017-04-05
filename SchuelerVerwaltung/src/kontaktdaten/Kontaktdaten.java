@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 
 
+
 public class Kontaktdaten
 {
 private KontaktdatenID	kontaktdatenID;
@@ -102,6 +103,13 @@ public void setFax(String pFax)
 */
 //Datenbank Methoden
 
+public void ergänzen()
+{
+  Kontaktdaten lKontaktdaten = auslesenDB(this.kontaktdatenID.getID());
+  festnetzNummer = lKontaktdaten.festnetzNummer;
+  mobilNummer = lKontaktdaten.mobilNummer;
+  email = lKontaktdaten.email ;
+}
 
 public void speichernDB()
 {
@@ -123,7 +131,7 @@ public void speichernDB()
 
 }
 
-public static Kontaktdaten auslesenDB(int FahrradausleiheIDWert)
+public static Kontaktdaten auslesenDB(int pKontaktdatenIDWert)
 {
 
       Connection lConnection = VerbindungKontaktdaten.holen();
@@ -134,7 +142,7 @@ public static Kontaktdaten auslesenDB(int FahrradausleiheIDWert)
 
 	  try {
 	  lBefehl = lConnection.createStatement();
-	  lErgebnis = lBefehl.executeQuery("SELECT * FROM kontaktdaten WHERE ID = "+ /*ID*/);
+	  lErgebnis = lBefehl.executeQuery("SELECT * FROM kontaktdaten WHERE ID = "+pKontaktdatenIDWert);
 	  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 	  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
