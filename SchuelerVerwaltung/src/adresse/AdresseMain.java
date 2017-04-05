@@ -21,7 +21,7 @@ public class AdresseMain extends Application {
     	this.grundStage = pPrimaryStage;
         FXMLLoader lLoader = new FXMLLoader();
         // Namen der FXML datei ändern
-        lLoader.setLocation(AdresseMain.class.getResource("Maske3 - Adresse.fxml"));
+        lLoader.setLocation(AdresseMain.class.getResource("AdresseView.fxml"));
         grundPane = lLoader.load();
 
         Scene lScene = new Scene(grundPane);
