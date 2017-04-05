@@ -1,4 +1,4 @@
-package fx;
+package allgemeinedaten;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class AngabenZurPersonProgramm extends Application {
+public class AngabenZurPersonMain extends Application {
 
     private Stage grundStage;
     private AnchorPane grundPane;
@@ -20,7 +20,7 @@ public class AngabenZurPersonProgramm extends Application {
     	this.grundStage = pPrimaryStage;
         FXMLLoader lLoader = new FXMLLoader();
         // Namen der FXML datei ändern
-        lLoader.setLocation(AngabenZurPersonProgramm.class.getResource("Maske_1_1_AgDView.fxml"));
+        lLoader.setLocation(AngabenZurPersonMain.class.getResource("Maske_1_1_AgDView.fxml"));
         grundPane = lLoader.load();
 
         Scene lScene = new Scene(grundPane);
