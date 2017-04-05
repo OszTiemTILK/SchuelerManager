@@ -1,6 +1,6 @@
-package fx;
+package allgemeinedaten;
 
-import anwendungslogik.AngabenZurPerson;
+
 import anwendungslogik.Geschlecht;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
