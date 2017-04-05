@@ -67,7 +67,7 @@ public void speichern(SchülerID pSchülerID)
 	}
 }
 
-public Lehrmittel[] holen(SchülerID pID) {
+public static Lehrmittel[] holen(SchülerID pID) {
 	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
 	Connection lConnection = Datenbankverbindung.holen();
 
