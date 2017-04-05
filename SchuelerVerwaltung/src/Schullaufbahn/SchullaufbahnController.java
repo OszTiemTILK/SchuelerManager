@@ -54,7 +54,7 @@ public class SchullaufbahnController {
     {
     	Schule lSchule = new Schule(SchülerID.getAktuelleSchülerID(), tfSchulname.getText());
     	lSchule.anlegen();
-    	System.out.print("bla");
+    	System.out.print("blaa");
     }
 
     @FXML

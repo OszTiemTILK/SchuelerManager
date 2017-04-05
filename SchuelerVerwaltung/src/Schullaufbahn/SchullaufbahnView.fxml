@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Schullaufbahn.SchullaufbahnController">
    <children>
-      <Button fx:id="btNächsteSchule" layoutX="504.0" layoutY="442.0" mnemonicParsing="false" onAction="#anlegenSchule" text="Nächste Schule" />
+      <Button fx:id="btNächsteSchule" layoutX="504.0" layoutY="432.0" mnemonicParsing="false" onAction="#anlegenSchule" text="Nächste Schule" />
       <Button fx:id="btZurück" layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
       <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
       <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
