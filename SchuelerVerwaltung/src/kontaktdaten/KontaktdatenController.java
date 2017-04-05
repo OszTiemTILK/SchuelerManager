@@ -37,6 +37,22 @@ public class KontaktdatenController {
 	    private Button btSpeichern; // Value injected by FXMLLoader
 
 	    @FXML
+	    private Button btSuchen;
+
+	    @FXML
+	    private TextField tfVorname;
+
+	    @FXML
+	    private TextField tfName;
+
+
+	    @FXML
+	    void suchen(ActionEvent event) {
+
+	    }
+
+
+	    @FXML
 	    void speichern(ActionEvent event)
 	    {
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText());
