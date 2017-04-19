@@ -47,8 +47,10 @@ public class KontaktdatenController {
 
 
 	    @FXML
-	    void suchen(ActionEvent event) {
-
+	    void suchen(ActionEvent event)
+	    {
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
+	    	lKontaktdaten.suchenID();
 	    }
 
 
@@ -70,7 +72,8 @@ public class KontaktdatenController {
 	    }
 
 	    @FXML // This method is called by the FXMLLoader when initialization is complete
-	    void initialize() {
+	    void initialize()
+	    {
 	        assert tfFestnetz != null : "fx:id=\"tfTelephon\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfEmail != null : "fx:id=\"tfEmail\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfKontaktdatenID != null : "fx:id=\"tfKontaktdatenID\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
