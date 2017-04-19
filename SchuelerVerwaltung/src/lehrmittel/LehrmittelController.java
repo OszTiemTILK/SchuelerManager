@@ -139,13 +139,15 @@ public class LehrmittelController
     	schülerin.speichernLehrmittel();
     }
 
-    private void ladenLehrmittel(String pFach)
+    private void ladenLehrmittelFürFach(String pFach)
     {
-    	if(lehrmittelMap.get(pFach) != null)
+    	if(lehrmittelMap.get(pFach) == null)
     	{
         	Lehrmittel[] lLehrmittel = Lehrmittel.holenFürFach(pFach);
 
         	lehrmittelMap.put(pFach, lLehrmittel);
+
+        	System.out.println(lLehrmittel);
     	}
     }
 
@@ -153,9 +155,6 @@ public class LehrmittelController
     {
     	ArrayList<String> lLehrmittelArtListe = new ArrayList<String>();
     	ArrayList<String> lLehrmittelNameListe = new ArrayList<String>();
-
-    	lLehrmittelArtListe.add("");
-    	lLehrmittelNameListe.add("");
 
     	for(int i = 0; i < pLehrmittel.length; i++)
     	{
@@ -167,11 +166,15 @@ public class LehrmittelController
     	pCbName.setItems(FXCollections.observableArrayList(lLehrmittelNameListe));
     }
 
+/*
     public void klickenChoiceboxFach1()
     {
-    	ladenLehrmittel(cbFach1.getValue());
+    	if(cbFach1.getValue() != "")
+    	{
+        	ladenLehrmittel(cbFach1.getValue());
 
-    	zuweisenLehrmittel(cbArt1, cbName1, lehrmittelMap.get(cbFach1.getValue()));
+        	zuweisenLehrmittel(cbArt1, cbName1, lehrmittelMap.get(cbFach1.getValue()));
+    	}
     }
 
     public void klickenChoiceboxFach2()
@@ -201,7 +204,7 @@ public class LehrmittelController
 
     	zuweisenLehrmittel(cbArt5, cbName5, lehrmittelMap.get(cbFach5.getValue()));
     }
-
+*/
     public void drueckenZuruecksetzen()
     {
     	setzenAnfangswerte();
@@ -267,8 +270,6 @@ public class LehrmittelController
 
     public void ladenSchülerIn()
     {
-    	DBVerbindung lDB = new DBVerbindung();
-
     	schülerin = new SchülerIn();
 
     	SchülerID lID = new SchülerID();
@@ -334,5 +335,31 @@ public class LehrmittelController
     public void initialize()
     {
     	laden();
+
+    	ladenLehrmittel();
+    	ladenAlleLehrmittel();
     }
+
+    private void ladenAlleLehrmittel()
+    {
+    	for(String lFach : cbFach1.getItems())
+    	{
+    		if(lFach != "")
+    		{
+    			ladenLehrmittelFürFach(lFach);
+    			zuweisenLehrmittelAlleFelder(lFach);
+    		}
+    	}
+    }
+
+    private void zuweisenLehrmittelAlleFelder(String pFach)
+    {
+    	zuweisenLehrmittel(cbArt1, cbName1, lehrmittelMap.get(pFach));
+    	zuweisenLehrmittel(cbArt2, cbName2, lehrmittelMap.get(pFach));
+    	zuweisenLehrmittel(cbArt3, cbName3, lehrmittelMap.get(pFach));
+    	zuweisenLehrmittel(cbArt4, cbName4, lehrmittelMap.get(pFach));
+    	zuweisenLehrmittel(cbArt5, cbName5, lehrmittelMap.get(pFach));
+
+    }
+
 }
