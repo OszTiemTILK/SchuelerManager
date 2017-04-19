@@ -79,8 +79,8 @@ public static Lehrmittel[] holen(SchülerID pID) {
      result.first();  //Zeigt auf den ersten Datensatz in result
 
      while(! result.isAfterLast()) { // as long as valid data is in the result set
-       new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe"));
 
+       lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
 //       System.out.println(result.getDate(6));
 
        result.next(); // geht zum nächsten Datensatz in result
@@ -105,13 +105,22 @@ public static Lehrmittel[] holenFürFach(String pFach)
 	Connection lConnection = Datenbankverbindung.holen();
 	try {
 	     stmt = lConnection.createStatement();
-	     result = stmt.executeQuery("SELECT * FROM Lernmittel l WHERE Fach = '" + pFach + "'" /* + pID.getSchülerID() */ /* + lWhere  + " WHERE " + lWhere */);
+	     result = stmt.executeQuery("SELECT * FROM Lernmittel l WHERE Fach = '" + pFach + "'");
 	     result.first();  //Zeigt auf den ersten Datensatz in result
+
+	     while(! result.isAfterLast()) { // as long as valid data is in the result set
+
+	         lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
+
+	         result.next(); // geht zum nächsten Datensatz in result
+	       }
 	}
+
     catch (Exception ex) {
         System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
-}
-	  return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
+    }
+
+	return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
 }
 
 public String getFach() {
