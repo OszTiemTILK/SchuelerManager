@@ -107,15 +107,20 @@ public static Lehrmittel[] holenFürFach(String pFach)
 	     stmt = lConnection.createStatement();
 	     result = stmt.executeQuery("SELECT * FROM Lernmittel l WHERE Fach = '" + pFach + "'");
 	     result.first();  //Zeigt auf den ersten Datensatz in result
-	     lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
+
+	     while(! result.isAfterLast()) { // as long as valid data is in the result set
+
+	         lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
+
+	         result.next(); // geht zum nächsten Datensatz in result
+	       }
 	}
+
     catch (Exception ex) {
         System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
     }
 
-
-
-	  return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
+	return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
 }
 
 public String getFach() {
