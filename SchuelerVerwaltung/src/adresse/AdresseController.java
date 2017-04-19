@@ -78,6 +78,7 @@ public class AdresseController {
     {
     	Adresse lAdresse = new Adresse(tfAdresseStraßeMitHausnummer1.getText(), tfWohnort1.getText(), Integer.parseInt(tfPlz1.getText()));
     	lAdresse.anlegenAdresse();
+    	
     }
 
 }
