@@ -86,7 +86,7 @@ public class Sprachkompetenz {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where id="+ SprachkompetenzIDWert +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ SprachkompetenzIDWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -101,7 +101,7 @@ public class Sprachkompetenz {
 
 		  	 } catch (Exception ex)
 		  		{
-		    System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
+		    System.out.println("Fehler bei der Verarbeitung: " + ex.getMessage());
 		  		}
 		  return null;
 	  }
