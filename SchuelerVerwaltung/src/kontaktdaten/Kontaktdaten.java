@@ -17,8 +17,9 @@ private KontaktdatenID	kontaktdatenID;
 private String festnetzNummer;
 private String mobilNummer;
 private String email;
-private String fax; //wird erstmal nicht gebraucht
-
+//private String fax; //wird erstmal nicht gebraucht
+private String vorname;
+private String name;
 /*
  * Konstruktoren
  */
@@ -26,6 +27,11 @@ public Kontaktdaten (int pKontaktdatenID)
 {
 
 	this.kontaktdatenID = new KontaktdatenID(pKontaktdatenID);
+}
+public Kontaktdaten (String pVorname, String pName)
+{
+	this.vorname = pVorname;
+	this.name = pName;
 }
 public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail)
 {
@@ -118,7 +124,7 @@ public void speichernDB()
 {
   Connection lConnection = VerbindungKontaktdaten.holen();
   Statement lBefehl;
-  ResultSet lErgebnis;
+
 
 
   try
