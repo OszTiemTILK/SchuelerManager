@@ -42,6 +42,17 @@ public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail)
     this.email =pEmail;
 
 }
+public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail, String pName, String pVorname)
+{
+
+	this.kontaktdatenID = this.suchenID();
+	this.festnetzNummer = pFestnetznummer;
+	this.mobilNummer = pMobilnummer;
+	this.email =pEmail;
+	this.name = pName;
+	this.vorname = pVorname;
+
+}
 public Kontaktdaten (int pKontaktdatenID,String pFestnetznummer, String pMobilnummer, String pEmail)
 {
 
