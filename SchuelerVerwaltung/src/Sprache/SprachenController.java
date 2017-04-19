@@ -1,3 +1,6 @@
+/*
+ * Onur Sükür 06.03.2017 angelegt
+ */
 package Sprache;
 
 import javafx.fxml.FXML;
@@ -64,16 +67,16 @@ public class SprachenController {
 	    private TextField tfSonstigesNiveau;
 
 	    @FXML
-	    private Button    btSpeichern;
+	    private Button    btAnlegenÄndern;
 
 	    @FXML
-	    private Button    btAnlegenDatei;
+	    private Button    btAuslesen;
 
 	    @FXML
 	    private TextField tfID;
 
 	    @FXML
-	    void anlegenDatei(ActionEvent event)
+	    void anlegenÄndern(ActionEvent event)
 	    {
 	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(null, null, 0);
 	       lSprachkompetenz.ergänzen();
