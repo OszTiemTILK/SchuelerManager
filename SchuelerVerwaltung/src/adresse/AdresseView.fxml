@@ -16,9 +16,6 @@
             <Image url="@src/logo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfFestnetzHandynummer1" layoutX="520.0" layoutY="150.0" prefHeight="50.0" prefWidth="134.0" />
-      <TextField fx:id="tfFestnetzHandynummer2" layoutX="520.0" layoutY="300.0" prefHeight="50.0" prefWidth="134.0" />
-      <TextField fx:id="tfFestnetzHandynummer3" layoutX="520.0" layoutY="450.0" prefHeight="50.0" prefWidth="134.0" />
       <Label layoutX="267.0" layoutY="70.0" prefHeight="14.0" prefWidth="134.0" text="Kontaktdaten" />
       <Label layoutX="14.0" layoutY="255.0" prefHeight="14.0" prefWidth="134.0" />
       <Label layoutX="55.0" layoutY="136.0" text="Adresse: Straße mit Hausnummer" />
@@ -27,32 +24,5 @@
       <TextField fx:id="tfPlz1" layoutX="242.0" layoutY="150.0" prefHeight="22.0" prefWidth="58.0" />
       <TextField fx:id="tfWohnort1" layoutX="325.0" layoutY="150.0" />
       <Label layoutX="329.0" layoutY="136.0" text="Wohnort" />
-      <Label layoutX="520.0" layoutY="136.0" text="Festnetz- und Handynummer" />
-      <TextField fx:id="tfAdresseStraßeMitHausnummer2" layoutX="55.0" layoutY="300.0" prefHeight="22.0" prefWidth="164.0" />
-      <Label layoutX="55.0" layoutY="436.0" text="Adresse: Straße mit Hausnummer" />
-      <TextField fx:id="tfPlz2" layoutX="242.0" layoutY="300.0" prefHeight="22.0" prefWidth="58.0" />
-      <Label layoutX="242.0" layoutY="436.0" text="PLZ" />
-      <TextField fx:id="tfWohnort2" layoutX="325.0" layoutY="300.0" />
-      <Label layoutX="329.0" layoutY="286.0" text="Wohnort" />
-      <Label layoutX="520.0" layoutY="286.0" text="Festnetz- und Handynummer" />
-      <TextField fx:id="tfAdresseStraßeMitHausnummer3" layoutX="55.0" layoutY="450.0" prefHeight="22.0" prefWidth="164.0" />
-      <TextField fx:id="tfPlz3" layoutX="242.0" layoutY="450.0" prefHeight="22.0" prefWidth="58.0" />
-      <TextField fx:id="tfWohnort3" layoutX="325.0" layoutY="450.0" />
-      <Label layoutX="329.0" layoutY="436.0" text="Wohnort" />
-      <Label layoutX="242.0" layoutY="286.0" text="PLZ" />
-      <Label layoutX="55.0" layoutY="286.0" text="Adresse: Straße mit Hausnummer" />
-      <Label layoutX="520.0" layoutY="436.0" text="Festnetz- und Handynummer" />
-      <Label layoutX="520.0" layoutY="250.0" text="Fax" />
-      <TextField fx:id="tfEmail1" layoutX="520.0" layoutY="214.0" />
-      <Label layoutX="520.0" layoutY="500.0" text="E-Mail" />
-      <TextField fx:id="tfEmail2" layoutX="520.0" layoutY="364.0" />
-      <TextField fx:id="tfEmail3" layoutX="520.0" layoutY="514.0" />
-      <Label layoutX="520.0" layoutY="350.0" text="E-Mail" />
-      <TextField fx:id="tfFax1" layoutX="520.0" layoutY="264.0" />
-      <TextField fx:id="tfFax2" layoutX="520.0" layoutY="414.0" />
-      <TextField fx:id="tfFax3" layoutX="520.0" layoutY="564.0" />
-      <Label layoutX="520.0" layoutY="400.0" text="Fax" />
-      <Label layoutX="520.0" layoutY="200.0" text="E-Mail" />
-      <Label layoutX="520.0" layoutY="550.0" text="Fax" />
    </children>
 </AnchorPane>
