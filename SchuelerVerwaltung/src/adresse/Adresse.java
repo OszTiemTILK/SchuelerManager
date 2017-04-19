@@ -63,7 +63,7 @@ Statement lBefehl;
 
 try {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO adresse(Ort,PLZ,Straße,HausNr) VALUES("+pWohnort+","+pPlz+","+pStrasse+","+pHausnummer+")");
+	lBefehl.execute("INSERT INTO db_schulprojekt.adresse(Ort,PLZ,Straße,HausNr) VALUES("+pWohnort+","+pPlz+","+pStrasse+","+pHausnummer+")");
 
 } catch (SQLException e) {
 	// TODO Auto-generated catch block
