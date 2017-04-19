@@ -80,7 +80,7 @@ public static Lehrmittel[] holen(SchülerID pID) {
 
      while(! result.isAfterLast()) { // as long as valid data is in the result set
 
-       lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
+       lArraylist.add(new Lehrmittel(result.getString("Fach"), result.getString("Art"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
 //       System.out.println(result.getDate(6));
 
        result.next(); // geht zum nächsten Datensatz in result
@@ -110,7 +110,7 @@ public static Lehrmittel[] holenFürFach(String pFach)
 
 	     while(! result.isAfterLast()) { // as long as valid data is in the result set
 
-	         lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.now(), result.getBoolean("Rückgabe")));
+	         lArraylist.add(new Lehrmittel(result.getString("Fach"), result.getString("Art"), result.getString("Name"), LocalDate.now(), false));
 
 	         result.next(); // geht zum nächsten Datensatz in result
 	       }
