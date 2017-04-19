@@ -13,9 +13,7 @@ public class Lehrmittel {
 private	String fach;
 private	String art;
 private	String name;
-private LocalDate ausgegeben;
-private boolean rückgabe;
-private	int lehrmittelID;
+private	LehrmittelID lehrmittelID;
 
 	/**
 	 * Konstruktor ohne Parameter erstellt ein leeres Objekt
@@ -30,42 +28,15 @@ public Lehrmittel()
  * @param pFach
  * @param pArt
  * @param pName
- * @param pAusgegeben
- * @param pRückgabe
  */
-public Lehrmittel(String pFach, String pArt, String pName, LocalDate pAusgegeben, boolean pRückgabe)
+public Lehrmittel(String pFach, String pArt, String pName, LehrmittelID pLehrmittelID)
 {
 	this.fach = pFach;
 	this.art = pArt;
 	this.name = pName;
-	this.ausgegeben = pAusgegeben;
-	this.rückgabe = pRückgabe;
+	this.lehrmittelID = pLehrmittelID;
 }
-/**
- * Lehrmittel anlegen
- */
-public void anlegen()
-{
 
-}
-/**
- * Lehrmittel speichern
- */
-public void speichern(SchülerID pSchülerID)
-{
-	Connection lConnection = Datenbankverbindung.holen();
-
-	Statement stmt = null;
-
-	try {
-	     stmt = lConnection.createStatement();
-	     stmt.execute("INSERT INTO Lernmittel VALUES ("+this.getLehrmittelID()+", '"+this.getArt()+"', '"+this.getFach()+"', '"+this.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
-
-
-	} catch (Exception ex) {
-	    System.out.println("Fehler bei der Verarbeitung + " + "Lehrmittel" + " " + ex.getMessage());
-	}
-}
 
 public static Lehrmittel[] holen(SchülerID pID) {
 	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
@@ -147,27 +118,11 @@ public void setName(String name) {
 	this.name = name;
 }
 
-public LocalDate getAusgegeben() {
-	return ausgegeben;
-}
-
-public void setAusgegeben(LocalDate ausgegeben) {
-	this.ausgegeben = ausgegeben;
-}
-
 public int getLehrmittelID() {
 	return lehrmittelID;
 }
 
 public void setLehrmittelID(int lehrmittelID) {
 	this.lehrmittelID = lehrmittelID;
-}
-
-public boolean isRückgabe() {
-	return rückgabe;
-}
-
-public void setRückgabe(boolean rückgabe) {
-	this.rückgabe = rückgabe;
 }
 }
