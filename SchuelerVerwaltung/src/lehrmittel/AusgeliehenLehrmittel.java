@@ -20,6 +20,7 @@ public class AusgeliehenLehrmittel
 		this.ausgegeben = pAusgegeben;
 		this.rückgabe = pRückgabe;
 		this.lehrmittelID = pLehrmittelID;
+		AusleiheID ausleiheID = new AusleiheID;
 	}
 
 	/**
