@@ -1,4 +1,4 @@
-package anwendungslogik;
+package Sprache;
 
 public class SprachkompetenzID
 {
