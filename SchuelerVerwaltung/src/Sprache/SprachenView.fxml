@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.SprachenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sprache.SprachenController">
    <children>
       <TextField fx:id="tfTitel" layoutX="267.0" layoutY="83.0" text="Titel" />
       <TextArea fx:id="taText" layoutX="180.0" layoutY="149.0" prefHeight="74.0" prefWidth="323.0" text="Wählen Sie die Sprachen aus, welche Sie sprechen.&#10;Im Dropdown daneben können Sie Ihre Sprachkenntnisse&#10;angeben. A1 steht hierbei für Grundkenntnisse und&#10;C2 für fortgeschrittene Kenntnisse." />
@@ -31,6 +31,6 @@
       </ImageView>
       <Button fx:id="btSpeichern" layoutX="207.0" layoutY="444.0" mnemonicParsing="false" text="Speichern" />
       <Button fx:id="btAnlegenDatei" layoutX="390.0" layoutY="444.0" mnemonicParsing="false" onAction="#anlegenDatei" text="AnlegenDatei" />
-      <TextField fx:id="tfID" layoutX="74.0" layoutY="83.0" text="ID" />
+      <TextField fx:id="tfSchülerID" layoutX="74.0" layoutY="83.0" text="SchülerID" />
    </children>
 </AnchorPane>

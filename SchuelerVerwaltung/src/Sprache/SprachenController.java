@@ -1,4 +1,4 @@
-package fx;
+package Sprache;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -6,7 +6,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import anwendungslogik.Sprachkompetenz;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import java.lang.Object;
@@ -76,7 +75,7 @@ public class SprachenController {
 	    @FXML
 	    void anlegenDatei(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(tfID.getText(), tfTitel.getText(), tfSprachen.getText(), cbDeutschNiveau.getItems(), cbEnglischNiveau.getItems(), cbTürkischNiveau.getItems(), cbArabischNiveau.getItems(), tfSonstigesNiveau.getText());
+	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(null, null, 0);
 	       lSprachkompetenz.ergänzen();
 
 	    }

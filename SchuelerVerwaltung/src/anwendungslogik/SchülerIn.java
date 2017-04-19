@@ -1,6 +1,7 @@
 package anwendungslogik;
 
 import lehrmittel.Lehrmittel;
+import Sprache.Sprachkompetenz;
 import allgemeinedaten.AngabenZurPerson;
 import kontaktdaten.Kontaktdaten;
 

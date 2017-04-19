@@ -1,7 +1,7 @@
 /*
  * Jose 08.03.2017 angelegt
  */
-package anwendungslogik;
+package Sprache;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,9 +9,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Sprache.Sprachkompetenz;
 import datenbank.Datenbankverbindung;
 import javafx.collections.ObservableList;
-import anwendungslogik.Sprachkompetenz;
 
 public class Sprachkompetenz {
 	SprachkompetenzID IDSprache;
