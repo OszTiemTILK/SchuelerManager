@@ -6,7 +6,8 @@ import java.sql.*;
 
 public class Schule
 {
-	private LocalDate ausgeschiedenAm;
+	private LocalDate einschulung;
+	private LocalDate abgang;
 	private int ausgeschiedenAusJahrgang;
 	private boolean sonderschule;
 	private boolean hauptschule;
@@ -20,7 +21,10 @@ public class Schule
 	private String land;
 	private String erreichterAbschluss;
 	private String bemerkungen;
-    SchülerID schülerID;
+    IDSchule iDSchule;
+    private String typ;
+    private String straße;
+    private String ort;
 
 
 
@@ -49,7 +53,7 @@ public class Schule
 
 	public Schule(LocalDate pAusgeschiedenAm, int pAusgeschiedenAusJahrgang, boolean pSonderschule, boolean pHauptschule, boolean pRealschule,boolean pSekundarschule, boolean pGesamtschule, boolean pGymnasium, String pSchulname, String pBezirk, String pStadt, String pLand, String pErreichterAbschluss, String pBemerkung)
 	{
-			this.ausgeschiedenAm = pAusgeschiedenAm;
+			this.abgang = pAusgeschiedenAm;
 			this.ausgeschiedenAusJahrgang = pAusgeschiedenAusJahrgang;
 			this.sonderschule = pSonderschule;
 			this.hauptschule = pHauptschule;
@@ -67,16 +71,18 @@ public class Schule
 	/**
 	 * Test-Konstrunkor und testbereich
 	 */
-	public Schule(int pSchülerID, String pSchulname)
+	public Schule(int pIDSchule, String pSchulname, String pTyp, String pStraße, String pOrt)
 	{
 			this.schulname = pSchulname;
-			this.schülerID = new SchülerID(pSchülerID);
+			this.iDSchule = new IDSchule(pIDSchule);
+			this.typ = pTyp;
+			this.straße = pStraße;
+			this.ort = pOrt;
+			
 	}
+
 	
-	public Schule( String pSchulname)
-	{
-			this.schulname = pSchulname;
-	}
+
 
 	/**
 	 * Ende des Testbereiches
@@ -95,7 +101,7 @@ public class Schule
 	  try
 	  {
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("INSERT INTO db_schulprojekt.schullaufbahn VALUES ("+schülerID.getSchülerSchülerID()+",\""+schulname+"\")");
+		lBefehl.execute("INSERT INTO db_schulprojekt.schule VALUES ("+iDSchule.getIDSchule()+",\""+schulname+"\",\""+typ+"\",\""+straße+"\",\""+ort+"\")");
 	  } catch (SQLException e)
 	  {
 		// TODO Auto-generated catch block
@@ -121,7 +127,7 @@ public class Schule
 
 	public void ausgeben()
 	{
-		System.out.println(ausgeschiedenAm.toString());
+		System.out.println(abgang.toString());
 		System.out.println(ausgeschiedenAusJahrgang);
 		System.out.println(sonderschule);
 		System.out.println(hauptschule);
@@ -138,11 +144,11 @@ public class Schule
 	}
 	public LocalDate getAusgeschiedenAm()
 	{
-		return ausgeschiedenAm;
+		return abgang;
 	}
 	public void setAusgeschiedenAm(LocalDate pDatum)
 	{
-		this.ausgeschiedenAm = pDatum;
+		this.abgang = pDatum;
 	}
 	public int getAusgeschiedenAusJahrgang()
 	{
@@ -248,4 +254,53 @@ public class Schule
 	{
 		this.land = pLand;
 	}
+	public String getTyp() {
+		return typ;
+	}
+
+	public void setTyp(String typ) 
+	{
+		this.typ = typ;
+	}
+
+	public String getStraße() 
+	{
+		return straße;
+	}
+
+	public void setStraße(String straße) 
+	{
+		this.straße = straße;
+	}
+
+	public String getOrt() {
+		return ort;
+	}
+
+	public void setOrt(String ort) 
+	{
+		this.ort = ort;
+	}
+
+	public Schule( String pSchulname)
+	{
+			this.schulname = pSchulname;
+	}
+	
+	public LocalDate getEinschulung() {
+		return einschulung;
+	}
+
+	public void setEinschulung(LocalDate einschulung) {
+		this.einschulung = einschulung;
+	}
+
+	public LocalDate getAbgang() {
+		return abgang;
+	}
+
+	public void setAbgang(LocalDate abgang) {
+		this.abgang = abgang;
+	}
+
 }

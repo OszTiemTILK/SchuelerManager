@@ -11,7 +11,7 @@ import javafx.scene.control.ChoiceBox;
 public class SchullaufbahnController {
 
     @FXML
-    private TextField tfArt;
+    private TextField tfTyp;
 
     @FXML
     private Button btWeiter;
@@ -52,15 +52,10 @@ public class SchullaufbahnController {
     @FXML
     void anlegenSchule(ActionEvent event)
     {
-    	Schule lSchule = new Schule(SchülerID.getAktuelleSchülerID(), tfSchulname.getText());
+    	Schule lSchule = new Schule(IDSchule.getAktuelleIDSchule(), tfSchulname.getText(), tfTyp.getText(), tfStraße.getText(), tfOrt.getText());
     	lSchule.anlegen();
     	System.out.print("blaa");
     }
 
-    @FXML
-    void anlegen(ActionEvent event)
-    {
-
-    }
 
 }
