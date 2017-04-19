@@ -110,7 +110,7 @@ public static Lehrmittel[] holenFürFach(String pFach)
 
 	     while(! result.isAfterLast()) { // as long as valid data is in the result set
 
-	         lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.parse(result.getString("Datum")), result.getBoolean("Rückgabe")));
+	         lArraylist.add(new Lehrmittel(result.getString("Art"), result.getString("Fach"), result.getString("Name"), LocalDate.now(), result.getBoolean("Rückgabe")));
 
 	         result.next(); // geht zum nächsten Datensatz in result
 	       }
