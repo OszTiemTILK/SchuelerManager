@@ -35,9 +35,6 @@ public Lehrmittel(String pFach, String pArt, String pName, LehrmittelID pLehrmit
 	this.lehrmittelID = pLehrmittelID;
 }
 
-
-
-
 public static Lehrmittel[] holenFürFach(String pFach)
 {
 	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
