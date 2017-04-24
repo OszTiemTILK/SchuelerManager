@@ -11,15 +11,15 @@ public class AusgeliehenLehrmittel
 {
 	private LocalDate ausgegeben;
 	private boolean rückgabe;
-	private LehrmittelID lehrmittelID;
+	private Lehrmittel lehrmittel;
 	private AusleiheID ausleiheID;
 
 
-	public AusgeliehenLehrmittel(LocalDate pAusgegeben, boolean pRückgabe, LehrmittelID pLehrmittelID)
+	public AusgeliehenLehrmittel(LocalDate pAusgegeben, boolean pRückgabe, Lehrmittel pLehrmittelID)
 	{
 		this.ausgegeben = pAusgegeben;
 		this.rückgabe = pRückgabe;
-		this.lehrmittelID = pLehrmittelID;
+		this.lehrmittel = pLehrmittelID;
 		AusleiheID ausleiheID = new AusleiheID();
 	}
 
@@ -35,7 +35,7 @@ public class AusgeliehenLehrmittel
 		try
 		{
 		     stmt = lConnection.createStatement();
-		     stmt.execute("INSERT INTO Lernmittel VALUES ("+this.getLehrmittelID()+", '"+this.getArt()+"', '"+this.getFach()+"', '"+this.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
+		     stmt.execute("INSERT INTO Lernmittel VALUES ("+lehrmittel.getLehrmittelID()+", '"+lehrmittel.getArt()+"', '"+lehrmittel.getFach()+"', '"+lehrmittel.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
 
 
 		} catch (Exception ex)
@@ -64,14 +64,14 @@ public class AusgeliehenLehrmittel
 		this.rückgabe = rückgabe;
 	}
 
-	public LehrmittelID getLehrmittelID()
+	public Lehrmittel getLehrmittel()
 	{
-		return this.lehrmittelID;
+		return this.lehrmittel;
 	}
 
-	public void setLehrmittelID(LehrmittelID pLehrmittelID)
+	public void setLehrmittelID(Lehrmittel pLehrmittel)
 	{
-		this.lehrmittelID = pLehrmittelID;
+		this.lehrmittel = pLehrmittel;
 	}
 
 	public AusleiheID getAusleiheID()
