@@ -3,12 +3,9 @@ package lehrmittel;
 public class LehrmittelID {
 
 	private int id;
-	public LehrmittelID()
+	public LehrmittelID(int pID)
 	{
-
-
-
-
+		this.id = pID;
 	}
 	public int getId()
 	{
