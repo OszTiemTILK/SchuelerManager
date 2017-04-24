@@ -5,14 +5,17 @@ public class LehrmittelID {
 	private int id;
 	public LehrmittelID()
 	{
-		
-		id = holenHöchsteVergebeneID() + 1;
-		
-		
+
+
+
+
 	}
-	public int holenHöchsteVergebeneID()
+	public int getId()
 	{
-	
-		
+		return id;
+	}
+	public void setId(int pid)
+	{
+		this.id = pid;
 	}
 }
