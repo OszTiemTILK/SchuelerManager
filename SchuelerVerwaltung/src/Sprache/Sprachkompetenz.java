@@ -17,23 +17,28 @@ public class Sprachkompetenz {
 	SprachkompetenzID IDSprache;
 	private Boolean sprachenName;
 	private String sprachenNiveau;
-
+	private Boolean sprachenDeutsch;
+	private Boolean sprachenEnglisch;
+	private Boolean sprachenTürkisch;
+	private Boolean sprachenArabisch;
+	private String sprachenSonstiges;
 	/**
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
 	 * @param pSprachenNiveau
 	 * @param pSprachkompetenzID
 	 */
-	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert)
+	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, String pSprachenSonstiges)
 	{
 		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
+		this.sprachenDeutsch = pSprachenDeutsch;
+		this.sprachenEnglisch = pSprachenEnglisch;
+		this.sprachenTürkisch = pSprachenTürkisch;
+		this.sprachenArabisch = pSprachenArabisch;
+		this.sprachenSonstiges = pSprachenSonstiges;
 	}
-
-
-
-
 
 	/** legt Sprachen an
 	 *
@@ -136,6 +141,46 @@ public class Sprachkompetenz {
 	public void setSprachkompetenzID(SprachkompetenzID pSprachkompetenzID)
 	{
 		this.IDSprache = pSprachkompetenzID;
+	}
+	public Boolean getSprachenDeutsch()
+	{
+		return sprachenDeutsch;
+	}
+	public void setSprachenDeutsch(Boolean pSprachenDeutsch)
+	{
+		this.sprachenDeutsch = pSprachenDeutsch;
+	}
+	public Boolean getSprachenEnglisch()
+	{
+		return sprachenEnglisch;
+	}
+	public void setSprachenEnglisch(Boolean pSprachenEnglisch)
+	{
+		this.sprachenEnglisch = pSprachenEnglisch;
+	}
+	public Boolean getSprachenTürkisch()
+	{
+		return sprachenTürkisch;
+	}
+	public void setSprachenTürkisch(Boolean pSprachenTürkisch)
+	{
+		this.sprachenTürkisch = pSprachenTürkisch;
+	}
+	public Boolean getSprachenArabisch()
+	{
+		return sprachenArabisch;
+	}
+	public void setSprachenArabisch(Boolean pSprachenArabisch)
+	{
+		this.sprachenArabisch = pSprachenArabisch;
+	}
+	public String getSprachenSonstiges()
+	{
+		return sprachenSonstiges;
+	}
+	public void setSprachenSonstiges(String pSprachenSonstiges)
+	{
+		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
 }
