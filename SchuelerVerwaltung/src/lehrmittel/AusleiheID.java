@@ -24,7 +24,7 @@ public class AusleiheID
 
 	public int holenNächsteAusleiheID()
 	{
-		int nächsteAusleiheID = 0;
+		int lNächsteID = 0;
 
 		Statement stmt = null;
 		ResultSet result = null;
@@ -32,16 +32,16 @@ public class AusleiheID
 		try
 		{
 			stmt = lConnection.createStatement();
-			result = stmt.executeQuery("Select IDAusleihe FROM db_schulprojekt.ausgeliehen a ORDER BY IDAusleihe desc ");
+			result = stmt.executeQuery("SELECT IDAusleihe FROM db_schulprojekt.ausgeliehen a ORDER BY IDAusleihe desc");
 			result.first();
-			nächsteAusleiheID = result.getInt("IDAusleihe") +1;
+			lNächsteID = result.getInt("IDAusleihe") +1;
 		}
 		catch(Exception ex)
 		{
 			System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
 		}
-		System.out.println(nächsteAusleiheID);
-		return nächsteAusleiheID;
+		System.out.println(lNächsteID);
+		return lNächsteID;
 
 	}
 
