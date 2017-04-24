@@ -69,7 +69,7 @@ public class AusgeliehenLehrmittel
 		try
 		{
 		     stmt = lConnection.createStatement();
-		     stmt.execute("INSERT INTO Lernmittel VALUES ("+lehrmittel.getLehrmittelID()+", '"+lehrmittel.getArt()+"', '"+lehrmittel.getFach()+"', '"+lehrmittel.getName()+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
+		     stmt.execute("INSERT INTO ausgeliehen VALUES ("+this.getAusleiheID().getAusleiheID()+", '"+this.getLehrmittel().getLehrmittelID().getId()+"', '"+pSchülerID+"', '"+this.getAusgegeben().toString()+"', "+this.isRückgabe()+")");
 
 
 		} catch (Exception ex)
