@@ -182,5 +182,4 @@ public class Sprachkompetenz {
 	{
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
-
 }
