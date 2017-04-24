@@ -40,7 +40,6 @@ public class AusleiheID
 		{
 			System.out.println("Fehler bei der Verarbeitung + " + "Lernmittel" + " " + ex.getMessage());
 		}
-		System.out.println(lNächsteID);
 		return lNächsteID;
 
 	}
