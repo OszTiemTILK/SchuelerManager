@@ -53,7 +53,8 @@ public class KontaktdatenController {
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
 	    	lKontaktdaten.suchenID();
 
-	    	tfKontaktdatenID.setText(lKontaktdaten.getStringID());
+	    	tfKontaktdatenID.setText(String.valueOf(lKontaktdaten.getID().getID()));
+	    	anzeigenDetails(event);
 	    }
 
 

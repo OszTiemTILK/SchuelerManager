@@ -17,11 +17,8 @@ private KontaktdatenID	kontaktdatenID;
 private String festnetzNummer;
 private String mobilNummer;
 private String email;
-//private String fax; //wird erstmal nicht gebraucht
 private String vorname;
 private String name;
-private String ID;
-//private int IntID;
 /*
  * Konstruktoren
  */
@@ -74,7 +71,6 @@ public void ausgeben()
     System.out.println("Festnetznummer:			"+getFestnetzNummer());
     System.out.println("Mobilniummer:			"+getMobilNummer());
     System.out.println("E-Mail:					"+getEmail());
-    //System.out.println("Fax:					"+getFax());
 }
 
 public String getFestnetzNummer()
@@ -108,40 +104,17 @@ public void setID(KontaktdatenID pID)
 public KontaktdatenID getID()
 {
     return this.kontaktdatenID;
-}
-
-public String getStringID()
-{
-	return this.ID;
-}
-
+}  
 public String getName()
 {
     return name;
 }
-
 public String getVorname()
 {
     return vorname;
 }
 
-
-
-/*public int getIntID()
-{
-	return this.IntID;
-}*/
-
-/*
-public String getFax()
-{
-    return fax;
-}
-public void setFax(String pFax)
-{
-    this.fax = pFax;
-}
-*/
+  
 //Datenbank Methoden
 
 public void ergänzen()
@@ -188,7 +161,7 @@ public void ändernIDDB()
 	try
 	{
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+getName()+"' AND Vorname = '"+getVorname()+"' ;");
+		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"' ;");
 	}
 	   catch (Exception ex)
     {
@@ -236,7 +209,6 @@ public static Kontaktdaten auslesenDB(int pKontaktdatenIDWert)
 
       Connection lConnection = VerbindungKontaktdaten.holen();
       Kontaktdaten lKontakdaten;
-     // ArrayList<Kontaktdaten> lKontaktdatenListe = new ArrayList<Kontaktdaten>();
       Statement lBefehl;
       ResultSet lErgebnis;
 
@@ -262,10 +234,9 @@ public static Kontaktdaten auslesenDB(int pKontaktdatenIDWert)
       		return null;
 }
 
-public KontaktdatenID /*int*/ /*herausdestillierenID*/ suchenID()
+public void suchenID()
 {
 	Connection lConnection = VerbindungKontaktdaten.holen();
-    // Kontaktdaten lKontakdaten;
     Statement lBefehl;
     ResultSet lErgebnis;
 
@@ -276,19 +247,13 @@ public KontaktdatenID /*int*/ /*herausdestillierenID*/ suchenID()
     	lErgebnis = lBefehl.executeQuery("SELECT * FROM schüler WHERE Nachname = '"+ name + "'and Vorname = '" + vorname + "';");
     	lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
-    	KontaktdatenID pID = new KontaktdatenID(lErgebnis.getInt(3));
-    	//int Wollnashornpüreesaucenmixbohrinselrinigungsspritzenkonventionsboykottierer = new Baumhaus(lErgebnis.getInt(3))
-    	ID=pID.getStringID();
-    	//IntID=pID.getIntID();
-    	return pID;
-    	//auslesenDB(pID);
+    	kontaktdatenID = new KontaktdatenID(lErgebnis.getInt(3));
+
 
     }
-    	catch (Exception ex)
+    catch (Exception ex)
     {
-    System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
+    	System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
     }
-    	return null;
-}
 
 }
