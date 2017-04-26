@@ -12,9 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import java.lang.Object;
-
 import javax.accessibility.Accessible;
-
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.ItemSelectable;
@@ -53,7 +51,6 @@ public class SprachenController {
 	    @FXML
 	    private ChoiceBox<String> cbDeutschNiveau;
 
-
 	    @FXML
 	    private ChoiceBox<String> cbEnglischNiveau;
 
@@ -73,13 +70,13 @@ public class SprachenController {
 	    private Button    btAuslesen;
 
 	    @FXML
-	    private TextField tfID;
+	    private TextField tfSchülerID;
 
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(null, null, 0);
-	       lSprachkompetenz.ergänzen();
+	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSchülerID.getText()));
+		  	lSprachkompetenz.anlegen();
 
 	    }
 
@@ -96,6 +93,12 @@ public class SprachenController {
 	    public void initialize()
 	    {
 	    	ladenChoiceBox();
+	    }
+
+	    @FXML
+	    protected void auslesen(ActionEvent event)
+	    {
+
 	    }
 
 }
