@@ -30,6 +30,7 @@ public class sprechen {
 	 * @param pSprachkompetenzID
 	 */
 
+
 	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSpricht, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{

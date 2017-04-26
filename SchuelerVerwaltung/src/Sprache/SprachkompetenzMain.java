@@ -32,3 +32,4 @@ public class SprachkompetenzMain extends Application {
 
 	}
 }
+

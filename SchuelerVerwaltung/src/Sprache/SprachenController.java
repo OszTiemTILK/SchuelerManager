@@ -43,6 +43,7 @@ public class SprachenController {
 	    @FXML
 	    private CheckBox ckTürkisch;
 
+
 	    @FXML
 	    private CheckBox ckArabisch;
 
