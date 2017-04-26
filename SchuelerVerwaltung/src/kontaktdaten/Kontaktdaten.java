@@ -115,6 +115,18 @@ public String getStringID()
 	return this.ID;
 }
 
+public String getName()
+{
+    return name;
+}
+
+public String getVorname()
+{
+    return vorname;
+}
+
+
+
 /*public int getIntID()
 {
 	return this.IntID;
@@ -151,7 +163,7 @@ public void vergleichenDB()
     try
     {
     	lBefehl = lConnection.createStatement();
-    	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"';");
+    	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+getName()+"' AND Vorname = '"+getVorname()+"';");
         pID = lErgebnis.getInt(1);
     	if (pID == 0)
     	{
@@ -177,7 +189,7 @@ public void ändernIDDB()
 	try
 	{
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"' ;");
+		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+getName()+"' AND Vorname = '"+getVorname()+"' ;");
 	}
 	   catch (Exception ex)
     {
