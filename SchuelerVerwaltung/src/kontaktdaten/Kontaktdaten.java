@@ -159,20 +159,19 @@ public void vergleichenDB()
     Connection lConnection = VerbindungKontaktdaten.holen();
     Statement lBefehl;
     ResultSet lErgebnis;
-    int pID;
     try
     {
     	lBefehl = lConnection.createStatement();
-    	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+getName()+"' AND Vorname = '"+getVorname()+"';");
-        pID = lErgebnis.getInt(1);
-    	if (pID == 0)
+    	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"';");
+        lErgebnis.next();
+    	if (lErgebnis.getInt(1) == 0)
     	{
     		ändernIDDB();
     		speichernDB();
     	}
     	else
     	{
-    		erneuernKontaktdatenDB(pID);
+    		erneuernKontaktdatenDB(lErgebnis.getInt(1));
     	}
     }
     catch (Exception ex)
@@ -205,7 +204,7 @@ public void erneuernKontaktdatenDB(int pAlteID)
 	try
 	{
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("UPDATE kotaktdaten SET Mail = '"+email+"', Telefon = "+festnetzNummer+", Handy = "+mobilNummer+" WHERE IDKontaktd = "+pAlteID+" ;");
+		lBefehl.execute("UPDATE kontaktdaten SET Mail = '"+email+"', Telefon = "+festnetzNummer+", Handy = "+mobilNummer+" WHERE IDKontaktd = "+pAlteID+" ;");
 	}
     catch (Exception ex)
 	{
