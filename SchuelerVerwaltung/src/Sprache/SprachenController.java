@@ -90,10 +90,9 @@ public class SprachenController {
 	       ckTürkisch.setSelected(lSprachkompetenz.getSprachenTürkisch());
 	       ckArabisch.setSelected(lSprachkompetenz.getSprachenArabisch());
 	       ckSonstiges.setSelected(lSprachkompetenz.getSprachenSonstiges());
-	       cbDeutschNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
-	       cbEnglischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
-	       cbTürkischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
-	       cbArabischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
+
+	       ladenChoiceBox();
+
 	    }
 
 	    public void ladenChoiceBox()
@@ -107,8 +106,9 @@ public class SprachenController {
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
+
+	    	ladenChoiceBox();	    }
+
 
 
 }
