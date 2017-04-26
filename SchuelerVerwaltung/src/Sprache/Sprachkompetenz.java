@@ -29,7 +29,9 @@ public class Sprachkompetenz {
 	 * @param pSprachenNiveau
 	 * @param pSprachkompetenzID
 	 */
+
 	public Sprachkompetenz(String pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+
 	{
 		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
