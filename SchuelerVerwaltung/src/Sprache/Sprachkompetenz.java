@@ -96,7 +96,7 @@ public class Sprachkompetenz {
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 		     {
-			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getBoolean(1),lErgebnis.getString(2),lErgebnis.getInt(3));
+			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getBoolean(1),lErgebnis.getString(2),lErgebnis.getInt(3),lErgebnis.getBoolean(4),lErgebnis.getBoolean(5),lErgebnis.getBoolean(6),lErgebnis.getBoolean(7),lErgebnis.getString(8));
 			   lSprachkompetenzliste.add(lSprachkompetenz);
 			   //Spezial für dieses Beispiel springen wir gleich wieder raus.
 	           // Sonst kann man hier eine Liste füllen.
