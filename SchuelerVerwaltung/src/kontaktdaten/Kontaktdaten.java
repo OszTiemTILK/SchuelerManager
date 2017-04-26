@@ -104,7 +104,7 @@ public void setID(KontaktdatenID pID)
 public KontaktdatenID getID()
 {
     return this.kontaktdatenID;
-}  
+}
 public String getName()
 {
     return name;
@@ -114,7 +114,7 @@ public String getVorname()
     return vorname;
 }
 
-  
+
 //Datenbank Methoden
 
 public void ergänzen()
@@ -256,4 +256,5 @@ public void suchenID()
     	System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
     }
 
+}
 }
