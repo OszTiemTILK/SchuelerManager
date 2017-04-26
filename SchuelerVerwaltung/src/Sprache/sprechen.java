@@ -10,12 +10,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Sprache.Sprachkompetenz;
+import Sprache.sprechen;
 import datenbank.Datenbankverbindung;
 import javafx.collections.ObservableList;
 
-public class Sprachkompetenz {
-	SprachkompetenzID IDSprache;
+public class sprechen {
+	IDSprachkompetenz IDSprache;
 	private String sprachenName;
 	private String sprachenNiveau;
 	private Boolean sprachenDeutsch;
@@ -30,10 +30,10 @@ public class Sprachkompetenz {
 	 * @param pSprachkompetenzID
 	 */
 
-	public Sprachkompetenz(String pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSpricht, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{
-		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
+		this.IDSprache = new IDSprachkompetenz(IDSpricht);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -43,16 +43,16 @@ public class Sprachkompetenz {
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
-	public Sprachkompetenz( int SprachkompetenzIDWert, String pSprachenNiveau, String pSprachenName )
+	public sprechen( int IDSpricht, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
+		this.IDSprache = new IDSprachkompetenz(IDSpricht);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
 	}
-	public Sprachkompetenz( int SprachkompetenzIDWert )
+	public sprechen( int IDSpricht )
 	{
-		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
+		this.IDSprache = new IDSprachkompetenz(IDSpricht);
 
 	}
 
@@ -98,23 +98,23 @@ public class Sprachkompetenz {
 			e.printStackTrace();
 		  }
 	}
-	 public static Sprachkompetenz auslesenDB(int SprachkompetenzIDWert)
+	 public static sprechen auslesenDB(int IDSpricht)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
-		  Sprachkompetenz lSprachkompetenz;
-		  ArrayList<Sprachkompetenz> lSprachkompetenzliste = new ArrayList<Sprachkompetenz>();
+		  sprechen lSprachkompetenz;
+		  ArrayList<sprechen> lSprachkompetenzliste = new ArrayList<sprechen>();
 		  Statement lBefehl;
 		  ResultSet lErgebnis;
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ SprachkompetenzIDWert +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ IDSpricht +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 		     {
-			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getInt(1));
+			   lSprachkompetenz = new sprechen(lErgebnis.getInt(1));
 			   lSprachkompetenzliste.add(lSprachkompetenz);
 			   //Spezial für dieses Beispiel springen wir gleich wieder raus.
 	           // Sonst kann man hier eine Liste füllen.
@@ -131,7 +131,7 @@ public class Sprachkompetenz {
 
 	public void ergänzen()
 	{
-	  Sprachkompetenz lSprachkompetenz = auslesenDB(this.IDSprache.getID());
+	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getID());
 	  sprachenName = lSprachkompetenz.sprachenName;
 	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
@@ -152,13 +152,13 @@ public class Sprachkompetenz {
 	{
 		this.sprachenNiveau = pSprachenNiveau;
 	}
-	public SprachkompetenzID getSprachkompetenzID()
+	public IDSprachkompetenz getIDSprachkompetenz()
 	{
 		return IDSprache;
 	}
-	public void setSprachkompetenzID(SprachkompetenzID pSprachkompetenzID)
+	public void setIDSprachkompetenz(IDSprachkompetenz pIDSprachkompetenz)
 	{
-		this.IDSprache = pSprachkompetenzID;
+		this.IDSprache = pIDSprachkompetenz;
 	}
 	public Boolean getSprachenDeutsch()
 	{
