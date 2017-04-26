@@ -22,14 +22,16 @@ public class Sprachkompetenz {
 	private Boolean sprachenEnglisch;
 	private Boolean sprachenTürkisch;
 	private Boolean sprachenArabisch;
-	private String sprachenSonstiges;
+	private Boolean sprachenSonstiges;
 	/**
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
 	 * @param pSprachenNiveau
 	 * @param pSprachkompetenzID
 	 */
-	public Sprachkompetenz(String pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, String pSprachenSonstiges)
+
+	public Sprachkompetenz(String pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+
 	{
 		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
@@ -190,11 +192,11 @@ public class Sprachkompetenz {
 	{
 		this.sprachenArabisch = pSprachenArabisch;
 	}
-	public String getSprachenSonstiges()
+	public Boolean getSprachenSonstiges()
 	{
 		return sprachenSonstiges;
 	}
-	public void setSprachenSonstiges(String pSprachenSonstiges)
+	public void setSprachenSonstiges(Boolean pSprachenSonstiges)
 	{
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
