@@ -4,9 +4,16 @@
  */
 package adresse;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+import datenbank.Datenbankverbindung;
+
 public class AdressID
 {
-    private static int aktuelleID = -1; //letzte vergebene ID
+    private static int aktuelleID =-1; //letzte vergebene ID
 
 	private int ID = 0;
 
@@ -22,6 +29,45 @@ public class AdressID
 	{
 		setID(pIDFest);
 	}
+
+
+//methoden
+
+
+	public int hohlenHöchsteAdressID()
+	{
+		Connection lConnection = Datenbankverbindung.holen();
+		Statement lBefehl;
+
+
+
+		try {
+			lBefehl = lConnection.createStatement();
+			ResultSet result= lBefehl.executeQuery("SELECT IDAdresse FROM adresse ORDER BY IDAdresse DESC LIMIT 1");
+			result.first();
+			int lHöchsteID =result.getInt(1);
+			return lHöchsteID;
+
+
+
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			int z=-1;
+			return z;
+
+		}
+	}
+
+
+
+
+
+
+
+
 //  Getter Setter Methoden
 
 	public int getID()
