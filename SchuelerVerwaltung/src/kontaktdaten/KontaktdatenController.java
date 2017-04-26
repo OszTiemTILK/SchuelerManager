@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 public class KontaktdatenController {
 
+
 	/**
 	 * Sample Skeleton for 'KontaktdatenView.fxml' Controller Class
 	 */
@@ -47,16 +48,21 @@ public class KontaktdatenController {
 
 
 	    @FXML
-	    void suchen(ActionEvent event) {
+	    void suchen(ActionEvent event)
+	    {
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
+	    	lKontaktdaten.suchenID();
 
+	    	tfKontaktdatenID.setText(lKontaktdaten.getStringID());
 	    }
+
 
 
 	    @FXML
 	    void speichern(ActionEvent event)
 	    {
-	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText());
-	    	lKontaktdaten.speichernDB();
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText(), tfName.getText(), tfVorname.getText());
+	    	lKontaktdaten.vergleichenDB();
 	    }
 
 	    @FXML
@@ -70,7 +76,8 @@ public class KontaktdatenController {
 	    }
 
 	    @FXML // This method is called by the FXMLLoader when initialization is complete
-	    void initialize() {
+	    void initialize()
+	    {
 	        assert tfFestnetz != null : "fx:id=\"tfTelephon\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfEmail != null : "fx:id=\"tfEmail\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfKontaktdatenID != null : "fx:id=\"tfKontaktdatenID\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";

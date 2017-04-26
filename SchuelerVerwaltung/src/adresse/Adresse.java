@@ -1,6 +1,8 @@
 package adresse;
 
+import java.sql.Array;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 import anwendungslogik.Geschlecht;
 import datenbank.Datenbankverbindung;
 
+
 public class Adresse
 {
 private String strasse;
@@ -16,6 +19,7 @@ private int hausNummer;
 private String wohnort;
 private int plz;
 private String AdresseStraßeMitHausnummer;
+
 
 
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
@@ -63,7 +67,9 @@ Statement lBefehl;
 
 try {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO adresse(Ort,PLZ,Straße,HausNr) VALUES("+pWohnort+","+pPlz+","+pStrasse+","+pHausnummer+")");
+	AdressID lAdressID = new AdressID();
+
+	lBefehl.execute("INSERT INTO db_schulprojekt.adresse(IDAdresse,Ort,PLZ,Straße,HausNr) VALUES("+lAdressID.getID()+",'"+pWohnort+"',"+pPlz+",'"+pStrasse+"',"+pHausnummer+")");
 
 } catch (SQLException e) {
 	// TODO Auto-generated catch block
@@ -85,6 +91,7 @@ public void ausgeben()
 	System.out.print("PLZ: " + getPlz());
 	System.out.println();
 }
+
 
 
 /**
