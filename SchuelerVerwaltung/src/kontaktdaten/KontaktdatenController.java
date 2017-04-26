@@ -57,11 +57,12 @@ public class KontaktdatenController {
 	    }
 
 
+
 	    @FXML
 	    void speichern(ActionEvent event)
 	    {
-	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText());
-	    	lKontaktdaten.speichernDB();
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText(), tfName.getText(), tfVorname.getText());
+	    	lKontaktdaten.vergleichenDB();
 	    }
 
 	    @FXML

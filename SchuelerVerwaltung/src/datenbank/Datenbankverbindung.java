@@ -48,7 +48,7 @@ public class Datenbankverbindung
 	return true;
 	}catch (Exception ex)
 	  {				//Fehlerbehandlung
-		 System.out.println("Fehler Verbindungsaufbau");
+		 System.out.println("Fehler beim Verbindungsaufbau. :(");
 		 return false;
       }
   }

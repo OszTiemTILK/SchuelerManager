@@ -44,6 +44,17 @@ public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail)
     this.email =pEmail;
 
 }
+public Kontaktdaten (String pFestnetznummer, String pMobilnummer, String pEmail, String pName, String pVorname)
+{
+
+	this.kontaktdatenID = new KontaktdatenID();
+	this.festnetzNummer = pFestnetznummer;
+	this.mobilNummer = pMobilnummer;
+	this.email =pEmail;
+	this.name = pName;
+	this.vorname = pVorname;
+
+}
 public Kontaktdaten (int pKontaktdatenID,String pFestnetznummer, String pMobilnummer, String pEmail)
 {
 
@@ -131,6 +142,64 @@ public void ergänzen()
 
 }
 
+public void vergleichenDB()
+{
+    Connection lConnection = VerbindungKontaktdaten.holen();
+    Statement lBefehl;
+    ResultSet lErgebnis;
+    int pID;
+    try
+    {
+    	lBefehl = lConnection.createStatement();
+    	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"';");
+        pID = lErgebnis.getInt(1);
+    	if (pID == 0)
+    	{
+    		ändernIDDB();
+    		speichernDB();
+    	}
+    	else
+    	{
+    		erneuernKontaktdatenDB(pID);
+    	}
+    }
+    catch (Exception ex)
+    {
+    	 System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
+    }
+}
+
+public void ändernIDDB()
+{
+	Connection lConnection = VerbindungKontaktdaten.holen();
+	Statement lBefehl;
+
+	try
+	{
+		lBefehl = lConnection.createStatement();
+		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"' ;");
+	}
+	   catch (Exception ex)
+    {
+    	 System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
+    }
+}
+
+public void erneuernKontaktdatenDB(int pAlteID)
+{
+	Connection lConnection = VerbindungKontaktdaten.holen();
+	Statement lBefehl;
+
+	try
+	{
+		lBefehl = lConnection.createStatement();
+		lBefehl.execute("UPDATE kotaktdaten SET Mail = '"+email+"', Telefon = "+festnetzNummer+", Handy = "+mobilNummer+" WHERE IDKontaktd = "+pAlteID+" ;");
+	}
+    catch (Exception ex)
+	{
+ 	 System.out.println("Fehler bei der Verarbeitung + " + "n" + ex.getMessage());
+	}
+}
 public void speichernDB()
 {
   Connection lConnection = VerbindungKontaktdaten.holen();
