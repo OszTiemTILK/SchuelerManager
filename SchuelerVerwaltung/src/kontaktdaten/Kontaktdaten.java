@@ -136,20 +136,20 @@ public void vergleichenDB()
     Connection lConnection = VerbindungKontaktdaten.holen();
     Statement lBefehl;
     ResultSet lErgebnis;
-
+    int pID;
     try
     {
     	lBefehl = lConnection.createStatement();
     	lErgebnis = lBefehl.executeQuery("SELECT IDKontaktdaten FROM schüler WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"';");
-
-    	if (lErgebnis != null)
-    	{
-    		erneuernKontaktdatenDB(lErgebnis.getInt(1));
-    	}
-    	else
+        pID = lErgebnis.getInt(1);
+    	if (pID == 0)
     	{
     		ändernIDDB();
     		speichernDB();
+    	}
+    	else
+    	{
+    		erneuernKontaktdatenDB(pID);
     	}
     }
     catch (Exception ex)
