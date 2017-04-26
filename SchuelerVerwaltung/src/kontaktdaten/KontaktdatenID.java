@@ -19,6 +19,12 @@ public class KontaktdatenID
 
 	private int ID = 0;
 
+	private String StringID = null;
+	private void UpdateStID()
+	{
+		StringID = String.valueOf(ID);
+	}
+
 //  Konstruktoren
 
 	KontaktdatenID()
@@ -37,6 +43,7 @@ public class KontaktdatenID
 	{
 		return ID;
 	}
+
 	public void setID(int iD)
 	{
 		ID = iD;
@@ -49,6 +56,12 @@ public class KontaktdatenID
 	private static void setAktuelleID(int pAktuelleID)
 	{
 		KontaktdatenID.aktuelleID = pAktuelleID;
+	}
+
+	public String getStringID()
+	{
+		UpdateStID();
+		return this.StringID;
 	}
 
 	private int holenHöchsteID()
