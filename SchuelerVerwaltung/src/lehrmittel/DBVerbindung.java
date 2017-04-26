@@ -25,7 +25,8 @@ public boolean connectToMysql(String host, String database, String user, String 
      connection = DriverManager.getConnection(connectionCommand);
      return true;
 
- }catch (Exception ex){				//Fehlerbehandlung
+ }
+	catch (Exception ex){				//Fehlerbehandlung
 	 System.out.println("Exeption: " + ex.getMessage());
 
 

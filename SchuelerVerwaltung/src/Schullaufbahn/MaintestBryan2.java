@@ -39,6 +39,7 @@ public class MaintestBryan2 extends Application
 	  {
 
 	   launch(args);
+	   System.out.println("Bla2");
 
 	  }
 }
