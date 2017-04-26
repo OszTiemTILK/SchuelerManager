@@ -1,3 +1,4 @@
+
 /*
  * Onur Sükür 06.03.2017 angelegt
  */
@@ -42,6 +43,7 @@ public class SprachenController {
 	    @FXML
 	    private CheckBox ckTürkisch;
 
+
 	    @FXML
 	    private CheckBox ckArabisch;
 
@@ -75,11 +77,27 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(Integer.parseInt(tfSchülerID.getText()));
-	    	lSprachkompetenz.anlegen();
+	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
+		  	lsprechen.anlegenSprachen();
 
 	    }
+	    @FXML
+	    void auslesen(ActionEvent event)
+	    {
 
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       lsprechen.ergänzen();
+	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
+	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
+	       ckTürkisch.setSelected(lsprechen.getSprachenTürkisch());
+	       ckArabisch.setSelected(lsprechen.getSprachenArabisch());
+	       ckSonstiges.setSelected(lsprechen.getSprachenSonstiges());
+	       cbDeutschNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbEnglischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+
+	    }
 
 	    public void ladenChoiceBox()
 	    {
@@ -92,14 +110,10 @@ public class SprachenController {
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
 
-	    @FXML
-	    protected void auslesen(ActionEvent event)
-	    {
+	    	ladenChoiceBox();	    }
 
-	    }
+
 
 }
 
