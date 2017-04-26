@@ -84,7 +84,6 @@ public class SprachenController {
 	       lSprachkompetenz.ergänzen();
 
 	    }
-
 	    @FXML
 	    void auslesen(ActionEvent event)
 	    {
