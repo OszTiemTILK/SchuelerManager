@@ -9,6 +9,10 @@ import datenbank.Datenbankverbindung;
 public class AusleiheID
 {
 	int ausleiheID;
+
+	/**
+	 * Konstruktor
+	 */
 	public AusleiheID()
 	{
 		ausleiheID = holenNächsteAusleiheID();
@@ -22,7 +26,7 @@ public class AusleiheID
 		this.ausleiheID = pausleiheID;
 	}
 
-	public int holenNächsteAusleiheID()
+	private int holenNächsteAusleiheID()
 	{
 		int lNächsteID = 0;
 

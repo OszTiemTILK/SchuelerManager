@@ -24,7 +24,7 @@ public Lehrmittel()
 /**
  * Konstruktor mit Parametern zur verarbeitung von Daten
  * @param pFach
- * @param pArt
+ * @param pArt : Art des Buches. Bsp. Fachbuch, Formelbuch
  * @param pName
  */
 public Lehrmittel(String pFach, String pArt, String pName, LehrmittelID pLehrmittelID)
@@ -34,7 +34,11 @@ public Lehrmittel(String pFach, String pArt, String pName, LehrmittelID pLehrmit
 	this.name = pName;
 	this.lehrmittelID = pLehrmittelID;
 }
-
+/**
+ * Greift auf die Datenbanken zu und gibt für ein Fach ein bestimmtes Array mit den Lehrmitteln zurück.
+ * @param pFach
+ * @return Arraylist mit Lehrmitteln
+ */
 public static Lehrmittel[] holenFürFach(String pFach)
 {
 	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
@@ -63,7 +67,7 @@ public static Lehrmittel[] holenFürFach(String pFach)
 	return lArraylist.toArray(new Lehrmittel[lArraylist.size()]);
 }
 
-public LehrmittelID holenID(String pFach, String pArt, String pName){
+public static LehrmittelID holenID(String pFach, String pArt, String pName){
 	LehrmittelID lLernmID = null;
 	//	ArrayList<Lehrmittel> lArraylist = new ArrayList<Lehrmittel>();
 
@@ -73,7 +77,7 @@ public LehrmittelID holenID(String pFach, String pArt, String pName){
 	try
 	{
 	     stmt = lConnection.createStatement();
-	     result = stmt.executeQuery("SELECT LernmID FROM Lernmittel l WHERE Art = '" + pArt + "'" + " and Fach = '" + pFach + "' and Name = '" + pName + "'");
+	     result = stmt.executeQuery("SELECT IDLernm FROM Lernmittel l WHERE Art = '" + pArt + "'" + " and Fach = '" + pFach + "' and Name = '" + pName + "'");
 	     result.first();  //Zeigt auf den ersten Datensatz in result
 /*
 	     while(! result.isAfterLast()) { // as long as valid data is in the result set
@@ -83,7 +87,7 @@ public LehrmittelID holenID(String pFach, String pArt, String pName){
 	         result.next(); // geht zum nächsten Datensatz in result
 	       }
 */
-	     lLernmID = new LehrmittelID(result.getInt("LernmID"));
+	     lLernmID = new LehrmittelID(result.getInt("IDLernm"));
 	}
 
     catch (Exception ex)
