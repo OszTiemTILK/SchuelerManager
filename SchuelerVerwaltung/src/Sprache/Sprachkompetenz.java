@@ -1,3 +1,4 @@
+
 /*
  * Jose 08.03.2017 angelegt
  */
@@ -15,7 +16,7 @@ import javafx.collections.ObservableList;
 
 public class Sprachkompetenz {
 	SprachkompetenzID IDSprache;
-	private Boolean sprachenName;
+	private String sprachenName;
 	private String sprachenNiveau;
 	private Boolean sprachenDeutsch;
 	private Boolean sprachenEnglisch;
@@ -28,7 +29,7 @@ public class Sprachkompetenz {
 	 * @param pSprachenNiveau
 	 * @param pSprachkompetenzID
 	 */
-	public Sprachkompetenz(Boolean pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, String pSprachenSonstiges)
+	public Sprachkompetenz(String pSprachenName, String pSprachenNiveau, int SprachkompetenzIDWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, String pSprachenSonstiges)
 	{
 		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
 		this.sprachenName = pSprachenName;
@@ -40,10 +41,24 @@ public class Sprachkompetenz {
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
+	public Sprachkompetenz( int SprachkompetenzIDWert, String pSprachenNiveau, String pSprachenName )
+	{
+		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
+		this.sprachenName = pSprachenName;
+		this.sprachenNiveau = pSprachenNiveau;
+
+	}
+	public Sprachkompetenz( int SprachkompetenzIDWert )
+	{
+		this.IDSprache = new SprachkompetenzID(SprachkompetenzIDWert);
+
+	}
+
+
 	/** legt Sprachen an
 	 *
 	 */
-	public void anlegenSprachen()
+	public void anlegen()
 	{
 		speichernDB();
 	}
@@ -72,7 +87,8 @@ public class Sprachkompetenz {
 
 		  try {
 			lBefehl = lConnection.createStatement();
-			lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
+			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
+			lBefehl.execute("INSERT INTO spricht (IDSchüler) VALUES ( "+IDSprache.getID()+"");
 
 		  } catch (SQLException e)
 		  {
@@ -96,7 +112,7 @@ public class Sprachkompetenz {
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 		     {
-			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getBoolean(1),lErgebnis.getString(2),lErgebnis.getInt(3),lErgebnis.getBoolean(4),lErgebnis.getBoolean(5),lErgebnis.getBoolean(6),lErgebnis.getBoolean(7),lErgebnis.getString(8));
+			   lSprachkompetenz = new Sprachkompetenz(lErgebnis.getInt(1));
 			   lSprachkompetenzliste.add(lSprachkompetenz);
 			   //Spezial für dieses Beispiel springen wir gleich wieder raus.
 	           // Sonst kann man hier eine Liste füllen.
@@ -118,11 +134,11 @@ public class Sprachkompetenz {
 	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
 // Ab hier folgen nur Get/Set Methoden
-	public Boolean getSprachenName()
+	public String getSprachenName()
 	{
 		return sprachenName;
 	}
-	public void setSprachenName(Boolean pSprachenName)
+	public void setSprachenName(String pSprachenName)
 	{
 		this.sprachenName = pSprachenName;
 	}
