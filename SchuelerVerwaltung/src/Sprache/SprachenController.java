@@ -1,3 +1,4 @@
+
 /*
  * Onur Sükür 06.03.2017 angelegt
  */
@@ -75,11 +76,25 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(Integer.parseInt(tfSchülerID.getText()));
-	    	lSprachkompetenz.anlegen();
+	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSchülerID.getText()));
+		  	lSprachkompetenz.anlegenSprachen();
 
 	    }
-
+	    @FXML
+	    void auslesen(ActionEvent event)
+	    {
+	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSprachkompetenzIDWert.getText()) );
+	       lSprachkompetenz.ergänzen();
+	       ckDeutsch.setSelected(lSprachkompetenz.getSprachenDeutsch());
+	       ckEnglisch.setSelected(lSprachkompetenz.getSprachenEnglisch());
+	       ckTürkisch.setSelected(lSprachkompetenz.getSprachenTürkisch());
+	       ckArabisch.setSelected(lSprachkompetenz.getSprachenArabisch());
+	       ckSonstiges.setSelected(lSprachkompetenz.getSprachenSonstiges());
+	       cbDeutschNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
+	       cbEnglischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
+	       cbTürkischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
+	       cbArabischNiveau.setId(String.valueOf(lSprachkompetenz.getSprachenNiveau()));
+	    }
 
 	    public void ladenChoiceBox()
 	    {
@@ -95,11 +110,6 @@ public class SprachenController {
 	    	ladenChoiceBox();
 	    }
 
-	    @FXML
-	    protected void auslesen(ActionEvent event)
-	    {
-
-	    }
 
 }
 
