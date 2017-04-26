@@ -1,3 +1,6 @@
+/*
+ * Onur Sükür 06.03.2017 angelegt
+ */
 package Sprache;
 
 import javafx.fxml.FXML;
@@ -11,6 +14,8 @@ import javafx.event.ActionEvent;
 import java.lang.Object;
 
 import javax.accessibility.Accessible;
+
+import fahrradausleihe.Fahrradausleihe;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -64,22 +69,37 @@ public class SprachenController {
 	    private TextField tfSonstigesNiveau;
 
 	    @FXML
-	    private Button    btSpeichern;
+	    private Button    btAnlegenÄndern;
 
 	    @FXML
-	    private Button    btAnlegenDatei;
+	    private Button    btAuslesen;
 
 	    @FXML
 	    private TextField tfID;
 
 	    @FXML
-	    void anlegenDatei(ActionEvent event)
+	    void anlegenÄndern(ActionEvent event)
 	    {
 	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(null, null, 0);
 	       lSprachkompetenz.ergänzen();
 
 	    }
 
+	    @FXML
+	    void auslesen(ActionEvent event)
+	    {
+	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSprachkompetenzIDWert.getText()) );
+	       lSprachkompetenz.ergänzen();
+	       ckDeutsch.setCheckBox(lSprachkompetenz.getSprachenDeutsch());
+	       ckEnglisch.setCheckBox(lSprachkompetenz.getSprachenEnglisch());
+	       ckTürkisch.setCheckBox(lSprachkompetenz.getSprachenTürkisch());
+	       ckArabisch.setCheckBox(lSprachkompetenz.getSprachenArabisch());
+	       ckSonstiges.setCheckBox(lSprachkompetenz.getSprachenSonstiges());
+	       cbDeutschNiveau.setChoiceBox(String.valueOf(lSprachkompetenz.getsprachenNiveau()));
+	       cbEnglischNiveau.setChoiceBox(String.valueOf(lSprachkompetenz.getsprachenNiveau()));
+	       cbTürkischNiveau.setChoiceBox(String.valueOf(lSprachkompetenz.getsprachenNiveau()));
+	       cbArabischNiveau.setChoiceBox(String.valueOf(lSprachkompetenz.getsprachenNiveau()));
+	    }
 
 	    public void ladenChoiceBox()
 	    {
