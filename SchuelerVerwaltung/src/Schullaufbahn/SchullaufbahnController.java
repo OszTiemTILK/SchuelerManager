@@ -7,20 +7,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+
 
 public class SchullaufbahnController {
 
     @FXML
-    private TextField tfArt;
+    private TextField tfTyp;
+
+    @FXML
+    private TextField tfZeugnis;
 
     @FXML
     private Button btWeiter;
 
     @FXML
     private Button btNächsteSchule;
-
-    @FXML
-    private TextField tfJahrgang;
 
     @FXML
     private TableColumn<?, ?> tcSchulname;
@@ -32,10 +34,10 @@ public class SchullaufbahnController {
     private TextField tfAbschluss;
 
     @FXML
-    private TextField tfDatum1;
+    private DatePicker dpDatum1;
 
     @FXML
-    private TextField tfDatum2;
+    private DatePicker dpDatum2;
 
     @FXML
     private TextField tfSchulname;
@@ -52,15 +54,10 @@ public class SchullaufbahnController {
     @FXML
     void anlegenSchule(ActionEvent event)
     {
-    	Schule lSchule = new Schule(SchülerID.getAktuelleSchülerID(), tfSchulname.getText());
+    	Schule lSchule = new Schule(tfSchulname.getText(), tfTyp.getText(), tfStraße.getText(), tfOrt.getText(), dpDatum1.getValue(), dpDatum2.getValue(),IDbesucht.getAktuelleIDbesucht(), IDSchüler.getAktuelleIDSchüler(), tfZeugnis.getText());
     	lSchule.anlegen();
     	System.out.print("blaa");
     }
 
-    @FXML
-    void anlegen(ActionEvent event)
-    {
-
-    }
 
 }

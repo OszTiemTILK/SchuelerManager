@@ -1,4 +1,9 @@
+/*
+ * geändert von Bryan, Fin, Aslan
+ *
+ */
 package Schullaufbahn;
+
 
 
 import java.time.LocalDate;
@@ -9,6 +14,7 @@ public class Schule
 	private LocalDate ausgeschiedenAm;
 	private int ausgeschiedenAusJahrgang;
 	private boolean sonderschule;
+
 	private boolean hauptschule;
 	private boolean realschule;
 	private boolean sekundarschule;
@@ -20,8 +26,15 @@ public class Schule
 	private String land;
 	private String erreichterAbschluss;
 	private String bemerkungen;
-    SchülerID schülerID;
-
+    IDSchule iDSchule;
+    private String typ;
+    private String Straße;
+    private String Ort;
+    private LocalDate Datum1;
+    private LocalDate Datum2;
+    IDbesucht iDbesucht;
+    IDSchüler iDSchüler;
+    private String Zeugnis;
 
 
 	/**
@@ -67,16 +80,43 @@ public class Schule
 	/**
 	 * Test-Konstrunkor und testbereich
 	 */
-	public Schule(int pSchülerID, String pSchulname)
+	public Schule(int pIDSchule, String pSchulname, String pTyp, String pStraße, String pOrt)
 	{
 			this.schulname = pSchulname;
-			this.schülerID = new SchülerID(pSchülerID);
+			this.iDSchule = new IDSchule(pIDSchule);
+			this.typ = pTyp;
+			this.Straße = pStraße;
+			this.Ort = pOrt;
 	}
-	
+
+	public Schule(String pSchulname, String pTyp, String pStraße, String pOrt, LocalDate pDatum1, LocalDate pDatum2, int pIDbesucht, int pIDSchüler, String pZeugnis)
+	{
+			this.schulname = pSchulname;
+			this.iDSchule = new IDSchule();
+			this.typ = pTyp;
+			this.Straße = pStraße;
+			this.Ort = pOrt;
+			this.Datum1 = pDatum1;
+			this.Datum2 = pDatum2;
+			this.iDbesucht = new IDbesucht(pIDbesucht);
+			this.iDSchüler = new IDSchüler(pIDSchüler);
+			this.Zeugnis   = pZeugnis;
+	}
+
+	public Schule(LocalDate pDatum1, LocalDate pDatum2, int pIDbesucht, int pIDSchüler, String pZeugnis)
+	{
+			this.Datum1 = pDatum1;
+			this.Datum2 = pDatum2;
+			this.iDbesucht = new IDbesucht(pIDbesucht);
+			this.iDSchüler = new IDSchüler(pIDSchüler);
+			this.Zeugnis   = pZeugnis;
+	}
+
 	public Schule( String pSchulname)
 	{
 			this.schulname = pSchulname;
 	}
+
 
 	/**
 	 * Ende des Testbereiches
@@ -85,6 +125,8 @@ public class Schule
 	public void anlegen()
 	{
 		speichern();
+		System.out.println(iDSchule.getIDSchule());
+		speichern2();
 	}
 	public void speichern()
 	{
@@ -95,7 +137,25 @@ public class Schule
 	  try
 	  {
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("INSERT INTO db_schulprojekt.schullaufbahn VALUES ("+schülerID.getSchülerSchülerID()+",\""+schulname+"\")");
+		
+		lBefehl.execute("INSERT INTO db_schulprojekt.schule VALUES ("+iDSchule.getIDSchule()+",\""+schulname+"\",\""+typ+"\",\""+Straße+"\",\""+Ort+"\")");
+	  } catch (SQLException e)
+	  {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	  }
+	}
+
+	public void speichern2()
+	{
+	  Connection lConnection = DBVerbindungSchullaufbahn.holen();
+	  Statement lBefehl;
+	  ResultSet lErgebnis;
+
+	  try
+	  {
+		lBefehl = lConnection.createStatement();
+		lBefehl.execute("INSERT INTO db_schulprojekt.besucht VALUES ("+iDbesucht.getIDbesucht()+",\""+Datum1+"\",\""+Zeugnis+"\",\""+IDSchule.getAktuelleIDSchule()+"\",\""+iDSchüler.getIDSchüler()+"\",\""+Datum2+"\")");
 	  } catch (SQLException e)
 	  {
 		// TODO Auto-generated catch block
@@ -104,7 +164,77 @@ public class Schule
 	}
 
 
+public IDSchule getiDSchule() {
+		return iDSchule;
+	}
 
+	public void setiDSchule(IDSchule iDSchule) {
+		this.iDSchule = iDSchule;
+	}
+
+	public LocalDate getDatum1() {
+		return Datum1;
+	}
+
+	public void setDatum1(LocalDate datum1) {
+		Datum1 = datum1;
+	}
+
+	public LocalDate getDatum2() {
+		return Datum2;
+	}
+
+	public void setDatum2(LocalDate datum2) {
+		Datum2 = datum2;
+	}
+
+	public IDbesucht getiDbesucht() {
+		return iDbesucht;
+	}
+
+	public void setiDbesucht(IDbesucht iDbesucht) {
+		this.iDbesucht = iDbesucht;
+	}
+
+	public IDSchüler getiDSchüler() {
+		return iDSchüler;
+	}
+
+	public void setiDSchüler(IDSchüler iDSchüler) {
+		this.iDSchüler = iDSchüler;
+	}
+
+	public String getZeugnis() {
+		return Zeugnis;
+	}
+
+	public void setZeugnis(String zeugnis) {
+		Zeugnis = zeugnis;
+	}
+
+	public String getTyp() {
+		return typ;
+	}
+
+	public void setTyp(String typ) {
+		this.typ = typ;
+	}
+
+	public String getStraße() {
+		return Straße;
+	}
+
+	public void setStraße(String straße) {
+		Straße = straße;
+	}
+
+	public String getOrt() {
+		return Ort;
+	}
+
+	public void setOrt(String ort) {
+		Ort = ort;
+	}
 
 	public void anlegenAllgemeinbildendeSchule()
 	{
