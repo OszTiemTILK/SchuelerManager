@@ -32,6 +32,6 @@
       <Label layoutX="65.0" layoutY="117.0" text="Name" />
       <TextField fx:id="tfVorname" layoutX="176.0" layoutY="134.0" prefHeight="25.0" prefWidth="77.0" />
       <Label layoutX="176.0" layoutY="117.0" text="Vorname" />
-      <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#speichern" text="Suchen" />
+      <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#suchen" text="Suchen" />
    </children>
 </AnchorPane>
