@@ -78,6 +78,9 @@ public class LehrmittelController
     private TextArea taName;
 
     @FXML
+    private TextArea taSchuelerID;
+
+    @FXML
     private ChoiceBox<String> cbFach2;
 
     @FXML
@@ -264,8 +267,6 @@ public class LehrmittelController
     	ladenChoiceboxen();
 
     	setzenAnfangswerte();
-
-    	ladenSchülerIn();
     }
 
     public void ladenSchülerIn()
@@ -274,54 +275,60 @@ public class LehrmittelController
 
     	SchülerID lID = new SchülerID();
 
-    	lID.setSchülerID(111);
+    	lID.setSchülerID(Integer.parseInt(taSchuelerID.getText()));
 
     	schülerin.setSchülerID(lID);
 
-    	schülerin.setLehrmittel(Lehrmittel.holen(schülerin.getSchülerInID()));
+    	schülerin.setAusgeliehenlehrmittel(AusgeliehenLehrmittel.holen(schülerin.getSchülerInID()));
+    }
+
+    public void ladenLehrmittelFuerSchuelerIn()
+    {
+    	ladenSchülerIn();
+    	ladenLehrmittel();
     }
 
     public void ladenLehrmittel()
     {
 
-    	Lehrmittel[] lLehrmittel = schülerin.getLehrmittel();
+    	AusgeliehenLehrmittel[] lLehrmittel = schülerin.getAusgeliehenlehrmittel();
 
     	for(int i = 0; i<lLehrmittel.length;i++)
     	{
     		switch(i)
     		{
     		case 0:
-    			cbFach1.setValue(lLehrmittel[i].getFach());
-    			cbArt1.setValue(lLehrmittel[i].getArt());
-    			cbName1.setValue(lLehrmittel[i].getName());
+    			cbFach1.setValue(lLehrmittel[i].getLehrmittel().getFach());
+    			cbArt1.setValue(lLehrmittel[i].getLehrmittel().getArt());
+    			cbName1.setValue(lLehrmittel[i].getLehrmittel().getName());
     			dpAusgegeben1.setValue(lLehrmittel[i].getAusgegeben());
     			ckRückgabe1.setSelected(lLehrmittel[i].isRückgabe());
     			break;
     		case 1:
-    			cbFach2.setValue(lLehrmittel[i].getFach());
-    			cbArt2.setValue(lLehrmittel[i].getArt());
-    			cbName2.setValue(lLehrmittel[i].getName());
+    			cbFach2.setValue(lLehrmittel[i].getLehrmittel().getFach());
+    			cbArt2.setValue(lLehrmittel[i].getLehrmittel().getArt());
+    			cbName2.setValue(lLehrmittel[i].getLehrmittel().getName());
     			dpAusgegeben2.setValue(lLehrmittel[i].getAusgegeben());
     			ckRückgabe2.setSelected(lLehrmittel[i].isRückgabe());
     			break;
     		case 2:
-    			cbFach3.setValue(lLehrmittel[i].getFach());
-    			cbArt3.setValue(lLehrmittel[i].getArt());
-    			cbName3.setValue(lLehrmittel[i].getName());
+    			cbFach3.setValue(lLehrmittel[i].getLehrmittel().getFach());
+    			cbArt3.setValue(lLehrmittel[i].getLehrmittel().getArt());
+    			cbName3.setValue(lLehrmittel[i].getLehrmittel().getName());
     			dpAusgegeben3.setValue(lLehrmittel[i].getAusgegeben());
     			ckRückgabe3.setSelected(lLehrmittel[i].isRückgabe());
     			break;
     		case 3:
-    			cbFach4.setValue(lLehrmittel[i].getFach());
-    			cbArt4.setValue(lLehrmittel[i].getArt());
-    			cbName4.setValue(lLehrmittel[i].getName());
+    			cbFach4.setValue(lLehrmittel[i].getLehrmittel().getFach());
+    			cbArt4.setValue(lLehrmittel[i].getLehrmittel().getArt());
+    			cbName4.setValue(lLehrmittel[i].getLehrmittel().getName());
     			dpAusgegeben4.setValue(lLehrmittel[i].getAusgegeben());
     			ckRückgabe4.setSelected(lLehrmittel[i].isRückgabe());
     			break;
     		case 4:
-    			cbFach5.setValue(lLehrmittel[i].getFach());
-    			cbArt5.setValue(lLehrmittel[i].getArt());
-    			cbName5.setValue(lLehrmittel[i].getName());
+    			cbFach5.setValue(lLehrmittel[i].getLehrmittel().getFach());
+    			cbArt5.setValue(lLehrmittel[i].getLehrmittel().getArt());
+    			cbName5.setValue(lLehrmittel[i].getLehrmittel().getName());
     			dpAusgegeben5.setValue(lLehrmittel[i].getAusgegeben());
     			ckRückgabe5.setSelected(lLehrmittel[i].isRückgabe());
     			break;
@@ -336,7 +343,6 @@ public class LehrmittelController
     {
     	laden();
 
-    	ladenLehrmittel();
     	ladenAlleLehrmittel();
     }
 
