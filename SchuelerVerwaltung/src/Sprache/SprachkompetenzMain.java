@@ -13,7 +13,7 @@ public class SprachkompetenzMain extends Application {
 	{
 		launch(pArgs);
 	}
-	//Danke dafür Onur...
+
 
 	private Stage grundStage;
 	private AnchorPane grundPane;
@@ -31,5 +31,4 @@ public class SprachkompetenzMain extends Application {
 		grundStage.show();
 
 	}
-
 }

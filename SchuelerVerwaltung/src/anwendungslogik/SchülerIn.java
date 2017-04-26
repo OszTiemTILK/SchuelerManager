@@ -1,5 +1,6 @@
 package anwendungslogik;
 
+import lehrmittel.AusgeliehenLehrmittel;
 import lehrmittel.Lehrmittel;
 
 import Sprache.Sprachkompetenz;
@@ -20,7 +21,7 @@ private Kontaktdaten kontaktMutter;
 private Kontaktdaten kontaktAndere;
 private Schülerverhältnisse schülerverhältnisse;
 private Herkunft herkunft;
-private Lehrmittel[] lehrmittel;
+private AusgeliehenLehrmittel[] ausgeliehenlehrmittel;
 private ErziehungsberechtigteR vormund;
 private BeruflicheBildungVorbereitungBefähigung beruflicheVorbereitung;
 private AllgemeinbildendeSchule aktuelleSchule;
@@ -46,7 +47,7 @@ public SchülerIn()
  * @param pKontaktAndere
  * @param pSchülerverhältnisse
  * @param pHerkunft
- * @param pLehrmittel
+ * @param pAusgeliehenLehrmittel
  * @param pVormund
  * @param pBeruflichVorbereitung
  * @param pAktuelleSchule
@@ -54,7 +55,7 @@ public SchülerIn()
  *
  */
 
-public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachkompetenz pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft, Lehrmittel[] pLehrmittel,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
+public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachkompetenz pSprachen, Kontaktdaten pKontaktSchüler, Kontaktdaten pKontaktVater,Kontaktdaten pKontaktMutter,Kontaktdaten pKontaktAndere, Schülerverhältnisse pSchülerverhältnisse, Herkunft pHerkunft, AusgeliehenLehrmittel[] pAusgeliehenLehrmittel,ErziehungsberechtigteR pVormund,BeruflicheBildungVorbereitungBefähigung pBeruflicheVorbereitung, AllgemeinbildendeSchule pAktuelleSchule,Adresse pAdresse)
 {
 
 	this.person = pPerson;
@@ -65,7 +66,7 @@ public SchülerIn(SchülerID pSchülerID, AngabenZurPerson pPerson, Sprachkompet
 	this.kontaktAndere = pKontaktAndere;
 	this.schülerverhältnisse = pSchülerverhältnisse;
 	this.herkunft = pHerkunft;
-	this.lehrmittel = pLehrmittel;
+	this.ausgeliehenlehrmittel = pAusgeliehenLehrmittel;
 	this.vormund = pVormund;
 	this.beruflicheVorbereitung = pBeruflicheVorbereitung;
 	this.aktuelleSchule = pAktuelleSchule;
@@ -94,15 +95,15 @@ aktuelleSchule.ausgeben();
  */
 public void speichern()
 {
-	speichernLehrmittel();
+	speichernAusgelieheneLehrmittel();
 }
 
-public void speichernLehrmittel()
+public void speichernAusgelieheneLehrmittel()
 {
 
-	for(Lehrmittel lLehrmittel : lehrmittel)
+	for(AusgeliehenLehrmittel lAusgeliehenLehrmittel : ausgeliehenlehrmittel)
 	{
-		lLehrmittel.speichern(getSchülerInID());
+		lAusgeliehenLehrmittel.speichern(getSchülerInID());
 	}
 }
 
@@ -211,12 +212,15 @@ public void setSchülerID(SchülerID pSchülerID)
 	this.schülerInID = pSchülerID;
 }
 
-public Lehrmittel[] getLehrmittel() {
-	return lehrmittel;
+public AusgeliehenLehrmittel[] getAusgeliehenlehrmittel()
+{
+	return ausgeliehenlehrmittel;
 }
 
-public void setLehrmittel(Lehrmittel[] lehrmittel) {
-	this.lehrmittel = lehrmittel;
+public void setAusgeliehenlehrmittel(AusgeliehenLehrmittel[] pAusgeliehenlehrmittel)
+{
+	this.ausgeliehenlehrmittel = pAusgeliehenlehrmittel;
 }
+
 
 }
