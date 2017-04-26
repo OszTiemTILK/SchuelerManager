@@ -91,7 +91,6 @@ public class SprachenController {
 	       ckArabisch.setSelected(lSprachkompetenz.getSprachenArabisch());
 	       ckSonstiges.setSelected(lSprachkompetenz.getSprachenSonstiges());
 	       ladenChoiceBox();
-
 	    }
 
 	    public void ladenChoiceBox()
@@ -105,8 +104,7 @@ public class SprachenController {
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
+	    	ladenChoiceBox();	    }
 
 
 }
