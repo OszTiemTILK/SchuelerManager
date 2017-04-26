@@ -52,4 +52,5 @@ public class IDSprachkompetenz {
 	{
 		// TODO Auto-generated constructor stub
 	}
+
 }
