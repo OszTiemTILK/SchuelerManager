@@ -7,6 +7,7 @@ import java.util.HashMap;
 import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -156,8 +157,8 @@ public class LehrmittelController
 
     private void zuweisenLehrmittel(ChoiceBox<String> pCbArt, ChoiceBox<String> pCbName, Lehrmittel[] pLehrmittel)
     {
-    	ArrayList<String> lLehrmittelArtListe = new ArrayList<String>();
-    	ArrayList<String> lLehrmittelNameListe = new ArrayList<String>();
+    	ObservableList<String> lLehrmittelArtListe = pCbArt.getItems();
+    	ObservableList<String> lLehrmittelNameListe = pCbName.getItems();
 
     	for(int i = 0; i < pLehrmittel.length; i++)
     	{
