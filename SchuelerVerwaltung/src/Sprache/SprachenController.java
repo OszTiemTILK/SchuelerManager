@@ -75,8 +75,8 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSchülerID.getText()));
-		  	lSprachkompetenz.anlegen();
+	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(Integer.parseInt(tfSchülerID.getText()));
+	    	lSprachkompetenz.anlegen();
 
 	    }
 
