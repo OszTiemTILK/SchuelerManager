@@ -4,26 +4,58 @@
  */
 package adresse;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import datenbank.Datenbankverbindung;
+
 public class AdressID
 {
-    private static int aktuelleID = -1; //letzte vergebene ID
+
 
 	private int ID = 0;
 
-//  Konstruktoren
 
+//  Konstruktoren
 	AdressID()
 	{
-		ID = aktuelleID + 1;
-		setAktuelleID(ID);
+		ID = höchsteID()+1;
+		
 	}
 
 	AdressID(int pIDFest)
 	{
 		setID(pIDFest);
 	}
-//  Getter Setter Methoden
 
+public int höchsteID()
+{
+	Connection lConnection = Datenbankverbindung.holen();
+	Statement lBefehl;
+
+
+
+	try {
+		lBefehl = lConnection.createStatement();
+		ResultSet rs;
+		rs= lBefehl.executeQuery("SELECT IDAdresse FROM db_schulprojekt.adresse ORDER BY IDAdresse DESC");
+		rs.first();
+		int höchsteID = rs.getInt(1);
+		return höchsteID;
+
+
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return 0;
+
+	}
+}
+
+
+//  Getter Setter Methoden
 	public int getID()
 	{
 		return ID;
@@ -32,14 +64,6 @@ public class AdressID
 	{
 		ID = iD;
 	}
-	public static int getAktuelleID()
-	{
-		return aktuelleID;
-	}
-
-	private static void setAktuelleID(int pAktuelleID)
-	{
-		AdressID.aktuelleID = pAktuelleID;
-	}
+	
 
 }
