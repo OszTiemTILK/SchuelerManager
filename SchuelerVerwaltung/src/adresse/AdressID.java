@@ -13,16 +13,15 @@ import datenbank.Datenbankverbindung;
 
 public class AdressID
 {
-    private static int aktuelleID =-1; //letzte vergebene ID
 
 	private int ID = 0;
 
-//  Konstruktoren
 
+//  Konstruktoren
 	AdressID()
 	{
-		ID = aktuelleID + 1;
-		setAktuelleID(ID);
+		ID = höchsteID()+1;
+		
 	}
 
 	AdressID(int pIDFest)
@@ -30,46 +29,32 @@ public class AdressID
 		setID(pIDFest);
 	}
 
-
-//methoden
-
-
-	public int hohlenHöchsteAdressID()
-	{
-		Connection lConnection = Datenbankverbindung.holen();
-		Statement lBefehl;
+public int höchsteID()
+{
+	Connection lConnection = Datenbankverbindung.holen();
+	Statement lBefehl;
 
 
 
-		try {
-			lBefehl = lConnection.createStatement();
-			ResultSet result= lBefehl.executeQuery("SELECT IDAdresse FROM adresse ORDER BY IDAdresse DESC LIMIT 1");
-			result.first();
-			int lHöchsteID =result.getInt(1);
-			return lHöchsteID;
+	try {
+		lBefehl = lConnection.createStatement();
+		ResultSet rs;
+		rs= lBefehl.executeQuery("SELECT IDAdresse FROM db_schulprojekt.adresse ORDER BY IDAdresse DESC");
+		rs.first();
+		int höchsteID = rs.getInt(1);
+		return höchsteID;
 
 
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return 0;
 
-		}
-
-		catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			int z=-1;
-			return z;
-
-		}
 	}
-
-
-
-
-
-
+}
 
 
 //  Getter Setter Methoden
-
 	public int getID()
 	{
 		return ID;
@@ -78,14 +63,6 @@ public class AdressID
 	{
 		ID = iD;
 	}
-	public static int getAktuelleID()
-	{
-		return aktuelleID;
-	}
-
-	private static void setAktuelleID(int pAktuelleID)
-	{
-		AdressID.aktuelleID = pAktuelleID;
-	}
+	
 
 }

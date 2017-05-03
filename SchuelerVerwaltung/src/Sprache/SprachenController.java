@@ -1,3 +1,7 @@
+
+/*
+ * Onur Sükür 06.03.2017 angelegt
+ */
 package Sprache;
 
 import javafx.fxml.FXML;
@@ -9,9 +13,7 @@ import javafx.scene.control.CheckBox;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import java.lang.Object;
-
 import javax.accessibility.Accessible;
-
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.ItemSelectable;
@@ -41,6 +43,7 @@ public class SprachenController {
 	    @FXML
 	    private CheckBox ckTürkisch;
 
+
 	    @FXML
 	    private CheckBox ckArabisch;
 
@@ -49,7 +52,6 @@ public class SprachenController {
 
 	    @FXML
 	    private ChoiceBox<String> cbDeutschNiveau;
-
 
 	    @FXML
 	    private ChoiceBox<String> cbEnglischNiveau;
@@ -64,22 +66,38 @@ public class SprachenController {
 	    private TextField tfSonstigesNiveau;
 
 	    @FXML
-	    private Button    btSpeichern;
+	    private Button    btAnlegenÄndern;
 
 	    @FXML
-	    private Button    btAnlegenDatei;
+	    private Button    btAuslesen;
 
 	    @FXML
-	    private TextField tfID;
+	    private TextField tfSchülerID;
 
 	    @FXML
-	    void anlegenDatei(ActionEvent event)
+	    void anlegenÄndern(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz(null, null, 0);
-	       lSprachkompetenz.ergänzen();
+	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
+		  	lsprechen.anlegenSprachen();
 
 	    }
+	    @FXML
+	    void auslesen(ActionEvent event)
+	    {
 
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       lsprechen.ergänzen();
+	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
+	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
+	       ckTürkisch.setSelected(lsprechen.getSprachenTürkisch());
+	       ckArabisch.setSelected(lsprechen.getSprachenArabisch());
+	       ckSonstiges.setSelected(lsprechen.getSprachenSonstiges());
+	       cbDeutschNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbEnglischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+
+	    }
 
 	    public void ladenChoiceBox()
 	    {
@@ -92,8 +110,10 @@ public class SprachenController {
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
+
+	    	ladenChoiceBox();	    }
+
+
 
 }
 

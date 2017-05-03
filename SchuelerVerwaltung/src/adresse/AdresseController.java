@@ -43,10 +43,12 @@ public class AdresseController {
     }
 
     @FXML
+  
     void suchenSchülerID(ActionEvent event)
     {
     	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText());
     	lAngabenZurPerson.suchenSchülerInID();
+
     }
 
 }
