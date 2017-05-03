@@ -161,7 +161,7 @@ public void ändernIDDB()
 	try
 	{
 		lBefehl = lConnection.createStatement();
-		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID+" WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"' ;");
+		lBefehl.execute("UPDATE schüler SET IDKontaktdaten = "+kontaktdatenID.getID()+" WHERE Nachname = '"+name+"' AND Vorname = '"+vorname+"' ;");
 	}
 	   catch (Exception ex)
     {
