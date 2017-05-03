@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 public class KontaktdatenController {
 
+
 	/**
 	 * Sample Skeleton for 'KontaktdatenView.fxml' Controller Class
 	 */
@@ -51,14 +52,18 @@ public class KontaktdatenController {
 	    {
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
 	    	lKontaktdaten.suchenID();
+
+	    	tfKontaktdatenID.setText(String.valueOf(lKontaktdaten.getID().getID()));
+	    	anzeigenDetails(event);
 	    }
+
 
 
 	    @FXML
 	    void speichern(ActionEvent event)
 	    {
-	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText());
-	    	lKontaktdaten.speichernDB();
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText(), tfName.getText(), tfVorname.getText());
+	    	lKontaktdaten.vergleichenDB();
 	    }
 
 	    @FXML
