@@ -33,5 +33,6 @@
       <TextField fx:id="tfVorname" layoutX="176.0" layoutY="134.0" prefHeight="25.0" prefWidth="77.0" />
       <Label layoutX="176.0" layoutY="117.0" text="Vorname" />
       <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#suchen" text="Suchen" />
+      <TextArea fx:id="taKeineKontaktID" editable="false" layoutX="40.0" layoutY="255.0" prefHeight="43.0" prefWidth="387.0" text="Keine Kontaktdaten zugewiesen&#10;Tragen sie bitte ihre Festnetznummer, Handynummer und E-Mail ein" visible="false" />
    </children>
 </AnchorPane>
