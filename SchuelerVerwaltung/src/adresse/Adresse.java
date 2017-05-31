@@ -47,8 +47,17 @@ public Adresse(String pAdresseStraßeMitHausnummer, String pWohnort, int pPlz)
 public void abtrennenHausnummer()
 {
 	Scanner lHausnummerScanner = new Scanner(AdresseStraßeMitHausnummer);
-	this.strasse = lHausnummerScanner.next();
-	this.hausNummer = lHausnummerScanner.nextInt();
+	while(lHausnummerScanner.hasNext())
+	{
+		if(lHausnummerScanner.hasNextInt())
+			hausNummer = lHausnummerScanner.nextInt();
+		else
+		{
+			if(strasse != "")
+				strasse += " ";
+			strasse += lHausnummerScanner.next();
+		}
+	}
 	lHausnummerScanner.close();
 }
 
