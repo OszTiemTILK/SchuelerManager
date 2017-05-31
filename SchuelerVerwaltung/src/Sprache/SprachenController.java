@@ -99,14 +99,13 @@ public class SprachenController {
 	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
 		  	lsprechen.anlegen();
 
-
 	    }
 	    @FXML
 	    void auslesen(ActionEvent event)
 	    {
 
 
-	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfSprachen.getText()) );
 
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
