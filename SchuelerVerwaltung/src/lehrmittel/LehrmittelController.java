@@ -1,14 +1,23 @@
 package lehrmittel;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.NodeOrientation;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -17,7 +26,7 @@ import javafx.scene.control.TextArea;
 
 public class LehrmittelController
 {
-	private SchülerIn schülerin;
+	private static SchülerIn schülerin;
 
 	private HashMap<String, Lehrmittel[]> lehrmittelMap = new HashMap<String, Lehrmittel[]>();
 
@@ -115,27 +124,27 @@ public class LehrmittelController
 
     	if(cbFach1.getValue() != "" && cbArt1.getValue() != "" && cbName1.getValue() != "" && dpAusgegeben1 != null)
     	{
-    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben1.getValue(), ckRückgabe1.isSelected(), new Lehrmittel(cbFach1.getValue(), cbArt1.getValue(), Lehrmittel.holenID(cbFach1.getValue(), cbArt1.getValue(), cbArt1.getValue()))));
+    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben1.getValue(), ckRückgabe1.isSelected(), new Lehrmittel(cbFach1.getValue(), cbArt1.getValue(), cbName1.getValue(), Lehrmittel.holenID(cbFach1.getValue(), cbArt1.getValue(), cbArt1.getValue()))));
     	}
 
     	if(cbFach2.getValue() != "" && cbArt2.getValue() != "" && cbName2.getValue() != "" && dpAusgegeben2 != null)
     	{
-    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben2.getValue(), ckRückgabe2.isSelected(), new Lehrmittel(cbFach2.getValue(), cbArt2.getValue(), Lehrmittel.holenID(cbFach2.getValue(), cbArt2.getValue(), cbArt2.getValue()))));
+    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben2.getValue(), ckRückgabe2.isSelected(), new Lehrmittel(cbFach2.getValue(), cbArt2.getValue(), cbName2.getValue(), Lehrmittel.holenID(cbFach2.getValue(), cbArt2.getValue(), cbArt2.getValue()))));
     	}
 
     	if(cbFach3.getValue() != "" && cbArt3.getValue() != "" && cbName3.getValue() != "" && dpAusgegeben3 != null)
     	{
-    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben3.getValue(), ckRückgabe3.isSelected(), new Lehrmittel(cbFach3.getValue(), cbArt3.getValue(), Lehrmittel.holenID(cbFach3.getValue(), cbArt3.getValue(), cbArt3.getValue()))));
+    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben3.getValue(), ckRückgabe3.isSelected(), new Lehrmittel(cbFach3.getValue(), cbArt3.getValue(), cbName3.getValue(), Lehrmittel.holenID(cbFach3.getValue(), cbArt3.getValue(), cbArt3.getValue()))));
     	}
 
     	if(cbFach4.getValue() != "" && cbArt4.getValue() != "" && cbName4.getValue() != "" && dpAusgegeben4 != null)
     	{
-    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben4.getValue(), ckRückgabe4.isSelected(), new Lehrmittel(cbFach4.getValue(), cbArt4.getValue(), Lehrmittel.holenID(cbFach4.getValue(), cbArt4.getValue(), cbArt4.getValue()))));
+    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben4.getValue(), ckRückgabe4.isSelected(), new Lehrmittel(cbFach4.getValue(), cbArt4.getValue(), cbName4.getValue(), Lehrmittel.holenID(cbFach4.getValue(), cbArt4.getValue(), cbArt4.getValue()))));
     	}
 
     	if(cbFach5.getValue() != "" && cbArt5.getValue() != "" && cbName5.getValue() != "" && dpAusgegeben5 != null)
     	{
-    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben5.getValue(), ckRückgabe5.isSelected(), new Lehrmittel(cbFach5.getValue(), cbArt5.getValue(), Lehrmittel.holenID(cbFach5.getValue(), cbArt5.getValue(), cbArt5.getValue()))));
+    		lLehrmittelListe.add(new AusgeliehenLehrmittel(dpAusgegeben5.getValue(), ckRückgabe5.isSelected(), new Lehrmittel(cbFach5.getValue(), cbArt5.getValue(), cbName5.getValue(), Lehrmittel.holenID(cbFach5.getValue(), cbArt5.getValue(), cbArt5.getValue()))));
     	}
 
     	schülerin.setAusgeliehenlehrmittel(lLehrmittelListe.toArray(new AusgeliehenLehrmittel[lLehrmittelListe.size()]));
@@ -367,6 +376,77 @@ public class LehrmittelController
     	zuweisenLehrmittel(cbArt4, cbName4, lehrmittelMap.get(pFach));
     	zuweisenLehrmittel(cbArt5, cbName5, lehrmittelMap.get(pFach));
 
+    }
+    @FXML
+    private void drückenLayoutDeutsch()
+    {
+    	cbArt1.getScene().setRoot(laden(new Locale("de","DE")));
+    }
+    @FXML
+    private void drückenLayoutEnglisch()
+    {
+    	cbArt1.getScene().setRoot(laden(new Locale("en","UK")));
+    }
+    @FXML
+    private void drückenLayoutArabisch()
+    {
+    	ändernLayoutRTL();
+    	cbArt1.getScene().setRoot(laden(new Locale("ar","SY")));
+    }
+
+    private Parent laden(Locale pLocale)
+    {
+    	try {
+			return FXMLLoader.load(getClass().getResource("Maske_6_2_LehrmittelView.fxml"),ResourceBundle.getBundle("lehrmittel/LehrmittelResourceBundle",pLocale));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return null;
+    }
+
+    @FXML
+    void ändernLayoutLTR()
+    {
+      //Nur für das Debugging
+    	Scene lScene = btSpeichern.getScene();
+      // Ende Debugghilfe
+
+ 	  lScene.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+
+/*
+ 	  btLTR.disableProperty().setValue(true);
+      btRTL.disableProperty().setValue(false);
+      //hbSchülerInID.getParent().setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+*/
+    }
+
+    @FXML
+    void ändernLayoutRTL()
+    {
+      //Nur für Sie zum Debuggen:
+/*
+    	Node  lNode         =  (Node)event.getTarget();
+      Scene lScene        = ((Node)event.getTarget()).getScene();
+*/
+//      Node  lElternknoten = btRTL.getParent();
+      //  Ende Debugghilfe
+
+      btSpeichern.getScene().setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+/*
+      btLTR.disableProperty().setValue(false);
+      btRTL.disableProperty().setValue(true);
+*/
+    }
+
+    public static SchülerIn getSchülerIn()
+    {
+    	return schülerin;
+    }
+
+    public static void setSchülerIn(SchülerIn pSchülerIn)
+    {
+    	schülerin = pSchülerIn;
     }
 
 }
