@@ -43,6 +43,7 @@ public class SprachenController {
 	    @FXML
 	    private CheckBox ckTürkisch;
 
+
 	    @FXML
 	    private CheckBox ckArabisch;
 
@@ -79,22 +80,27 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSchülerID.getText()));
-		  	lSprachkompetenz.anlegenSprachen();
+	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
+		  	lsprechen.anlegenSprachen();
 
 	    }
 	    @FXML
 	    void auslesen(ActionEvent event)
 	    {
-	       Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSprachkompetenzIDWert.getText()) );
-	       lSprachkompetenz.ergänzen();
-	       ckDeutsch.setSelected(lSprachkompetenz.getSprachenDeutsch());
-	       ckEnglisch.setSelected(lSprachkompetenz.getSprachenEnglisch());
-	       ckTürkisch.setSelected(lSprachkompetenz.getSprachenTürkisch());
-	       ckArabisch.setSelected(lSprachkompetenz.getSprachenArabisch());
-	       ckSonstiges.setSelected(lSprachkompetenz.getSprachenSonstiges());
 
-	       ladenChoiceBox();
+
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       lsprechen.ergänzen();
+	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
+	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
+	       ckTürkisch.setSelected(lsprechen.getSprachenTürkisch());
+	       ckArabisch.setSelected(lsprechen.getSprachenArabisch());
+	       ckSonstiges.setSelected(lsprechen.getSprachenSonstiges());
+	       cbDeutschNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbEnglischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+
 
 	    }
 
@@ -111,7 +117,11 @@ public class SprachenController {
 	    public void initialize()
 	    {
 
+
 	    	ladenChoiceBox();	    }
+
+
+
 
 }
 

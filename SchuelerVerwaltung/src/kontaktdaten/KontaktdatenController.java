@@ -1,9 +1,11 @@
 package kontaktdaten;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 public class KontaktdatenController {
+
 
 	/**
 	 * Sample Skeleton for 'KontaktdatenView.fxml' Controller Class
@@ -45,18 +47,38 @@ public class KontaktdatenController {
 	    @FXML
 	    private TextField tfName;
 
+	    @FXML
+	    private TextArea taKeineKontaktID;
+
 
 	    @FXML
-	    void suchen(ActionEvent event) {
+	    void suchen(ActionEvent event)
+	    {
+	    	resetFields();
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
+	    	lKontaktdaten.suchenID();
+	    	if(Integer.valueOf(lKontaktdaten.getID().getID())==0)
+	    	{
+	    		taKeineKontaktID.setVisible(true);
+	    		//btSpeichern.setVisible(true);
+	    	}
 
+	    	else
+	    	{
+	    		tfKontaktdatenID.setText(String.valueOf(lKontaktdaten.getID().getID()));
+	    		anzeigenDetails(event);
+	    	}
 	    }
+
 
 
 	    @FXML
 	    void speichern(ActionEvent event)
 	    {
-	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText());
-	    	lKontaktdaten.speichernDB();
+	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText(), tfName.getText(), tfVorname.getText());
+	    	lKontaktdaten.vergleichenDB();
+	    	lKontaktdaten.ändernIDDB();
+	    	resetFields();
 	    }
 
 	    @FXML
@@ -70,10 +92,20 @@ public class KontaktdatenController {
 	    }
 
 	    @FXML // This method is called by the FXMLLoader when initialization is complete
-	    void initialize() {
+	    void initialize()
+	    {
 	        assert tfFestnetz != null : "fx:id=\"tfTelephon\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfEmail != null : "fx:id=\"tfEmail\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 	        assert tfKontaktdatenID != null : "fx:id=\"tfKontaktdatenID\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 
+	    }
+
+	    public void resetFields()
+	    {
+	    	taKeineKontaktID.setVisible(false);
+	    	tfKontaktdatenID.setText(null);
+	    	tfFestnetz.setText(null);
+	    	tfMobilnummer.setText(null);
+	    	tfEmail.setText(null);
 	    }
 	}

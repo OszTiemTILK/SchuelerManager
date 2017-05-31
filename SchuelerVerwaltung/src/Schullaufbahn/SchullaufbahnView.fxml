@@ -9,11 +9,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Schullaufbahn.SchullaufbahnController">
    <children>
-      <TextField layoutX="267.0" layoutY="83.0" text="Titel" />
-      <TextArea layoutX="181.0" layoutY="126.0" prefHeight="74.0" prefWidth="323.0" text="Beschreibung" />
-      <TextField layoutX="520.0" layoutY="83.0" text="Sprachen" />
-      <Button fx:id="btWeiter" layoutX="452.0" layoutY="684.0" mnemonicParsing="false" onAction="#anlegenSchule" text="Weiter" />
-      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <Button fx:id="btNächsteSchule" layoutX="521.0" layoutY="385.0" mnemonicParsing="false" onAction="#anlegenSchule" text="Nächste Schule" />
+      <Button fx:id="btZurück" layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
       <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
       <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
          <image>
@@ -21,38 +18,40 @@
          </image>
       </ImageView>
       <Label layoutX="14.0" layoutY="208.0" prefHeight="25.0" prefWidth="222.0" text="Schulabschlüsse/Ausbildungsabschluss:" />
-      <TextField fx:id="tfSchulname1" layoutX="180.0" layoutY="241.0" onAction="#anlegen" promptText="Schulname" />
-      <ChoiceBox layoutX="422.0" layoutY="241.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="463.0" layoutY="241.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="503.0" layoutY="241.0" prefHeight="25.0" prefWidth="62.0" />
-      <TextField fx:id="tfSchulname2" layoutX="180.0" layoutY="286.0" promptText="Schulname" />
-      <ChoiceBox layoutX="463.0" layoutY="286.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="422.0" layoutY="286.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="503.0" layoutY="286.0" prefHeight="25.0" prefWidth="62.0" />
-      <TextField fx:id="tfSchulname4" layoutX="180.0" layoutY="377.0" promptText="Schulname" />
-      <TextField fx:id="tfSchulname3" layoutX="180.0" layoutY="331.0" promptText="Schulname" />
-      <ChoiceBox layoutX="463.0" layoutY="331.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="423.0" layoutY="331.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="463.0" layoutY="377.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="423.0" layoutY="377.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox layoutX="503.0" layoutY="331.0" prefHeight="25.0" prefWidth="62.0" />
-      <ChoiceBox layoutX="502.0" layoutY="377.0" prefHeight="25.0" prefWidth="62.0" />
-      <Label layoutX="14.0" layoutY="415.0" prefHeight="25.0" prefWidth="200.0" text="Zuletzt besuchte Bildungsstätte:" />
-      <Label layoutX="106.0" layoutY="482.0" prefHeight="25.0" prefWidth="53.0" text="Jahrgang:" />
-      <TextField layoutX="180.0" layoutY="441.0" prefHeight="25.0" prefWidth="232.0" promptText="Einrichtungsname" />
-      <TextField layoutX="180.0" layoutY="482.0" promptText="Beschäftigungsjahr" />
-      <TextField layoutX="429.0" layoutY="441.0" promptText="Schulart/Tätigkeit" />
-      <Label layoutX="54.0" layoutY="520.0" prefHeight="25.0" prefWidth="105.0" text="Ort der Ausbildung:" />
-      <TextField layoutX="180.0" layoutY="520.0" promptText="Land" />
-      <TextField layoutX="342.0" layoutY="520.0" prefHeight="25.0" prefWidth="95.0" promptText="Bezirk" />
-      <Label layoutX="49.0" layoutY="557.0" prefHeight="25.0" prefWidth="115.0" text="Erreichter Abschluss:" />
-      <TextField layoutX="180.0" layoutY="557.0" promptText="BBR, eBBR usw." />
-      <Label layoutX="355.0" layoutY="241.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
-      <Label layoutX="355.0" layoutY="286.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
-      <Label layoutX="355.0" layoutY="331.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
-      <Label layoutX="355.0" layoutY="377.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
-      <Label layoutX="81.0" layoutY="591.0" prefHeight="25.0" prefWidth="88.0" text="Anmerkungen:" />
-      <TextArea layoutX="180.0" layoutY="591.0" prefHeight="74.0" prefWidth="330.0" promptText="Sonstiges" />
+      <TextField fx:id="tfSchulname" layoutX="228.0" layoutY="233.0" promptText="Schulname" />
+      <Label layoutX="68.0" layoutY="608.0" prefHeight="25.0" prefWidth="53.0" text="Jahrgang:" />
+      <TextField fx:id="tfJahrgang" layoutX="183.0" layoutY="608.0" promptText="Beschäftigungsjahr" />
+      <Label layoutX="68.0" layoutY="645.0" prefHeight="25.0" prefWidth="115.0" text="Erreichter Abschluss:" />
+      <TextField fx:id="tfAbschluss" layoutX="183.0" layoutY="645.0" promptText="BBR, eBBR usw." />
+      <Label layoutX="82.0" layoutY="306.0" prefHeight="25.0" prefWidth="69.0" text="Abgang am:" />
+      <TextField fx:id="tfDatum1" layoutX="230.0" layoutY="271.0" prefHeight="25.0" prefWidth="95.0" promptText="TT.MM.JJJJ" />
+      <Label text="Label" />
+      <Label text="Label" />
+      <Label layoutX="242.0" layoutY="108.0" text="Schullaufbahn">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="82.0" layoutY="348.0" prefHeight="25.0" prefWidth="69.0" text="Schulart:" />
+      <TextField fx:id="tfTyp" layoutX="228.0" layoutY="348.0" promptText="Technik, Wirtschaft..." />
+      <Label layoutX="87.0" layoutY="233.0" prefHeight="25.0" prefWidth="76.0" text="Schulname :" />
+      <Label layoutX="84.0" layoutY="271.0" prefHeight="25.0" prefWidth="95.0" text="Einschulung am:" />
+      <TextField fx:id="tfDatum2" layoutX="230.0" layoutY="306.0" prefHeight="25.0" prefWidth="95.0" promptText="TT.MM.JJJJ" />
+      <Label layoutX="79.0" layoutY="385.0" prefHeight="25.0" prefWidth="76.0" text="Schuladresse:" />
+      <TextField fx:id="tfStraße" layoutX="228.0" layoutY="385.0" promptText="Straße" />
+      <TextField fx:id="tfOrt" layoutX="395.0" layoutY="385.0" prefHeight="25.0" prefWidth="95.0" promptText="Ort" />
+      <Button fx:id="btWeiter" layoutX="451.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
+      <ChoiceBox fx:id="cbSprachen" layoutX="504.0" layoutY="119.0" prefWidth="150.0" />
+      <TableView layoutX="41.0" layoutY="425.0" prefHeight="170.0" prefWidth="591.0">
+        <columns>
+          <TableColumn fx:id="tcSchulname" prefWidth="124.0" text="Schulname" />
+            <TableColumn prefWidth="75.0" text="Einschulung" />
+            <TableColumn prefWidth="71.0" text="Abgang" />
+            <TableColumn prefWidth="99.0" text="Schulart" />
+            <TableColumn prefWidth="132.0" text="Straße" />
+            <TableColumn prefWidth="89.0" text="Ort" />
+        </columns>
+      </TableView>
    </children>
    <opaqueInsets>
       <Insets />
