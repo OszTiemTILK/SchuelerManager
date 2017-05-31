@@ -34,7 +34,9 @@ public class sprechen {
 	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachenWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{
+
 		this.IDSprache = new IDSprachen();
+
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -46,7 +48,7 @@ public class sprechen {
 
 	public sprechen( int IDSprachenWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachen();
+		this.IDSprache = new IDSprachen()
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
@@ -55,7 +57,6 @@ public class sprechen {
 	{
 
 		this.IDSprache = new IDSprachen();
-
 	}
 
 
@@ -112,6 +113,7 @@ public class sprechen {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
+
 		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachenWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
