@@ -24,14 +24,15 @@
       <TextField fx:id="tfWohnort1" layoutX="325.0" layoutY="150.0" />
       <Label layoutX="329.0" layoutY="136.0" text="%Wohnort" />
       <Button fx:id="btSchülerIDsuchen" layoutX="77.0" layoutY="320.0" mnemonicParsing="false" onAction="#suchenSchülerID" text="%Schüler_ID_suchen" />
-      <Button fx:id="btAdresseIDsuchen" layoutX="360.0" layoutY="320.0" mnemonicParsing="false" text="%Adresse_ID_suchen" />
+      <Button fx:id="btAdresseIDsuchen" layoutX="360.0" layoutY="320.0" mnemonicParsing="false" onAction="#suchenAdresseID" text="%Adresse_ID_suchen" />
       <TextField fx:id="tfNachname" layoutX="137.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="122.0" promptText="%Nachname" />
-      <TextField fx:id="tfAdresseIDsuchen" layoutX="286.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%Ort" />
+      <TextField fx:id="tfOrtSuchen" layoutX="286.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%Ort" />
       <TextField fx:id="tfVorname" layoutX="21.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="111.0" promptText="%Vorname" />
-      <TextField fx:id="tfAdresseIDsuchen1" layoutX="417.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%PLZ" />
-      <TextField fx:id="tfAdresseIDsuchen2" layoutX="286.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%Straße" />
-      <TextField fx:id="tfAdresseIDsuchen3" layoutX="417.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%HausNr" />
+      <TextField fx:id="tfPlzSuchen" layoutX="417.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%PLZ" />
+      <TextField fx:id="tfStrasseSuchen" layoutX="286.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%Straße" />
+      <TextField fx:id="tfHausNrSuchen" layoutX="417.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%HausNr" />
       <TextField fx:id="tfSuchAusgabe" layoutX="87.0" layoutY="244.0" prefHeight="25.0" prefWidth="111.0" promptText="%Suchergebnis" />
+      <TextField fx:id="tfAusgabeAdresseID" layoutX="369.0" layoutY="219.0" prefHeight="25.0" prefWidth="90.0" promptText="%Adress-ID" />
       <Button fx:id="btRTL" layoutX="293.0" layoutY="476.0" mnemonicParsing="false" onAction="#ändernSpracheArabisch" text="%Arabisch" />
       <Button fx:id="btLTR" layoutX="295.0" layoutY="438.0" mnemonicParsing="false" onAction="#ändernSpracheDeutsch" text="%Deutsch" />
    </children>

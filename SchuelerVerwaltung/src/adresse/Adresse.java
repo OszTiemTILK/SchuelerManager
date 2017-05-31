@@ -52,6 +52,28 @@ public void abtrennenHausnummer()
 	lHausnummerScanner.close();
 }
 
+public int suchenAdresseID()
+{
+	Connection lConnection = Datenbankverbindung.holen();
+	Statement lBefehl;
+	try
+	{
+		lBefehl = lConnection.createStatement();
+		ResultSet result = lBefehl.executeQuery("SELECT IDAdresse FROM adresse WHERE Ort = '" + wohnort + "' AND PLZ = " + plz + " AND Straße = '" + strasse + "' AND HausNr = " + hausNummer);
+		if(result.first())
+		{
+			int lAdresseID = result.getInt(1);
+			System.out.println(lAdresseID);
+			return lAdresseID;
+		}
+	}
+	catch(SQLException e)
+	{
+		e.printStackTrace();
+	}
+	return -1;
+}
+
 public void anlegenAdresse()
 {
 	speichernDB();
@@ -70,7 +92,7 @@ try {
 	lBefehl = lConnection.createStatement();
 	AdressID lAdresse = new AdressID();
 	this.adressID = lAdresse;
-	
+
 	lBefehl.execute("INSERT INTO db_schulprojekt.adresse(IDAdresse,Ort,PLZ,Straße,HausNr) VALUES("+lAdresse.getID()+",'"+wohnort+"',"+plz+",'"+strasse+"',"+hausNummer+")");
 
 
