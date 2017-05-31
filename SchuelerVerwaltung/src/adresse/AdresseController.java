@@ -1,9 +1,17 @@
 package adresse;
 
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import allgemeinedaten.AngabenZurPerson;
 import anwendungslogik.Geschlecht;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.NodeOrientation;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
@@ -38,6 +46,12 @@ public class AdresseController {
     private TextField tfSuchAusgabe;
 
     @FXML
+    private Button btLTR;
+
+    @FXML
+    private Button btRTL;
+
+    @FXML
     void anlegenKontaktdaten(ActionEvent event)
     {
     	Adresse lAdresse = new Adresse(tfAdresseStraßeMitHausnummer1.getText(), tfWohnort1.getText(), Integer.parseInt(tfPlz1.getText()));
@@ -57,8 +71,12 @@ public class AdresseController {
     	{
     		tfSuchAusgabe.setText(String.valueOf(lSchülerInID));
     	}
+    	else
+    	{
+    		tfSuchAusgabe.setText("Nicht vorhanden");
+    	}
 
-    
+
     }
 
     @FXML
@@ -72,4 +90,34 @@ public class AdresseController {
     {
     	tfSuchAusgabe.setText("Nein");
     }
-}
+
+    @FXML
+    void ändernSpracheArabisch(ActionEvent event)
+    {
+    	((Node)event.getTarget()).getScene().setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+    	btRTL.getScene().setRoot(laden(new Locale("ar", "SY")));
+    }
+
+    @FXML
+    void ändernSpracheDeutsch(ActionEvent event)
+    {
+    	((Node)event.getTarget()).getScene().setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+    	btLTR.getScene().setRoot(laden(new Locale("de", "DE")));
+    }
+    private Parent laden(Locale pLocale)
+    {
+    	try
+    	{
+    		return FXMLLoader.load(getClass().getResource("AdresseView.fxml"),
+    			   ResourceBundle.getBundle("adresse/AdresseResourceBundle",
+    			   pLocale));
+    	}
+    	catch (IOException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return null;
+
+    }
+
+}//end

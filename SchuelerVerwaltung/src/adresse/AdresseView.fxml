@@ -8,32 +8,31 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adresse.AdresseController">
    <children>
-      <Button fx:id="btWeiter" layoutX="436.0" layoutY="685.0" mnemonicParsing="false" onAction="#anlegenKontaktdaten" text="Weiter" />
-      <Button fx:id="btZurück" layoutX="161.0" layoutY="685.0" mnemonicParsing="false" text="Zurück" />
-      <ProgressBar fx:id="pbFortschritt" layoutX="225.0" layoutY="688.0" prefWidth="200.0" progress="0.0" />
+      <Button fx:id="btWeiter" layoutX="436.0" layoutY="685.0" mnemonicParsing="false" onAction="#anlegenKontaktdaten" text="%Weiter" />
+      <Button fx:id="btZurück" layoutX="161.0" layoutY="685.0" mnemonicParsing="false" text="%Zurück" />
       <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
          <image>
             <Image url="@src/logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="289.0" layoutY="69.0" prefHeight="17.0" prefWidth="72.0" text="Kontaktdaten" />
+      <Label layoutX="289.0" layoutY="69.0" prefHeight="17.0" prefWidth="94.0" text="%Kontaktdaten" />
       <Label layoutX="14.0" layoutY="255.0" prefHeight="14.0" prefWidth="134.0" />
-      <Label layoutX="55.0" layoutY="136.0" text="Adresse: Straße mit Hausnummer" />
+      <Label layoutX="55.0" layoutY="136.0" text="%Straße_mit_Hausnummer" />
       <TextField fx:id="tfAdresseStraßeMitHausnummer1" layoutX="55.0" layoutY="150.0" prefHeight="22.0" prefWidth="164.0" />
-      <Label layoutX="242.0" layoutY="136.0" text="PLZ" />
+      <Label layoutX="242.0" layoutY="136.0" text="%PLZ" />
       <TextField fx:id="tfPlz1" layoutX="242.0" layoutY="150.0" prefHeight="22.0" prefWidth="58.0" />
       <TextField fx:id="tfWohnort1" layoutX="325.0" layoutY="150.0" />
-      <Label layoutX="329.0" layoutY="136.0" text="Wohnort" />
-      <Button fx:id="btSchülerIDsuchen" layoutX="77.0" layoutY="320.0" mnemonicParsing="false" onAction="#suchenSchülerID" text="Schüler ID suchen" />
-      <Button fx:id="btAdresseIDsuchen" layoutX="360.0" layoutY="320.0" mnemonicParsing="false" text="Adresse ID suchen" />
-      <TextField fx:id="tfNachname" layoutX="137.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="122.0" promptText="Nachname" />
-      <TextField fx:id="tfAdresseIDsuchen" layoutX="286.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="Ort" />
-      <Button fx:id="a" layoutX="260.0" layoutY="412.0" mnemonicParsing="false" text="a" />
-      <TextField fx:id="a" layoutX="211.0" layoutY="381.0" prefHeight="25.0" prefWidth="122.0" promptText="a" />
-      <TextField fx:id="tfVorname" layoutX="21.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="111.0" promptText="Vorname" />
-      <TextField fx:id="tfAdresseIDsuchen1" layoutX="417.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="PLZ" />
-      <TextField fx:id="tfAdresseIDsuchen2" layoutX="286.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="Straße" />
-      <TextField fx:id="tfAdresseIDsuchen3" layoutX="417.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="HausNr" />
-      <TextField fx:id="tfSuchAusgabe" layoutX="87.0" layoutY="244.0" prefHeight="25.0" prefWidth="90.0" promptText="Such Ergebnis" />
+      <Label layoutX="329.0" layoutY="136.0" text="%Wohnort" />
+      <Button fx:id="btSchülerIDsuchen" layoutX="77.0" layoutY="320.0" mnemonicParsing="false" onAction="#suchenSchülerID" text="%Schüler_ID_suchen" />
+      <Button fx:id="btAdresseIDsuchen" layoutX="360.0" layoutY="320.0" mnemonicParsing="false" text="%Adresse_ID_suchen" />
+      <TextField fx:id="tfNachname" layoutX="137.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="122.0" promptText="%Nachname" />
+      <TextField fx:id="tfAdresseIDsuchen" layoutX="286.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%Ort" />
+      <TextField fx:id="tfVorname" layoutX="21.0" layoutY="285.0" onAction="#suchenSchülerID" prefHeight="25.0" prefWidth="111.0" promptText="%Vorname" />
+      <TextField fx:id="tfAdresseIDsuchen1" layoutX="417.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="%PLZ" />
+      <TextField fx:id="tfAdresseIDsuchen2" layoutX="286.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%Straße" />
+      <TextField fx:id="tfAdresseIDsuchen3" layoutX="417.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="%HausNr" />
+      <TextField fx:id="tfSuchAusgabe" layoutX="87.0" layoutY="244.0" prefHeight="25.0" prefWidth="111.0" promptText="%Suchergebnis" />
+      <Button fx:id="btRTL" layoutX="293.0" layoutY="476.0" mnemonicParsing="false" onAction="#ändernSpracheArabisch" text="%Arabisch" />
+      <Button fx:id="btLTR" layoutX="295.0" layoutY="438.0" mnemonicParsing="false" onAction="#ändernSpracheDeutsch" text="%Deutsch" />
    </children>
 </AnchorPane>
