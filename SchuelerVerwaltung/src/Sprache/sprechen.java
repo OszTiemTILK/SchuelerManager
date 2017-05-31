@@ -27,14 +27,14 @@ public class sprechen {
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
 	 * @param pSprachenNiveau
-	 * @param pSprachkompetenzID
+	 * @param pIDSprachkompetenz
 	 */
 
 
-	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSpricht, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachkompetenzWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
+		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -44,18 +44,20 @@ public class sprechen {
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
-	public sprechen( int IDSpricht, String pSprachenNiveau, String pSprachenName )
+	public sprechen( int IDSprachkompetenzWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
+		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
 	}
-	public sprechen( int IDSpricht )
+	public sprechen( int IDSprachkompetenzWert )
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
+
+		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
 
 	}
+
 
 
 	/** legt Sprachen an
@@ -91,7 +93,7 @@ public class sprechen {
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO spricht (IDSchüler) VALUES ( "+IDSprache.getID()+"");
+			lBefehl.execute("INSERT INTO spricht (IDSchüler) VALUES ( "+IDSprache.getIDSprachkompetenz()+"");
 
 		  } catch (SQLException e)
 		  {
@@ -99,7 +101,7 @@ public class sprechen {
 			e.printStackTrace();
 		  }
 	}
-	 public static sprechen auslesenDB(int IDSpricht)
+	 public static sprechen auslesenDB(int IDSprachkompetenzWert)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -110,7 +112,7 @@ public class sprechen {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ IDSpricht +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ IDSprachkompetenzWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
