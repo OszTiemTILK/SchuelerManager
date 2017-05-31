@@ -97,7 +97,9 @@ public void speichern()
 {
 	speichernAusgelieheneLehrmittel();
 }
-
+/**
+ * Speichert Lehrmittel zu einer bestimmten SchülerIn in der Datenbank.
+ */
 public void speichernAusgelieheneLehrmittel()
 {
 

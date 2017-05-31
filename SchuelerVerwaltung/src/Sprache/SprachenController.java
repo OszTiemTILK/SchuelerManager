@@ -31,10 +31,12 @@ public class SprachenController {
     private Button btSpracheÄndernArabisch;
 //
     @FXML
+
     private ChoiceBox<String> cbTürkischNiveau;
 
     @FXML
     private ChoiceBox<String> cbArabischNiveau;
+
 
     @FXML
     private CheckBox ckEnglisch;
@@ -52,6 +54,7 @@ public class SprachenController {
     private TextArea taText;
 
     @FXML
+
     private CheckBox ckDeutsch;
 
     @FXML
@@ -71,6 +74,7 @@ public class SprachenController {
 
     @FXML
     private TextField tfSprachen;
+
 
 
     @FXML
