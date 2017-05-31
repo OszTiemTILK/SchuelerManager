@@ -9,5 +9,8 @@ public abstract class Controller
 	private TextField tfName;
 
 	@FXML
+	private TextField tfVorname;
+
+	@FXML
 	private TextField tfID;
 }
