@@ -26,10 +26,28 @@ public class AdresseController {
     private Button btZurück;
 
     @FXML
+    private TextField tfVorname;
+
+    @FXML
+    private TextField tfNachname;
+
+    @FXML
+    private Button btSchülerIDsuchen;
+
+    @FXML
     void anlegenKontaktdaten(ActionEvent event)
     {
     	Adresse lAdresse = new Adresse(tfAdresseStraßeMitHausnummer1.getText(), tfWohnort1.getText(), Integer.parseInt(tfPlz1.getText()));
     	lAdresse.anlegenAdresse();
+
+    }
+
+    @FXML
+  
+    void suchenSchülerID(ActionEvent event)
+    {
+    	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText());
+    	lAngabenZurPerson.suchenSchülerInID();
 
     }
 

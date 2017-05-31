@@ -2,6 +2,7 @@
 package allgemeinedaten;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -27,7 +28,13 @@ public AngabenZurPerson(String pVorname , String pNachname , LocalDate pGeburtsd
 	this.nachname=pNachname;
 	this.geburtsDatum=pGeburtsdatum;
 	this.geschlecht=pGeschlecht;
+}
 
+public AngabenZurPerson(String pVorname, String pNachname)
+{
+	super();
+	this.vorname=pVorname;
+	this.nachname=pNachname;
 
 }
  /** 
@@ -92,7 +99,34 @@ public void speichernDB(String pVorname , String pNachname , LocalDate pGeburtsd
 
 }
 
+public int suchenSchülerInID()
+{
+	Connection lConnection = Datenbankverbindung.holen();
+	Statement lBefehl;
 
+
+
+	try {
+		lBefehl = lConnection.createStatement();
+		ResultSet result= lBefehl.executeQuery("SELECT IDSchüler FROM schüler WHERE Vorname='"+vorname+"'AND Nachname='"+nachname+"'");
+		result.first();
+		int lSchülerID =result.getInt(1);
+		System.out.println(lSchülerID);
+		return lSchülerID;
+
+
+
+
+	}
+
+	catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		int z=-1;
+		return z;
+
+	}
+}
 
 // getter und setter
 public String getVorname()

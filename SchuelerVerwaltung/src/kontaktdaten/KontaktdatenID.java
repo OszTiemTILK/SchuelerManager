@@ -19,11 +19,6 @@ public class KontaktdatenID
 
 	private int ID = 0;
 
-	private String StringID = null;
-	private void UpdateStID()
-	{
-		StringID = String.valueOf(ID);
-	}
 
 //  Konstruktoren
 
@@ -58,12 +53,6 @@ public class KontaktdatenID
 		KontaktdatenID.aktuelleID = pAktuelleID;
 	}
 
-	public String getStringID()
-	{
-		UpdateStID();
-		return this.StringID;
-	}
-
 	private int holenHöchsteID()
 	{
 		 Connection lConnection = VerbindungKontaktdaten.holen();
@@ -80,8 +69,6 @@ public class KontaktdatenID
 		  return Ergebnis;
 
 		   }
-
-
 
 		  catch (SQLException ex)
 	  		{

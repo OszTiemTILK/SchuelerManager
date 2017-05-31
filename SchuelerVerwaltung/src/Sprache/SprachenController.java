@@ -63,6 +63,9 @@ public class SprachenController {
 	    private ChoiceBox<String> cbArabischNiveau;
 
 	    @FXML
+	    private ChoiceBox<String> cbSonstigesNiveau;
+
+	    @FXML
 	    private TextField tfSonstigesNiveau;
 
 	    @FXML
@@ -86,7 +89,9 @@ public class SprachenController {
 	    void auslesen(ActionEvent event)
 	    {
 
-	       sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()) );
+
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
 	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
@@ -98,6 +103,7 @@ public class SprachenController {
 	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
 	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
 
+
 	    }
 
 	    public void ladenChoiceBox()
@@ -106,13 +112,16 @@ public class SprachenController {
 	    	cbEnglischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbTürkischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbArabischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbSonstigesNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    }
 
 	    @FXML
 	    public void initialize()
 	    {
 
+
 	    	ladenChoiceBox();	    }
+
 
 
 
