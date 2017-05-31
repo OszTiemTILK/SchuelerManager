@@ -21,7 +21,7 @@
 
       <Label layoutX="63.0" layoutY="177.0" text="%Festnetznummer" />
       <Label layoutX="366.0" layoutY="117.0" text="%KontaktdatenID" />
-      <TextField fx:id="tfEmail" layoutX="281.0" layoutY="194.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="tfEmail" layoutX="286.0" layoutY="194.0" prefHeight="25.0" prefWidth="173.0" />
       <TextField fx:id="tfKontaktdatenID" layoutX="366.0" layoutY="134.0" prefHeight="25.0" prefWidth="41.0" />
       <Label layoutX="281.0" layoutY="177.0" text="%E-Mail" />
       <Button fx:id="btSpeichern" layoutX="503.0" layoutY="251.0" mnemonicParsing="false" onAction="#speichern" text="%Speichern" />
