@@ -1,7 +1,16 @@
 package kontaktdaten;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import i18nArabischEinstieg.ArabischEinstiegController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 public class KontaktdatenController {
 
@@ -31,8 +40,8 @@ public class KontaktdatenController {
 	    @FXML // fx:id="tfKontaktdatenID"
 	    private TextField tfKontaktdatenID; // Value injected by FXMLLoader
 
-	    @FXML // fx:id="btStepIntoTheLight"
-	    private Button btStepIntoTheLight; // Value injected by FXMLLoader
+	   /* @FXML // fx:id="btStepIntoTheLight"
+	    private Button btStepIntoTheLight; // Value injected by FXMLLoader */
 
 	    @FXML // fx:id="btSpeichern"
 	    private Button btSpeichern; // Value injected by FXMLLoader
@@ -46,14 +55,27 @@ public class KontaktdatenController {
 	    @FXML
 	    private TextField tfName;
 
+	    @FXML
+	    private TextArea taKeineKontaktID;
+
 
 	    @FXML
 	    void suchen(ActionEvent event)
 	    {
+	    	resetFields();
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten (tfVorname.getText(), tfName.getText() );
 	    	lKontaktdaten.suchenID();
+	    	if(Integer.valueOf(lKontaktdaten.getID().getID())==0)
+	    	{
+	    		taKeineKontaktID.setVisible(true);
+	    		//btSpeichern.setVisible(true);
+	    	}
 
-	    	tfKontaktdatenID.setText(lKontaktdaten.getStringID());
+	    	else
+	    	{
+	    		tfKontaktdatenID.setText(String.valueOf(lKontaktdaten.getID().getID()));
+	    		anzeigenDetails(event);
+	    	}
 	    }
 
 
@@ -63,6 +85,8 @@ public class KontaktdatenController {
 	    {
 	    	Kontaktdaten lKontaktdaten = new Kontaktdaten( tfFestnetz.getText(), tfMobilnummer.getText(), tfEmail.getText(), tfName.getText(), tfVorname.getText());
 	    	lKontaktdaten.vergleichenDB();
+	    	lKontaktdaten.ändernIDDB();
+	    	resetFields();
 	    }
 
 	    @FXML
@@ -83,4 +107,51 @@ public class KontaktdatenController {
 	        assert tfKontaktdatenID != null : "fx:id=\"tfKontaktdatenID\" was not injected: check your FXML file 'KontaktdatenView.fxml'.";
 
 	    }
+
+	    public void resetFields()
+	    {
+	    	taKeineKontaktID.setVisible(false);
+	    	tfKontaktdatenID.setText(null);
+	    	tfFestnetz.setText(null);
+	    	tfMobilnummer.setText(null);
+	    	tfEmail.setText(null);
+	    }
+
+	    //Sprachenkladderadatsch
+	    public Parent ausgebenParent(Locale pLocale)
+	    {
+	    	Parent lParent=null;
+	    	try
+	    	{
+				lParent = FXMLLoader.load(KontaktdatenController.class.getResource("KontaktdatenView.fxml"),  ResourceBundle.getBundle("Kontaktdaten/Kontaktdaten", pLocale ));
+			}
+	    	catch (IOException e)
+	    	{
+				e.printStackTrace();
+			}
+	    	return lParent;
+	    }
+
+	    @FXML
+	    void Deutsch()
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("de", "DE")));
+	    	//ändernLayoutLTR(copyFor(btLTR, btDeutsch));
+	    }
+
+	    @FXML
+	    void Englisch(/*ActionEvent event*/)
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("en", "UK")));
+	    	//ändernLayoutLTR(event);
+	    }
+
+	   /* @FXML
+	    void Arabisch()
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("ar", "SY")));
+	    	//ändernLayoutRTL();
+	    }*/
+
+
 	}

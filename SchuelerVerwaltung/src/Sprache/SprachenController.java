@@ -1,3 +1,4 @@
+
 /*
  * Onur Sükür 06.03.2017 angelegt
  */
@@ -42,6 +43,7 @@ public class SprachenController {
 	    @FXML
 	    private CheckBox ckTürkisch;
 
+
 	    @FXML
 	    private CheckBox ckArabisch;
 
@@ -61,6 +63,9 @@ public class SprachenController {
 	    private ChoiceBox<String> cbArabischNiveau;
 
 	    @FXML
+	    private ChoiceBox<String> cbSonstigesNiveau;
+
+	    @FXML
 	    private TextField tfSonstigesNiveau;
 
 	    @FXML
@@ -75,11 +80,31 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	Sprachkompetenz lSprachkompetenz = new Sprachkompetenz( Integer.parseInt(tfSchülerID.getText()));
-		  	lSprachkompetenz.anlegen();
+	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
+		  	lsprechen.anlegen();
+
 
 	    }
+	    @FXML
+	    void auslesen(ActionEvent event)
+	    {
 
+
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+
+	       lsprechen.ergänzen();
+	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
+	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
+	       ckTürkisch.setSelected(lsprechen.getSprachenTürkisch());
+	       ckArabisch.setSelected(lsprechen.getSprachenArabisch());
+	       ckSonstiges.setSelected(lsprechen.getSprachenSonstiges());
+	       cbDeutschNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbEnglischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+
+
+	    }
 
 	    public void ladenChoiceBox()
 	    {
@@ -87,19 +112,18 @@ public class SprachenController {
 	    	cbEnglischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbTürkischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    	cbArabischNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
+	    	cbSonstigesNiveau.setItems(FXCollections.observableArrayList("A1","A2","B1","B2","C1","C2"));
 	    }
 
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
 
-	    @FXML
-	    protected void auslesen(ActionEvent event)
-	    {
 
-	    }
+	    	ladenChoiceBox();	    }
+
+
+
 
 }
 

@@ -19,6 +19,7 @@
       <TextField fx:id="tfFestnetz" layoutX="66.0" layoutY="193.0" prefHeight="25.0" prefWidth="91.0" />
       <Label layoutX="267.0" layoutY="70.0" prefHeight="14.0" prefWidth="134.0" text="%Kontaktdaten" />
       <Label layoutX="14.0" layoutY="255.0" prefHeight="14.0" prefWidth="134.0" />
+
       <Label layoutX="63.0" layoutY="177.0" text="%Festnetznummer" />
       <Label layoutX="366.0" layoutY="117.0" text="%KontaktdatenID" />
       <TextField fx:id="tfEmail" layoutX="281.0" layoutY="194.0" prefHeight="25.0" prefWidth="97.0" />
@@ -35,5 +36,6 @@
       <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#suchen" text="%Suchen" />
       <Button fx:id="btEnglisch" layoutX="57.0" layoutY="371.0" mnemonicParsing="false" text="%Englisch" />
       <Button fx:id="btDeutsch" layoutX="153.0" layoutY="371.0" mnemonicParsing="false" text="%Deutsch" />
+
    </children>
 </AnchorPane>

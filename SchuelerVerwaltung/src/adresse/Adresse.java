@@ -1,6 +1,8 @@
 package adresse;
 
+import java.sql.Array;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 import anwendungslogik.Geschlecht;
 import datenbank.Datenbankverbindung;
 
+
 public class Adresse
 {
 private String strasse;
@@ -16,6 +19,8 @@ private int hausNummer;
 private String wohnort;
 private int plz;
 private String AdresseStraßeMitHausnummer;
+private AdressID adressID;
+
 
 
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
@@ -49,12 +54,12 @@ public void abtrennenHausnummer()
 
 public void anlegenAdresse()
 {
-	speichernDB(wohnort , plz ,strasse, hausNummer);
+	speichernDB();
 	ausgeben();
 }
 
 //Datenbankmethoden
-public void speichernDB(String pWohnort , int pPlz , String pStrasse, int pHausnummer)
+public void speichernDB()
 {
 Connection lConnection = Datenbankverbindung.holen();
 Statement lBefehl;
@@ -63,7 +68,11 @@ Statement lBefehl;
 
 try {
 	lBefehl = lConnection.createStatement();
-	lBefehl.execute("INSERT INTO db_schulprojekt.adresse(Ort,PLZ,Straße,HausNr) VALUES("+pWohnort+","+pPlz+","+pStrasse+","+pHausnummer+")");
+	AdressID lAdresse = new AdressID();
+	this.adressID = lAdresse;
+	
+	lBefehl.execute("INSERT INTO db_schulprojekt.adresse(IDAdresse,Ort,PLZ,Straße,HausNr) VALUES("+lAdresse.getID()+",'"+wohnort+"',"+plz+",'"+strasse+"',"+hausNummer+")");
+
 
 } catch (SQLException e) {
 	// TODO Auto-generated catch block
@@ -84,7 +93,9 @@ public void ausgeben()
 	System.out.println();
 	System.out.print("PLZ: " + getPlz());
 	System.out.println();
+	System.out.println("ID: "+ adressID.getID());
 }
+
 
 
 /**
