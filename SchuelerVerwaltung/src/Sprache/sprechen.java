@@ -58,6 +58,7 @@ public class sprechen {
 	}
 
 
+
 	/** legt Sprachen an
 	 *
 	 */
