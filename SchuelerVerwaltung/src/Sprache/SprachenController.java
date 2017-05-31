@@ -78,13 +78,14 @@ public class SprachenController {
 	    void anlegenÄndern(ActionEvent event)
 	    {
 	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
-		  	lsprechen.anlegenSprachen();
+		  	lsprechen.anlegen();
 
 	    }
 	    @FXML
 	    void auslesen(ActionEvent event)
 	    {
-	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()) );
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
 	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
@@ -95,6 +96,7 @@ public class SprachenController {
 	       cbEnglischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
 	       cbTürkischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
 	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
+
 	    }
 
 	    public void ladenChoiceBox()
@@ -108,8 +110,9 @@ public class SprachenController {
 	    @FXML
 	    public void initialize()
 	    {
-	    	ladenChoiceBox();
-	    }
+
+	    	ladenChoiceBox();	    }
+
 
 
 }
