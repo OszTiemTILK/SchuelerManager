@@ -15,7 +15,7 @@ import datenbank.Datenbankverbindung;
 import javafx.collections.ObservableList;
 
 public class sprechen {
-	IDSprachkompetenz IDSprache;
+	IDSprachen IDSprache;
 	private String sprachenName;
 	private String sprachenNiveau;
 	private Boolean sprachenDeutsch;
@@ -27,14 +27,15 @@ public class sprechen {
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
 	 * @param pSprachenNiveau
-	 * @param pSprachkompetenzID
+	 * @param pIDSprachen
 	 */
 
 
-	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSpricht, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachenWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
-	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
+
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
+
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -44,18 +45,21 @@ public class sprechen {
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
-	public sprechen( int IDSpricht, String pSprachenNiveau, String pSprachenName )
+	public sprechen( int IDSprachenWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
 	}
-	public sprechen( int IDSpricht )
+	public sprechen( int IDSprachenWert )
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSpricht);
 
+
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
 	}
+
+
 
 
 	/** legt Sprachen an
@@ -91,7 +95,8 @@ public class sprechen {
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO spricht (IDSchüler) VALUES ( "+IDSprache.getID()+"");
+			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES (("+IDSprache.getTürkischID()+"),"+allgemeinedaten.SchülerInID.getAktuelleID()+")");
+
 
 		  } catch (SQLException e)
 		  {
@@ -99,7 +104,7 @@ public class sprechen {
 			e.printStackTrace();
 		  }
 	}
-	 public static sprechen auslesenDB(int IDSpricht)
+	 public static sprechen auslesenDB(int IDSprachenWert)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -110,7 +115,8 @@ public class sprechen {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ IDSpricht +";");
+
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachenWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -129,14 +135,14 @@ public class sprechen {
 		  		}
 		  return null;
 	  }
-
 	public void ergänzen()
 	{
-	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getID());
+	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getTürkischID());
 	  sprachenName = lSprachkompetenz.sprachenName;
 	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
 // Ab hier folgen nur Get/Set Methoden
+
 	public String getSprachenName()
 	{
 		return sprachenName;
@@ -153,13 +159,13 @@ public class sprechen {
 	{
 		this.sprachenNiveau = pSprachenNiveau;
 	}
-	public IDSprachkompetenz getIDSprachkompetenz()
+	public IDSprachen getIDSprachen()
 	{
 		return IDSprache;
 	}
-	public void setIDSprachkompetenz(IDSprachkompetenz pIDSprachkompetenz)
+	public void setIDSprachen(IDSprachen pIDSprachen)
 	{
-		this.IDSprache = pIDSprachkompetenz;
+		this.IDSprache = pIDSprachen;
 	}
 	public Boolean getSprachenDeutsch()
 	{

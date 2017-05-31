@@ -1,13 +1,13 @@
 package Sprache;
 
-public class IDSprachkompetenz {
+public class IDSprachen {
 
 	private int deutschID = 1;
 	private int englischID = 2;
 	private int türkischID = 3;
 	private int arabischID = 4;
 	private int sonstigesID = 5;
-    public IDSprachkompetenz (int pDeutschID,int pEnglischID,int pTürkischID,int pArabischID,int pSonstigesID)
+    public IDSprachen (int pDeutschID,int pEnglischID,int pTürkischID,int pArabischID,int pSonstigesID)
     {
     	this.deutschID = pDeutschID;
     	this.englischID = pEnglischID;
@@ -56,9 +56,6 @@ public class IDSprachkompetenz {
 	{
 		this.sonstigesID = pSonstigesID;
 	}
-	public IDSprachkompetenz()
-	{
-		// TODO Auto-generated constructor stub
-	}
+
 
 }

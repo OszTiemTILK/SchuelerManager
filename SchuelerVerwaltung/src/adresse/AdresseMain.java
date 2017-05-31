@@ -2,6 +2,8 @@ package adresse;
 
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 
 import javafx.application.Application;
@@ -20,8 +22,15 @@ public class AdresseMain extends Application {
 	{
     	this.grundStage = pPrimaryStage;
         FXMLLoader lLoader = new FXMLLoader();
-        // Namen der FXML datei ändern
+        //Hier können Sie zwischen den Sprachen wechseln
+        Locale.setDefault(new Locale("de","DE"));
+        //Locale.setDefault(new Locale("ar","SY"));
+
+
+        ResourceBundle lZBA_RB = ResourceBundle.getBundle("adresse/AdresseResourceBundle");
         lLoader.setLocation(AdresseMain.class.getResource("AdresseView.fxml"));
+        lLoader.setResources(lZBA_RB);
+
         grundPane = lLoader.load();
 
         Scene lScene = new Scene(grundPane);

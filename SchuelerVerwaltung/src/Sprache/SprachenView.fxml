@@ -32,6 +32,7 @@
       <Button fx:id="btAuslesen" layoutX="207.0" layoutY="484.0" mnemonicParsing="false" text="%Auslesen" />
       <Button fx:id="btAnlegenÄndern" layoutX="390.0" layoutY="484.0" mnemonicParsing="false" onAction="#anlegenÄndern" text="%AnlegenÄndern" />
       <TextField fx:id="tfSchülerID" layoutX="74.0" layoutY="83.0" text="SchülerID" />
+
       <ChoiceBox fx:id="cbSonstigesNiveau" layoutX="467.0" layoutY="410.0" prefWidth="150.0" />
 
       <Button fx:id="btSpracheÄndernDeutsch" layoutX="316.0" layoutY="540.0" mnemonicParsing="false" onAction="#spracheÄndernDeutsch" text="Deutsch" />

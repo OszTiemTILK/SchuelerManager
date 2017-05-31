@@ -8,31 +8,33 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontaktdaten.KontaktdatenController">
    <children>
-      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="Weiter" />
-      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="Zurück" />
+      <Button layoutX="452.0" layoutY="684.0" mnemonicParsing="false" text="%Weiter" />
+      <Button layoutX="180.0" layoutY="684.0" mnemonicParsing="false" text="%Zurück" />
       <ProgressBar layoutX="242.0" layoutY="687.0" prefWidth="200.0" progress="0.0" />
       <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
          <image>
             <Image url="@src/logo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfFestnetz" layoutX="69.0" layoutY="194.0" prefHeight="25.0" prefWidth="91.0" />
-      <Label layoutX="267.0" layoutY="70.0" prefHeight="14.0" prefWidth="134.0" text="Kontaktdaten" />
-      <Label layoutX="14.0" layoutY="255.0" prefHeight="14.0" prefWidth="134.0" />
-      <Label layoutX="70.0" layoutY="177.0" text="Festnetznummer" />
-      <Label layoutX="366.0" layoutY="117.0" text="KontaktdatenID" />
-      <TextField fx:id="tfEmail" layoutX="281.0" layoutY="194.0" prefHeight="22.0" prefWidth="97.0" />
-      <TextField fx:id="tfKontaktdatenID" editable="false" layoutX="366.0" layoutY="134.0" prefHeight="25.0" prefWidth="41.0" />
-      <Label layoutX="281.0" layoutY="177.0" text="E-Mail" />
-      <Button fx:id="btSpeichern" layoutX="503.0" layoutY="251.0" mnemonicParsing="false" onAction="#speichern" text="Speichern" />
-      <Button fx:id="btStepIntoTheLight" layoutX="53.0" layoutY="590.0" mnemonicParsing="false" onAction="#anzeigenDetails" prefHeight="25.0" prefWidth="228.0" text="Ausgeben (Da ersetzt, nur für Notfälle)" />
-      <TextField fx:id="tfMobilnummer" layoutX="189.0" layoutY="194.0" prefHeight="22.0" prefWidth="72.0" />
-      <Label layoutX="186.0" layoutY="177.0" text="Handynummer" />
+      <TextField fx:id="tfFestnetz" layoutX="66.0" layoutY="193.0" prefHeight="25.0" prefWidth="91.0" />
+      <Label layoutX="267.0" layoutY="70.0" prefHeight="14.0" prefWidth="134.0" text="%Kontaktdaten" />
+
+      <Label layoutX="63.0" layoutY="177.0" text="%Festnetznummer" />
+      <Label layoutX="366.0" layoutY="117.0" text="%KontaktdatenID" />
+      <TextField fx:id="tfEmail" layoutX="286.0" layoutY="194.0" prefHeight="25.0" prefWidth="173.0" />
+      <TextField fx:id="tfKontaktdatenID" layoutX="366.0" layoutY="134.0" prefHeight="25.0" prefWidth="41.0" />
+      <Label layoutX="281.0" layoutY="177.0" text="%E-Mail" />
+      <Button fx:id="btSpeichern" layoutX="503.0" layoutY="251.0" mnemonicParsing="false" onAction="#speichern" text="%Speichern" />
+      <TextField fx:id="tfMobilnummer" layoutX="189.0" layoutY="194.0" prefHeight="25.0" prefWidth="72.0" />
+      <Label layoutX="186.0" layoutY="177.0" text="%Handynummer" />
       <TextField fx:id="tfName" layoutX="65.0" layoutY="134.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="65.0" layoutY="117.0" text="Name" />
+      <Label layoutX="65.0" layoutY="117.0" text="%Name" />
       <TextField fx:id="tfVorname" layoutX="176.0" layoutY="134.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="176.0" layoutY="117.0" text="Vorname" />
-      <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#suchen" text="Suchen" />
-      <TextArea fx:id="taKeineKontaktID" editable="false" layoutX="40.0" layoutY="255.0" prefHeight="43.0" prefWidth="387.0" text="Keine Kontaktdaten zugewiesen&#10;Tragen sie bitte ihre Festnetznummer, Handynummer und E-Mail ein" visible="false" />
+      <Label layoutX="176.0" layoutY="117.0" text="%Vorname" />
+      <Button fx:id="btSuchen" layoutX="281.0" layoutY="134.0" mnemonicParsing="false" onAction="#suchen" text="%Suchen" />
+      <Button fx:id="btEnglisch" layoutX="57.0" layoutY="371.0" mnemonicParsing="false" onAction="#Englisch" text="%Englisch" />
+      <Button fx:id="btDeutsch" layoutX="153.0" layoutY="371.0" mnemonicParsing="false" onAction="#Deutsch" text="%Deutsch" />
+      <TextArea fx:id="taKeineKontaktID" editable="false" layoutX="103.0" layoutY="251.0" prefHeight="96.0" prefWidth="318.0" text="%Fehlermeldung1" visible="false" wrapText="true" />
+
    </children>
 </AnchorPane>

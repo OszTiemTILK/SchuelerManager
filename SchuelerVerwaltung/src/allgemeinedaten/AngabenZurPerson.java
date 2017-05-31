@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
+import adresse.AdresseController;
 import anwendungslogik.Geschlecht;
 import datenbank.Datenbankverbindung;
 
@@ -103,18 +104,24 @@ public int suchenSchülerInID()
 {
 	Connection lConnection = Datenbankverbindung.holen();
 	Statement lBefehl;
-
+	AdresseController lAdresseController = new AdresseController();
 
 
 	try {
 		lBefehl = lConnection.createStatement();
 		ResultSet result= lBefehl.executeQuery("SELECT IDSchüler FROM schüler WHERE Vorname='"+vorname+"'AND Nachname='"+nachname+"'");
-		result.first();
+
+		if(result.first())
+		{
 		int lSchülerID =result.getInt(1);
 		System.out.println(lSchülerID);
+		
 		return lSchülerID;
-
-
+		}
+		else
+		{
+		return -1;
+		}
 
 
 	}
