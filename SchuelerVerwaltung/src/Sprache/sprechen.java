@@ -33,9 +33,8 @@ public class sprechen {
 
 	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachenWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
-	{
 
-		this.IDSprache = new IDSprachen();
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
 
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
@@ -48,7 +47,7 @@ public class sprechen {
 
 	public sprechen( int IDSprachenWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachen()
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
@@ -56,8 +55,10 @@ public class sprechen {
 	public sprechen( int IDSprachenWert )
 	{
 
-		this.IDSprache = new IDSprachen();
+
+		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
 	}
+
 
 
 
