@@ -15,7 +15,7 @@ import datenbank.Datenbankverbindung;
 import javafx.collections.ObservableList;
 
 public class sprechen {
-	IDSprachkompetenz IDSprache;
+	IDSprachen IDSprache;
 	private String sprachenName;
 	private String sprachenNiveau;
 	private Boolean sprachenDeutsch;
@@ -27,14 +27,16 @@ public class sprechen {
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
 	 * @param pSprachenNiveau
-	 * @param pIDSprachkompetenz
+	 * @param pIDSprachen
 	 */
 
 
-	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachkompetenzWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
+	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachenWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{
-		this.IDSprache = new IDSprachkompetenz();
+
+		this.IDSprache = new IDSprachen();
+
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -44,18 +46,17 @@ public class sprechen {
 		this.sprachenSonstiges = pSprachenSonstiges;
 	}
 
-	public sprechen( int IDSprachkompetenzWert, String pSprachenNiveau, String pSprachenName )
+	public sprechen( int IDSprachenWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachkompetenz();
+		this.IDSprache = new IDSprachen()
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
 	}
-	public sprechen( int IDSprachkompetenzWert )
+	public sprechen( int IDSprachenWert )
 	{
 
-		this.IDSprache = new IDSprachkompetenz();
-
+		this.IDSprache = new IDSprachen();
 	}
 
 
@@ -101,7 +102,7 @@ public class sprechen {
 			e.printStackTrace();
 		  }
 	}
-	 public static sprechen auslesenDB(int IDSprachkompetenzWert)
+	 public static sprechen auslesenDB(int IDSprachenWert)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -112,7 +113,8 @@ public class sprechen {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachkompetenzWert +";");
+
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachenWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -155,13 +157,13 @@ public class sprechen {
 	{
 		this.sprachenNiveau = pSprachenNiveau;
 	}
-	public IDSprachkompetenz getIDSprachkompetenz()
+	public IDSprachen getIDSprachen()
 	{
 		return IDSprache;
 	}
-	public void setIDSprachkompetenz(IDSprachkompetenz pIDSprachkompetenz)
+	public void setIDSprachen(IDSprachen pIDSprachen)
 	{
-		this.IDSprache = pIDSprachkompetenz;
+		this.IDSprache = pIDSprachen;
 	}
 	public Boolean getSprachenDeutsch()
 	{
