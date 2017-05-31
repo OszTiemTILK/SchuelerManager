@@ -1,10 +1,11 @@
 package Sprache;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -26,7 +27,7 @@ public class SprachkompetenzMain extends Application {
 	{
 		this.grundStage = pPrimaryStage;
         FXMLLoader lLoader = new FXMLLoader();
-
+//
         Locale.setDefault(new Locale("de","DE"));
 
         ResourceBundle lZBA_RB = ResourceBundle.getBundle("SchuelerVerwaltung/SchülerManagerResourceBundle");

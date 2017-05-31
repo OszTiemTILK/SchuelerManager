@@ -29,7 +29,7 @@ public class SprachenController {
 
     @FXML
     private Button btSpracheÄndernArabisch;
-
+//
     @FXML
     private ChoiceBox<?> cbTürkischNiveau;
 
