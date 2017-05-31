@@ -14,7 +14,7 @@ import datenbank.Datenbankverbindung;
 public class AdressID
 {
 
-	private int ID = 0;
+	private int ID;
 
 
 //  Konstruktoren
