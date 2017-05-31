@@ -7,7 +7,15 @@ public class IDSprachkompetenz {
 	private int türkischID = 3;
 	private int arabischID = 4;
 	private int sonstigesID = 5;
+    public IDSprachkompetenz (int pDeutschID,int pEnglischID,int pTürkischID,int pArabischID,int pSonstigesID)
+    {
+    	this.deutschID = pDeutschID;
+    	this.englischID = pEnglischID;
+    	this.türkischID = pTürkischID;
+    	this.arabischID = pArabischID;
+    	this.sonstigesID = pSonstigesID;
 
+	}
 	public int getDeutschID()
 	{
 		return deutschID;
