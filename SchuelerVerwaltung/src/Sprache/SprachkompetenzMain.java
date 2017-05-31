@@ -31,7 +31,9 @@ public class SprachkompetenzMain extends Application {
         //Locale.setDefault(new Locale("ar","SY"));
         Locale.setDefault(new Locale("de","DE"));
 
-        ResourceBundle lZBA_RB = ResourceBundle.getBundle("sprache/SchülerManagerResourceBundle");
+
+        ResourceBundle lZBA_RB = ResourceBundle.getBundle("Sprache/SchülerManagerResourceBundle");
+
 
         lLoader.setLocation(SprachkompetenzMain.class.getResource("SprachenView.fxml"));
         lLoader.setResources(lZBA_RB);

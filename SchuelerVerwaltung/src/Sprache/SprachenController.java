@@ -151,12 +151,13 @@ public class SprachenController {
 	    	try
 	    	{
 	    		return FXMLLoader.load(getClass().getResource("SprachenView.fxml"),
-	    			   ResourceBundle.getBundle("SchuelerVerwaltung/SchülerManagerResourceBundle",
+	    			   ResourceBundle.getBundle("Sprache/SchülerManagerResourceBundle",
 	    			   pLocale));
 	    	}
 	    	catch (IOException e)
 	    	{
 	    		e.printStackTrace();
+
 	    	}
 	    	return null;
 	    }
