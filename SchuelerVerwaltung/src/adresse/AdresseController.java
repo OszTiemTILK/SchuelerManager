@@ -10,7 +10,13 @@ import javafx.scene.control.TextField;
 
 public class AdresseController {
 
-    @FXML
+	@FXML
+    private TextField tfVorname;
+
+	@FXML
+    private TextField tfNachname;
+
+	@FXML
     private Button btWeiter;
 
     @FXML
@@ -26,13 +32,10 @@ public class AdresseController {
     private Button btZurück;
 
     @FXML
-    private TextField tfVorname;
-
-    @FXML
-    private TextField tfNachname;
-
-    @FXML
     private Button btSchülerIDsuchen;
+
+    @FXML
+    private TextField tfSuchAusgabe;
 
     @FXML
     void anlegenKontaktdaten(ActionEvent event)
@@ -47,6 +50,26 @@ public class AdresseController {
     {
     	AngabenZurPerson lAngabenZurPerson = new AngabenZurPerson(tfVorname.getText(), tfNachname.getText());
     	lAngabenZurPerson.suchenSchülerInID();
+
+    	int lSchülerInID;
+
+    	if((lSchülerInID = lAngabenZurPerson.suchenSchülerInID()) != -1)
+    	{
+    		tfSuchAusgabe.setText(String.valueOf(lSchülerInID));
+    	}
+
+    
     }
 
+    @FXML
+    public void suchAusgabeGefunden()
+    {
+    	tfSuchAusgabe.setText("Ok");
+    }
+
+    @FXML
+    public void suchAusgabeNichtGefunden()
+    {
+    	tfSuchAusgabe.setText("Nein");
+    }
 }

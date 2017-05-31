@@ -34,5 +34,6 @@
       <TextField fx:id="tfAdresseIDsuchen1" layoutX="417.0" layoutY="256.0" prefHeight="25.0" prefWidth="128.0" promptText="PLZ" />
       <TextField fx:id="tfAdresseIDsuchen2" layoutX="286.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="Straße" />
       <TextField fx:id="tfAdresseIDsuchen3" layoutX="417.0" layoutY="285.0" prefHeight="25.0" prefWidth="128.0" promptText="HausNr" />
+      <TextField fx:id="tfSuchAusgabe" layoutX="87.0" layoutY="244.0" prefHeight="25.0" prefWidth="90.0" promptText="Such Ergebnis" />
    </children>
 </AnchorPane>
