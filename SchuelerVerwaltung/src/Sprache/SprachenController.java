@@ -90,7 +90,7 @@ public class SprachenController {
 	    {
 
 
-	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfSprachen.getText()) );
 
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
