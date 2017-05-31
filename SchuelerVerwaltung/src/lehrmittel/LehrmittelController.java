@@ -1,14 +1,19 @@
 package lehrmittel;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -17,7 +22,7 @@ import javafx.scene.control.TextArea;
 
 public class LehrmittelController
 {
-	private SchülerIn schülerin;
+	private static SchülerIn schülerin;
 
 	private HashMap<String, Lehrmittel[]> lehrmittelMap = new HashMap<String, Lehrmittel[]>();
 
@@ -367,6 +372,42 @@ public class LehrmittelController
     	zuweisenLehrmittel(cbArt4, cbName4, lehrmittelMap.get(pFach));
     	zuweisenLehrmittel(cbArt5, cbName5, lehrmittelMap.get(pFach));
 
+    }
+    @FXML
+    private void ändernLayoutDeutsch()
+    {
+    	cbArt1.getScene().setRoot(laden(new Locale("de","DE")));
+    }
+
+    private void ändernLayoutEnglisch()
+    {
+    	cbArt1.getScene().setRoot(laden(new Locale("en","UK")));
+    }
+
+    private void ändernLayoutArabisch()
+    {
+    	cbArt1.getScene().setRoot(laden(new Locale("ar","SY")));
+    }
+
+    private Parent laden(Locale pLocale)
+    {
+    	try {
+			return FXMLLoader.load(getClass().getResource("Maske_6_2_LehrmittelView.fxml"),ResourceBundle.getBundle("lehrmittel/LehrmittelResorceBundle",pLocale));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return null;
+    }
+
+    public static SchülerIn getSchülerIn()
+    {
+    	return schülerin;
+    }
+
+    public static void setSchülerIn(SchülerIn pSchülerIn)
+    {
+    	schülerin = pSchülerIn;
     }
 
 }
