@@ -32,5 +32,6 @@
       <Button fx:id="btAuslesen" layoutX="207.0" layoutY="444.0" mnemonicParsing="false" text="Auslesen" />
       <Button fx:id="btAnlegenÄndern" layoutX="390.0" layoutY="444.0" mnemonicParsing="false" onAction="#anlegenÄndern" text="AnlegenÄndern" />
       <TextField fx:id="tfSchülerID" layoutX="74.0" layoutY="83.0" text="SchülerID" />
+      <ChoiceBox fx:id="cbSonstigesNiveau" layoutX="467.0" layoutY="370.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
