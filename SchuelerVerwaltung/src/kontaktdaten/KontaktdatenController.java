@@ -58,6 +58,15 @@ public class KontaktdatenController {
 	    @FXML
 	    private TextArea taKeineKontaktID;
 
+	    @FXML
+	    private Button btDeutsch;
+
+	    @FXML
+	    private Button btEnglisch;
+
+	    /*@FXML
+	    private Button btArabisch;*/
+
 
 	    @FXML
 	    void suchen(ActionEvent event)
