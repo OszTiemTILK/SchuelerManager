@@ -44,7 +44,6 @@ public class SprachenController {
     @FXML
     private CheckBox ckSonstiges;
 
-
     @FXML
     private TextField tfTitel;
 
