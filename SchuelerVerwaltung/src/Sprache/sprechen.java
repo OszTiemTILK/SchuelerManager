@@ -95,7 +95,8 @@ public class sprechen {
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprache, IDSchüler, SprachenNiveau) VALUES ( "+IDSprache.getTürkischID()+")");
+			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES (("+IDSprache.getTürkischID()+"),"+allgemeinedaten.SchülerInID.getAktuelleID()+")");
+
 
 		  } catch (SQLException e)
 		  {
