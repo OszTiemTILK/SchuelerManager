@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
@@ -131,7 +132,7 @@ public class KontaktdatenController {
 	    	Parent lParent=null;
 	    	try
 	    	{
-				lParent = FXMLLoader.load(KontaktdatenController.class.getResource("KontaktdatenView.fxml"),  ResourceBundle.getBundle("Kontaktdaten/Kontaktdaten", pLocale ));
+				lParent = FXMLLoader.load(KontaktdatenController.class.getResource("KontaktdatenView.fxml"),  ResourceBundle.getBundle("Kontaktdaten/KontaktdatenResourceBundle", pLocale ));
 			}
 	    	catch (IOException e)
 	    	{
@@ -139,6 +140,7 @@ public class KontaktdatenController {
 			}
 	    	return lParent;
 	    }
+
 
 	    @FXML
 	    void Deutsch()
@@ -150,7 +152,7 @@ public class KontaktdatenController {
 	    @FXML
 	    void Englisch(/*ActionEvent event*/)
 	    {
-	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("en", "UK")));
+	    	btEnglisch.getScene().setRoot(ausgebenParent(new Locale("en", "UK")));
 	    	//ändernLayoutLTR(event);
 	    }
 
