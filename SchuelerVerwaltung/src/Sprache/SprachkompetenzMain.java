@@ -1,5 +1,8 @@
 package Sprache;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,13 +25,19 @@ public class SprachkompetenzMain extends Application {
 	public void start(Stage pPrimaryStage) throws Exception
 	{
 		this.grundStage = pPrimaryStage;
-		FXMLLoader lLoader = new FXMLLoader();
-		lLoader.setLocation(SprachkompetenzMain.class.getClassLoader().getResource("Sprache/SprachenView.fxml"));
-		grundPane = lLoader.load();
+        FXMLLoader lLoader = new FXMLLoader();
 
-		Scene lScene = new Scene(grundPane);
-		grundStage.setScene(lScene);
-		grundStage.show();
+        Locale.setDefault(new Locale("de","DE"));
+
+        ResourceBundle lZBA_RB = ResourceBundle.getBundle("SchuelerVerwaltung/SchülerManagerResourceBundle");
+        lLoader.setLocation(SprachkompetenzMain.class.getResource("SprachenView.fxml"));
+        lLoader.setResources(lZBA_RB);
+
+        grundPane = lLoader.load();
+
+        Scene lScene = new Scene(grundPane);
+        grundStage.setScene(lScene);
+        grundStage.show();
 
 	}
 }
