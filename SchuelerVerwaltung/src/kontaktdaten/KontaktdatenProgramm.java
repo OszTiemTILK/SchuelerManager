@@ -22,9 +22,18 @@ public class KontaktdatenProgramm extends Application
 		{
 	    	this.grundStage = pPrimaryStage;
 	        FXMLLoader lLoader = new FXMLLoader();
+	        //Locale.setDefault(new Locale("de","DE"));
+	        //Locale.setDefault(new Locale("ar","SY"));
+	        Locale.setDefault(new Locale("en","UK"));
 
+	        ResourceBundle lZBA_RB = ResourceBundle.getBundle("kontaktdaten/KontaktdatenResourceBundle");
 	        lLoader.setLocation(KontaktdatenProgramm.class.getResource("KontaktdatenView.fxml"));
-	        grundPane = lLoader.load();
+	        lLoader.setResources(lZBA_RB);
+
+	       /* lLoader.setLocation(KontaktdatenProgramm.class.getResource("KontaktdatenView.fxml"));
+	        grundPane = lLoader.load();*/
+
+	        grundPane= lLoader.load();
 
 	        Scene lScene = new Scene(grundPane);
 	        grundStage.setScene(lScene);
@@ -37,6 +46,6 @@ public class KontaktdatenProgramm extends Application
 		   launch(args);
 
 		  }
-	
+
 	}
 
