@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hauptfenster.HauptfensterContoller">
+   <children>
+      <Accordion layoutX="48.0" layoutY="120.0" prefHeight="695.0" prefWidth="911.0">
+        <panes>
+          <TitledPane animated="false" text="%AllgemeineDaten">
+            <content>
+              <AnchorPane fx:id="pnAllgemein" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="%Adresse">
+            <content>
+              <AnchorPane fx:id="pnAdresse" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="%Kontaktdaten">
+            <content>
+              <AnchorPane fx:id="pnKontakt" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" text="%Schullaufbahn">
+              <content>
+                <AnchorPane fx:id="pnSchule" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="%Sprache">
+              <content>
+                <AnchorPane fx:id="pnSprache" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="%Lehrmittel">
+              <content>
+                <AnchorPane fx:id="pnLehrmittel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <TextField fx:id="tfName" editable="false" focusTraversable="false" layoutX="129.0" layoutY="53.0" mouseTransparent="true" promptText="%SchuelerName">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="tfID" editable="false" focusTraversable="false" layoutX="520.0" layoutY="53.0" mouseTransparent="true" promptText="%SchuelerID">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Button fx:id="btDeutsch" focusTraversable="false" layoutX="92.0" layoutY="840.0" mnemonicParsing="false" onMouseClicked="#drueckenDeutsch" prefHeight="100.0" prefWidth="100.0" />
+      <Button fx:id="btEnglisch" focusTraversable="false" layoutX="454.0" layoutY="845.0" mnemonicParsing="false" onMouseClicked="#drueckenEnglisch" prefHeight="100.0" prefWidth="100.0" />
+      <Button fx:id="btArabisch" focusTraversable="false" layoutX="805.0" layoutY="846.0" mnemonicParsing="false" onMouseClicked="#drueckenArabisch" prefHeight="100.0" prefWidth="100.0" />
+   </children>
+</AnchorPane>
