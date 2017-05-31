@@ -81,7 +81,8 @@ public class SprachenController {
 	    void anlegenÄndern(ActionEvent event)
 	    {
 	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
-		  	lsprechen.anlegenSprachen();
+		  	lsprechen.anlegen();
+
 
 	    }
 	    @FXML
@@ -90,6 +91,7 @@ public class SprachenController {
 
 
 	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
 	       ckEnglisch.setSelected(lsprechen.getSprachenEnglisch());
