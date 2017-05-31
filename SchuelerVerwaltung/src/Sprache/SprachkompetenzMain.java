@@ -27,10 +27,12 @@ public class SprachkompetenzMain extends Application {
 	{
 		this.grundStage = pPrimaryStage;
         FXMLLoader lLoader = new FXMLLoader();
-//
+
+        //Locale.setDefault(new Locale("ar","SY"));
         Locale.setDefault(new Locale("de","DE"));
 
-        ResourceBundle lZBA_RB = ResourceBundle.getBundle("SchuelerVerwaltung/SchülerManagerResourceBundle");
+        ResourceBundle lZBA_RB = ResourceBundle.getBundle("Sprache/SchülerManagerResourceBundle");
+
         lLoader.setLocation(SprachkompetenzMain.class.getResource("SprachenView.fxml"));
         lLoader.setResources(lZBA_RB);
 
@@ -41,5 +43,6 @@ public class SprachkompetenzMain extends Application {
         grundStage.show();
 
 	}
+
 }
 

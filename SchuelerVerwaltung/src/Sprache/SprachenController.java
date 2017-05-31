@@ -31,10 +31,12 @@ public class SprachenController {
     private Button btSpracheÄndernArabisch;
 //
     @FXML
-    private ChoiceBox<?> cbTürkischNiveau;
+
+    private ChoiceBox<String> cbTürkischNiveau;
 
     @FXML
-    private ChoiceBox<?> cbArabischNiveau;
+    private ChoiceBox<String> cbArabischNiveau;
+
 
     @FXML
     private CheckBox ckEnglisch;
@@ -52,16 +54,14 @@ public class SprachenController {
     private TextArea taText;
 
     @FXML
-    private ChoiceBox<?> cbSonstigesNiveau;
 
-    @FXML
     private CheckBox ckDeutsch;
 
     @FXML
     private TextField tfSonstigesNiveau;
 
     @FXML
-    private ChoiceBox<?> cbDeutschNiveau;
+    private ChoiceBox<String> cbDeutschNiveau;
 
     @FXML
     private Button btAnlegenÄndern;
@@ -75,14 +75,19 @@ public class SprachenController {
     @FXML
     private TextField tfSprachen;
 
+
+
     @FXML
     private CheckBox ckArabisch;
 
-    @FXML
-    private ChoiceBox<?> cbEnglischNiveau;
+   @FXML
+   private ChoiceBox<String> cbSonstigesNiveau;
 
-    @FXML
-    private CheckBox ckTürkisch;
+   @FXML
+   private ChoiceBox<String> cbEnglischNiveau;
+
+   @FXML
+   private CheckBox ckTürkisch;
 
 
 	    @FXML
@@ -91,14 +96,13 @@ public class SprachenController {
 	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
 		  	lsprechen.anlegen();
 
-
 	    }
 	    @FXML
 	    void auslesen(ActionEvent event)
 	    {
 
 
-	       sprechen lsprechen = new sprechen( Integer.parseInt(tfIDSpricht.getText()) );
+	       sprechen lsprechen = new sprechen( Integer.parseInt(tfSprachen.getText()) );
 
 	       lsprechen.ergänzen();
 	       ckDeutsch.setSelected(lsprechen.getSprachenDeutsch());
@@ -147,7 +151,7 @@ public class SprachenController {
 	    	try
 	    	{
 	    		return FXMLLoader.load(getClass().getResource("SprachenView.fxml"),
-	    			   ResourceBundle.getBundle("SchuelerVerwaltung/SchülerManagerResourceBundle",
+	    			   ResourceBundle.getBundle("Sprache/SchülerManagerResourceBundle",
 	    			   pLocale));
 	    	}
 	    	catch (IOException e)
@@ -156,6 +160,7 @@ public class SprachenController {
 	    	}
 	    	return null;
 	    }
+
 
 
 }
