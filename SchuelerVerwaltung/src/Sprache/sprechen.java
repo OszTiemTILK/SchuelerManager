@@ -53,6 +53,7 @@ public class sprechen {
 	}
 	public sprechen( int IDSprachkompetenzWert )
 	{
+
 		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
 
 	}
