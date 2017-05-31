@@ -45,7 +45,7 @@
       <CheckBox fx:id="ckRückgabe3" layoutX="519.0" layoutY="251.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="86.0" text="%Rückgabe" />
       <CheckBox fx:id="ckRückgabe4" layoutX="519.0" layoutY="283.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="86.0" text="%Rückgabe" />
       <CheckBox fx:id="ckRückgabe5" layoutX="519.0" layoutY="316.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="86.0" text="%Rückgabe" />
-      <Button fx:id="btZuruecksetzen" layoutX="255.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#drueckenZuruecksetzen" text="%Alle_Felder_zurücksetzten">
+      <Button fx:id="btZuruecksetzen" layoutX="255.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#drueckenZuruecksetzen" text="%Alle_Felder_zurücksetzten" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>

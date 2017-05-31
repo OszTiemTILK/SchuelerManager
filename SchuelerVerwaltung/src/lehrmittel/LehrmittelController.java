@@ -380,11 +380,13 @@ public class LehrmittelController
     @FXML
     private void drückenLayoutDeutsch()
     {
+    	ändernLayoutLTR();
     	cbArt1.getScene().setRoot(laden(new Locale("de","DE")));
     }
     @FXML
     private void drückenLayoutEnglisch()
     {
+    	ändernLayoutLTR();
     	cbArt1.getScene().setRoot(laden(new Locale("en","UK")));
     }
     @FXML
