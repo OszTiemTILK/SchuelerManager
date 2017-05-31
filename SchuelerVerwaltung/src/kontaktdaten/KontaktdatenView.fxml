@@ -25,7 +25,6 @@
       <TextField fx:id="tfKontaktdatenID" editable="false" layoutX="366.0" layoutY="134.0" prefHeight="25.0" prefWidth="41.0" />
       <Label layoutX="281.0" layoutY="177.0" text="E-Mail" />
       <Button fx:id="btSpeichern" layoutX="503.0" layoutY="251.0" mnemonicParsing="false" onAction="#speichern" text="Speichern" />
-      <Button fx:id="btStepIntoTheLight" layoutX="53.0" layoutY="590.0" mnemonicParsing="false" onAction="#anzeigenDetails" prefHeight="25.0" prefWidth="228.0" text="Ausgeben (Da ersetzt, nur für Notfälle)" />
       <TextField fx:id="tfMobilnummer" layoutX="189.0" layoutY="194.0" prefHeight="22.0" prefWidth="72.0" />
       <Label layoutX="186.0" layoutY="177.0" text="Handynummer" />
       <TextField fx:id="tfName" layoutX="65.0" layoutY="134.0" prefHeight="25.0" prefWidth="77.0" />
