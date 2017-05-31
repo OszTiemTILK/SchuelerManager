@@ -16,7 +16,12 @@ public class AusgeliehenLehrmittel
 	private Lehrmittel lehrmittel;
 	private AusleiheID ausleiheID;
 
-
+/**
+ * Konstruktor
+ * @param pAusgegeben
+ * @param pRückgabe
+ * @param pLehrmittel
+ */
 	public AusgeliehenLehrmittel(LocalDate pAusgegeben, boolean pRückgabe, Lehrmittel pLehrmittel)
 	{
 		this.ausgegeben = pAusgegeben;
@@ -25,6 +30,11 @@ public class AusgeliehenLehrmittel
 		AusleiheID ausleiheID = new AusleiheID();
 	}
 
+	/**
+	 * Läd alle ausgeliehenen Lehrmittel aus der Datenbank und gibt diese als Array zurück
+	 * @param pID
+	 * @return AusgeliehenLehrmittel[]
+	 */
 	public static AusgeliehenLehrmittel[] holen(SchülerID pID) {
 		ArrayList<AusgeliehenLehrmittel> lArraylist = new ArrayList<AusgeliehenLehrmittel>();
 		Connection lConnection = Datenbankverbindung.holen();
@@ -58,7 +68,7 @@ public class AusgeliehenLehrmittel
 	  }
 
 	/**
-	 * AusgeliehenLehrmittel speichern
+	 * Speichert die ausgeliehenen Lehrmittel in der Datenbank
 	 */
 	public void speichern(SchülerID pSchülerID)
 	{

@@ -34,7 +34,7 @@ public class sprechen {
 	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachkompetenzWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
 
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
+		this.IDSprache = new IDSprachkompetenz();
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 		this.sprachenDeutsch = pSprachenDeutsch;
@@ -46,7 +46,7 @@ public class sprechen {
 
 	public sprechen( int IDSprachkompetenzWert, String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
+		this.IDSprache = new IDSprachkompetenz();
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
@@ -54,7 +54,7 @@ public class sprechen {
 	public sprechen( int IDSprachkompetenzWert )
 	{
 
-		this.IDSprache = new IDSprachkompetenz(IDSprachkompetenzWert);
+		this.IDSprache = new IDSprachkompetenz();
 
 	}
 
@@ -93,7 +93,7 @@ public class sprechen {
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO spricht (IDSchüler) VALUES ( "+IDSprache.getIDSprachkompetenz()+"");
+			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprache, IDSchüler, SprachenNiveau) VALUES ( "+IDSprache.getTürkischID()+")");
 
 		  } catch (SQLException e)
 		  {
@@ -112,7 +112,7 @@ public class sprechen {
 
 		  try {
 		  lBefehl = lConnection.createStatement();
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprache where IDSprache="+ IDSprachkompetenzWert +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachkompetenzWert +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -131,14 +131,14 @@ public class sprechen {
 		  		}
 		  return null;
 	  }
-
 	public void ergänzen()
 	{
-	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getID());
+	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getTürkischID());
 	  sprachenName = lSprachkompetenz.sprachenName;
 	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
 	}
 // Ab hier folgen nur Get/Set Methoden
+
 	public String getSprachenName()
 	{
 		return sprachenName;
