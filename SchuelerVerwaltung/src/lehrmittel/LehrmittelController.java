@@ -11,9 +11,13 @@ import anwendungslogik.SchülerID;
 import anwendungslogik.SchülerIn;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.NodeOrientation;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -374,30 +378,65 @@ public class LehrmittelController
 
     }
     @FXML
-    private void ändernLayoutDeutsch()
+    private void drückenLayoutDeutsch()
     {
     	cbArt1.getScene().setRoot(laden(new Locale("de","DE")));
     }
-
-    private void ändernLayoutEnglisch()
+    @FXML
+    private void drückenLayoutEnglisch()
     {
     	cbArt1.getScene().setRoot(laden(new Locale("en","UK")));
     }
-
-    private void ändernLayoutArabisch()
+    @FXML
+    private void drückenLayoutArabisch()
     {
+    	ändernLayoutRTL();
     	cbArt1.getScene().setRoot(laden(new Locale("ar","SY")));
     }
 
     private Parent laden(Locale pLocale)
     {
     	try {
-			return FXMLLoader.load(getClass().getResource("Maske_6_2_LehrmittelView.fxml"),ResourceBundle.getBundle("lehrmittel/LehrmittelResorceBundle",pLocale));
+			return FXMLLoader.load(getClass().getResource("Maske_6_2_LehrmittelView.fxml"),ResourceBundle.getBundle("lehrmittel/LehrmittelResourceBundle",pLocale));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	return null;
+    }
+
+    @FXML
+    void ändernLayoutLTR()
+    {
+      //Nur für das Debugging
+    	Scene lScene = btSpeichern.getScene();
+      // Ende Debugghilfe
+
+ 	  lScene.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+
+/*
+ 	  btLTR.disableProperty().setValue(true);
+      btRTL.disableProperty().setValue(false);
+      //hbSchülerInID.getParent().setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+*/
+    }
+
+    @FXML
+    void ändernLayoutRTL()
+    {
+      //Nur für Sie zum Debuggen:
+/*
+    	Node  lNode         =  (Node)event.getTarget();
+      Scene lScene        = ((Node)event.getTarget()).getScene();
+*/
+//      Node  lElternknoten = btRTL.getParent();
+      //  Ende Debugghilfe
+
+      btSpeichern.getScene().setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+/*
+      btLTR.disableProperty().setValue(false);
+      btRTL.disableProperty().setValue(true);
+*/
     }
 
     public static SchülerIn getSchülerIn()
