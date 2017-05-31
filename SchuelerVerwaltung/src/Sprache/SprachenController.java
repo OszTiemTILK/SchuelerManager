@@ -75,8 +75,16 @@ public class SprachenController {
     @FXML
     private TextField tfSprachen;
 
+
     @FXML
     private CheckBox ckArabisch;
+
+	    @FXML
+	    private ChoiceBox<String> cbSonstigesNiveau;
+
+	    @FXML
+	    private TextField tfSonstigesNiveau;
+
 
     @FXML
     private ChoiceBox<?> cbEnglischNiveau;
@@ -156,6 +164,7 @@ public class SprachenController {
 	    	}
 	    	return null;
 	    }
+
 
 
 }

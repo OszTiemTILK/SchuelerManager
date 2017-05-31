@@ -1,8 +1,16 @@
 package kontaktdaten;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import i18nArabischEinstieg.ArabischEinstiegController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 public class KontaktdatenController {
 
@@ -32,8 +40,8 @@ public class KontaktdatenController {
 	    @FXML // fx:id="tfKontaktdatenID"
 	    private TextField tfKontaktdatenID; // Value injected by FXMLLoader
 
-	    @FXML // fx:id="btStepIntoTheLight"
-	    private Button btStepIntoTheLight; // Value injected by FXMLLoader
+	   /* @FXML // fx:id="btStepIntoTheLight"
+	    private Button btStepIntoTheLight; // Value injected by FXMLLoader */
 
 	    @FXML // fx:id="btSpeichern"
 	    private Button btSpeichern; // Value injected by FXMLLoader
@@ -49,6 +57,15 @@ public class KontaktdatenController {
 
 	    @FXML
 	    private TextArea taKeineKontaktID;
+
+	    @FXML
+	    private Button btDeutsch;
+
+	    @FXML
+	    private Button btEnglisch;
+
+	    /*@FXML
+	    private Button btArabisch;*/
 
 
 	    @FXML
@@ -108,4 +125,42 @@ public class KontaktdatenController {
 	    	tfMobilnummer.setText(null);
 	    	tfEmail.setText(null);
 	    }
+
+	    //Sprachenkladderadatsch
+	    public Parent ausgebenParent(Locale pLocale)
+	    {
+	    	Parent lParent=null;
+	    	try
+	    	{
+				lParent = FXMLLoader.load(KontaktdatenController.class.getResource("KontaktdatenView.fxml"),  ResourceBundle.getBundle("Kontaktdaten/Kontaktdaten", pLocale ));
+			}
+	    	catch (IOException e)
+	    	{
+				e.printStackTrace();
+			}
+	    	return lParent;
+	    }
+
+	    @FXML
+	    void Deutsch()
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("de", "DE")));
+	    	//ändernLayoutLTR(copyFor(btLTR, btDeutsch));
+	    }
+
+	    @FXML
+	    void Englisch(/*ActionEvent event*/)
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("en", "UK")));
+	    	//ändernLayoutLTR(event);
+	    }
+
+	   /* @FXML
+	    void Arabisch()
+	    {
+	    	btDeutsch.getScene().setRoot(ausgebenParent(new Locale("ar", "SY")));
+	    	//ändernLayoutRTL();
+	    }*/
+
+
 	}
