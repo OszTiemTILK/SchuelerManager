@@ -131,7 +131,6 @@ public class sprechen {
 		  		}
 		  return null;
 	  }
-
 	public void ergänzen()
 	{
 	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getTürkischID());

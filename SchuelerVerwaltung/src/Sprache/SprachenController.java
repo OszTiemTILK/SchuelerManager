@@ -83,7 +83,6 @@ public class SprachenController {
 	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
 		  	lsprechen.anlegen();
 
-
 	    }
 	    @FXML
 	    void auslesen(ActionEvent event)
