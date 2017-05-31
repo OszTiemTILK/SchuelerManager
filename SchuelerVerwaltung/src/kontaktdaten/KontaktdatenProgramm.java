@@ -22,9 +22,9 @@ public class KontaktdatenProgramm extends Application
 		{
 	    	this.grundStage = pPrimaryStage;
 	        FXMLLoader lLoader = new FXMLLoader();
-	        //Locale.setDefault(new Locale("de","DE"));
+	        Locale.setDefault(new Locale("de","DE"));
 	        //Locale.setDefault(new Locale("ar","SY"));
-	        Locale.setDefault(new Locale("en","UK"));
+	        //Locale.setDefault(new Locale("en","UK"));
 
 	        ResourceBundle lZBA_RB = ResourceBundle.getBundle("kontaktdaten/KontaktdatenResourceBundle");
 	        lLoader.setLocation(KontaktdatenProgramm.class.getResource("KontaktdatenView.fxml"));
