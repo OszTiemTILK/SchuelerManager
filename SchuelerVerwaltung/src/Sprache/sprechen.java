@@ -101,7 +101,6 @@ public class sprechen {
 		  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		  }
 	}
 	 public static sprechen auslesenDB(int IDSprachenWert)
