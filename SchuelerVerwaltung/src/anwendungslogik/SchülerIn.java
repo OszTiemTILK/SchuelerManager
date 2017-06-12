@@ -1,11 +1,10 @@
 package anwendungslogik;
 
 import lehrmittel.AusgeliehenLehrmittel;
+
 import lehrmittel.Lehrmittel;
-
-import Sprache.Sprachkompetenz;
-
 import adresse.Adresse;
+import Sprache.sprechen;
 
 import allgemeinedaten.AngabenZurPerson;
 import kontaktdaten.Kontaktdaten;
@@ -14,7 +13,7 @@ public class SchülerIn
 {
 private SchülerID schülerInID;
 private AngabenZurPerson person;
-private Sprachkompetenz sprachkompetenz;
+private sprechen sprechen;
 private Kontaktdaten kontaktSchüler;
 private Kontaktdaten kontaktVater;
 private Kontaktdaten kontaktMutter;
@@ -96,6 +95,8 @@ aktuelleSchule.ausgeben();
 public void speichern()
 {
 	speichernAusgelieheneLehrmittel();
+	speichernsprechen();
+
 }
 /**
  * Speichert Lehrmittel zu einer bestimmten SchülerIn in der Datenbank.
@@ -109,6 +110,14 @@ public void speichernAusgelieheneLehrmittel()
 	}
 }
 
+public void speichernsprechen()
+{
+	sprechen.speichernDB();
+}
+
+
+
+
 public AngabenZurPerson getPerson()
 {
 	return person;
@@ -117,13 +126,13 @@ public void setPerson(AngabenZurPerson pPerson)
 {
 	this.person = pPerson;
 }
-public Sprachkompetenz getSprachKompetenz()
+public sprechen getSprachKompetenz()
 {
-	return sprachkompetenz;
+	return sprechen;
 }
-public void setSprachKompetenz(Sprachkompetenz pSprachen)
+public void setSprachKompetenz(sprechen pSprachen)
 {
-	this.sprachkompetenz = pSprachen;
+	this.sprechen = pSprachen;
 }
 public Kontaktdaten getKontaktschüler()
 {

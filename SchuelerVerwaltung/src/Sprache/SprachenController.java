@@ -15,6 +15,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import java.lang.Object;
 import javax.accessibility.Accessible;
+
+import anwendungslogik.SchülerID;
+
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.ItemSelectable;
@@ -31,7 +34,6 @@ public class SprachenController {
     private Button btSpracheÄndernArabisch;
 //
     @FXML
-
     private ChoiceBox<String> cbTürkischNiveau;
 
     @FXML
@@ -76,12 +78,11 @@ public class SprachenController {
     private TextField tfSprachen;
 
 
-
     @FXML
     private CheckBox ckArabisch;
 
-   @FXML
-   private ChoiceBox<String> cbSonstigesNiveau;
+    @FXML
+    private ChoiceBox<String> cbSonstigesNiveau;
 
    @FXML
    private ChoiceBox<String> cbEnglischNiveau;
@@ -93,11 +94,40 @@ public class SprachenController {
 	    @FXML
 	    void anlegenÄndern(ActionEvent event)
 	    {
-	    	sprechen lsprechen = new sprechen( Integer.parseInt(tfSchülerID.getText()));
-		  	lsprechen.anlegen();
+	    	if(ckDeutsch.isSelected() && cbDeutschNiveau.getValue()!= null)
+	    	{
+	    		sprechen lsprechen = new sprechen(cbDeutschNiveau.getValue(),"deutsch");
+	    		SchülerID lID = new SchülerID();
+	    		lID.setSchülerID(Integer.parseInt(tfSchülerID.getText()));
+	    		lsprechen.speichernDB(lID);
+	    	}
+
+	    	if(ckEnglisch.isSelected() && cbEnglischNiveau.getValue()!= null)
+	    	{
+	    		sprechen lsprechen = new sprechen(cbEnglischNiveau.getValue(),"englisch");
+	    		SchülerID lID = new SchülerID();
+	    		lID.setSchülerID(Integer.parseInt(tfSchülerID.getText()));
+	    		lsprechen.speichernDB(lID);
+	    	}
+
+	    	if(ckTürkisch.isSelected() && cbTürkischNiveau.getValue()!= null)
+	    	{
+	    		sprechen lsprechen = new sprechen(cbTürkischNiveau.getValue(),"türkisch");
+	    		SchülerID lID = new SchülerID();
+	    		lID.setSchülerID(Integer.parseInt(tfSchülerID.getText()));
+	    		lsprechen.speichernDB(lID);
+	    	}
+
+	    	if(ckArabisch.isSelected() && cbArabischNiveau.getValue()!= null)
+	    	{
+	    		sprechen lsprechen = new sprechen(cbArabischNiveau.getValue(),"arabisch");
+	    		SchülerID lID = new SchülerID();
+	    		lID.setSchülerID(Integer.parseInt(tfSchülerID.getText()));
+	    		lsprechen.speichernDB(lID);
+	    	}
 
 	    }
-	    @FXML
+	/*    @FXML
 	    void auslesen(ActionEvent event)
 	    {
 
@@ -116,7 +146,7 @@ public class SprachenController {
 	       cbArabischNiveau.setId(String.valueOf(lsprechen.getSprachenNiveau()));
 
 
-	    }
+	    }*/
 
 	    public void ladenChoiceBox()
 	    {
