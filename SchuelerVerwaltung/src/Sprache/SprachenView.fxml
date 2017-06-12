@@ -22,8 +22,6 @@
       <ChoiceBox fx:id="cbEnglischNiveau" layoutX="292.0" layoutY="308.0" prefWidth="150.0" />
       <ChoiceBox fx:id="cbTürkischNiveau" layoutX="292.0" layoutY="342.0" prefWidth="150.0" />
       <ChoiceBox fx:id="cbArabischNiveau" layoutX="292.0" layoutY="375.0" prefWidth="150.0" />
-      <CheckBox fx:id="ckSonstiges" layoutX="180.0" layoutY="417.0" mnemonicParsing="false" text="%Sonstiges" />
-      <TextField fx:id="tfSonstigesNiveau" layoutX="292.0" layoutY="410.0" />
       <ImageView fitHeight="63.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
          <image>
             <Image url="@src/logo.png" />
@@ -32,8 +30,6 @@
       <Button fx:id="btAuslesen" layoutX="207.0" layoutY="484.0" mnemonicParsing="false" text="%Auslesen" />
       <Button fx:id="btAnlegenÄndern" layoutX="390.0" layoutY="484.0" mnemonicParsing="false" onAction="#anlegenÄndern" text="%AnlegenÄndern" />
       <TextField fx:id="tfSchülerID" layoutX="74.0" layoutY="83.0" text="SchülerID" />
-
-      <ChoiceBox fx:id="cbSonstigesNiveau" layoutX="467.0" layoutY="410.0" prefWidth="150.0" />
 
       <Button fx:id="btSpracheÄndernDeutsch" layoutX="316.0" layoutY="540.0" mnemonicParsing="false" onAction="#spracheÄndernDeutsch" text="Deutsch" />
       <Button fx:id="btSpracheÄndernArabisch" layoutX="316.0" layoutY="579.0" mnemonicParsing="false" onAction="#spracheÄndernArabisch" text="Arabisch" />

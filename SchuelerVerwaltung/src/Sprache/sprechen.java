@@ -11,18 +11,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Sprache.sprechen;
+import anwendungslogik.SchülerID;
 import datenbank.Datenbankverbindung;
 import javafx.collections.ObservableList;
 
 public class sprechen {
-	IDSprachen IDSprache;
+	IDSprechen IDSprechen;
 	private String sprachenName;
 	private String sprachenNiveau;
-	private Boolean sprachenDeutsch;
-	private Boolean sprachenEnglisch;
-	private Boolean sprachenTürkisch;
-	private Boolean sprachenArabisch;
-	private Boolean sprachenSonstiges;
+
 	/**
 	 * Konstruktor mit Strings
 	 * @param pSprachenName
@@ -31,47 +28,16 @@ public class sprechen {
 	 */
 
 
-	public sprechen(String pSprachenName, String pSprachenNiveau, int IDSprachenWert, Boolean pSprachenDeutsch, Boolean pSprachenEnglisch, Boolean pSprachenTürkisch, Boolean pSprachenArabisch, Boolean pSprachenSonstiges)
-
+	public sprechen( String pSprachenNiveau, String pSprachenName )
 	{
-		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
-
-		this.sprachenName = pSprachenName;
-		this.sprachenNiveau = pSprachenNiveau;
-		this.sprachenDeutsch = pSprachenDeutsch;
-		this.sprachenEnglisch = pSprachenEnglisch;
-		this.sprachenTürkisch = pSprachenTürkisch;
-		this.sprachenArabisch = pSprachenArabisch;
-		this.sprachenSonstiges = pSprachenSonstiges;
-	}
-
-	public sprechen( int IDSprachenWert, String pSprachenNiveau, String pSprachenName )
-	{
-		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
+		this.IDSprechen = new IDSprechen();
 		this.sprachenName = pSprachenName;
 		this.sprachenNiveau = pSprachenNiveau;
 
 	}
-	public sprechen( int IDSprachenWert )
-	{
-
-
-		this.IDSprache = new IDSprachen(IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert, IDSprachenWert);
-	}
 
 
 
-
-	/** legt Sprachen an
-	 *
-	 */
-	public void anlegen()
-	{
-		speichernDB();
-	}
-	/** aendert Sprachen
-	 *
-	 */
 	public void aendernSprachen()
 	{
 
@@ -79,23 +45,17 @@ public class sprechen {
 	/** loescht Angaben zur Person
 	 *
 	 */
-	public void loeschenSprachen()
-	{
-
-	}
-	/** speichert Sprachen
-	 *
-	 */
-	public void speichernDB()
+	public void speichernDB(SchülerID pIDSchüler)
 	{
 		Connection lConnection = Datenbankverbindung.holen();
 		  Statement lBefehl;
 		  ResultSet lErgebnis;
 
+
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES (("+IDSprache.getTürkischID()+"),"+allgemeinedaten.SchülerInID.getAktuelleID()+")");
+			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES ("+IDSprechen.getID()+","+holenIDSprache(sprachenName)+","+pIDSchüler.getSchülerID()+",'"+sprachenNiveau+"')");
 
 
 		  } catch (SQLException e)
@@ -104,7 +64,32 @@ public class sprechen {
 			e.printStackTrace();
 		  }
 	}
-	 public static sprechen auslesenDB(int IDSprachenWert)
+
+	public int holenIDSprache(String pSprachenName)
+
+	{
+		int lID = 0;
+
+		Statement stmt = null;
+		ResultSet result = null;
+		Connection lConnection = Datenbankverbindung.holen();
+		try
+		{
+			stmt = lConnection.createStatement();
+			result = stmt.executeQuery("SELECT idsprachen FROM db_schulprojekt.idsprachen WHERE Sprachenniveau LIKE '" +pSprachenName+"'");
+			result.first();
+			lID = result.getInt("idsprachen");
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Fehler bei der Verarbeitung + " + "Sprache" + " " + ex.getMessage());
+		}
+		return lID;
+	}
+
+
+
+	 public static ArrayList<sprechen> auslesenDB(SchülerID pSchülerID)
 	  {
 
 	      Connection lConnection = Datenbankverbindung.holen();
@@ -116,16 +101,15 @@ public class sprechen {
 		  try {
 		  lBefehl = lConnection.createStatement();
 
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSprache="+ IDSprachenWert +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM db_schulprojekt.sprachkompetenz where IDSchüler="+ pSchülerID.getSchülerID() +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
 		     {
-			   lSprachkompetenz = new sprechen(lErgebnis.getInt(1));
+			   lSprachkompetenz = new sprechen(lErgebnis.getString("SprachenNiveau"), holenSprachenName(lErgebnis.getInt("IDSprache")));
 			   lSprachkompetenzliste.add(lSprachkompetenz);
 			   //Spezial für dieses Beispiel springen wir gleich wieder raus.
 	           // Sonst kann man hier eine Liste füllen.
-			   return lSprachkompetenz;
 		     }
 
 
@@ -133,14 +117,33 @@ public class sprechen {
 		  		{
 		    System.out.println("Fehler bei der Verarbeitung: " + ex.getMessage());
 		  		}
-		  return null;
+		  return lSprachkompetenzliste;
 	  }
-	public void ergänzen()
-	{
-	  sprechen lSprachkompetenz = auslesenDB(this.IDSprache.getTürkischID());
-	  sprachenName = lSprachkompetenz.sprachenName;
-	  sprachenNiveau = lSprachkompetenz.sprachenNiveau;
-	}
+
+	 public static String holenSprachenName(int pSprachID)
+	 {
+		 String name = "";
+
+		 	Statement stmt = null;
+			ResultSet result = null;
+			Connection lConnection = Datenbankverbindung.holen();
+			try
+			{
+				stmt = lConnection.createStatement();
+				result = stmt.executeQuery("SELECT sprachenniveau FROM db_schulprojekt.idsprachen WHERE IDSprachen = " +pSprachID+"");
+				result.first();
+				name = result.getString("sprachenniveau");
+			}
+			catch(Exception ex)
+			{
+				System.out.println("Fehler bei der Verarbeitung + " + "Sprache" + " " + ex.getMessage());
+			}
+			return name;
+	 }
+
+
+
+
 // Ab hier folgen nur Get/Set Methoden
 
 	public String getSprachenName()
@@ -159,52 +162,13 @@ public class sprechen {
 	{
 		this.sprachenNiveau = pSprachenNiveau;
 	}
-	public IDSprachen getIDSprachen()
+	public IDSprechen getIDSprechen()
 	{
-		return IDSprache;
+		return IDSprechen;
 	}
-	public void setIDSprachen(IDSprachen pIDSprachen)
+	public void setIDSprechen(IDSprechen pIDSprechen)
 	{
-		this.IDSprache = pIDSprachen;
-	}
-	public Boolean getSprachenDeutsch()
-	{
-		return sprachenDeutsch;
-	}
-	public void setSprachenDeutsch(Boolean pSprachenDeutsch)
-	{
-		this.sprachenDeutsch = pSprachenDeutsch;
-	}
-	public Boolean getSprachenEnglisch()
-	{
-		return sprachenEnglisch;
-	}
-	public void setSprachenEnglisch(Boolean pSprachenEnglisch)
-	{
-		this.sprachenEnglisch = pSprachenEnglisch;
-	}
-	public Boolean getSprachenTürkisch()
-	{
-		return sprachenTürkisch;
-	}
-	public void setSprachenTürkisch(Boolean pSprachenTürkisch)
-	{
-		this.sprachenTürkisch = pSprachenTürkisch;
-	}
-	public Boolean getSprachenArabisch()
-	{
-		return sprachenArabisch;
-	}
-	public void setSprachenArabisch(Boolean pSprachenArabisch)
-	{
-		this.sprachenArabisch = pSprachenArabisch;
-	}
-	public Boolean getSprachenSonstiges()
-	{
-		return sprachenSonstiges;
-	}
-	public void setSprachenSonstiges(Boolean pSprachenSonstiges)
-	{
-		this.sprachenSonstiges = pSprachenSonstiges;
+		this.IDSprechen = pIDSprechen;
 	}
 }
+
