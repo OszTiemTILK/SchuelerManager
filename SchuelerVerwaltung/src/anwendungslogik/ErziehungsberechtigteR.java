@@ -1,5 +1,8 @@
 package anwendungslogik;
 
+import adresse.Adresse;
+import fx.Kontaktdaten;
+
 public class ErziehungsberechtigteR
 {
 	private Vormund typ;

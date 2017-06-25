@@ -36,7 +36,7 @@ public class IDSprechen {
 		try
 		{
 			stmt = lConnection.createStatement();
-			result = stmt.executeQuery("SELECT idsprachkompetenz FROM db_schulprojekt.sprachkompetenz a ORDER BY idsprachkompetenz desc");
+			result = stmt.executeQuery("SELECT idsprachkompetenz FROM sprachen.sprachkompetenz a ORDER BY idsprachkompetenz desc");
 			result.first();
 			lNächsteID = result.getInt("idsprachkompetenz") +1;
 		}
