@@ -21,7 +21,8 @@ private int plz;
 private String AdresseStraßeMitHausnummer;
 private AdressID adressID;
 
-
+public Adresse(){
+}
 
 public Adresse(String pStrasse, int pHausnummer, String pWohnort, int pPlz)
 {

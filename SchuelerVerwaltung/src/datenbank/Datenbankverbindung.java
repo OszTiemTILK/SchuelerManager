@@ -8,10 +8,10 @@ public class Datenbankverbindung
 
 {
   private static Connection connection;
-  private static String     hostrechner = "dbserver";
-  private static String     datenbank = "db_schulprojekt";
-  private static String     benutzer = "dbuser";
-  private static String     passwort = "benutzer";
+  private static String     hostrechner = "localhost";
+  private static String     datenbank = "sprachen";
+  private static String     benutzer = "root";
+  private static String     passwort = "putzerfenster42";
 
 
   /**
@@ -48,7 +48,7 @@ public class Datenbankverbindung
 	return true;
 	}catch (Exception ex)
 	  {				//Fehlerbehandlung
-		 System.out.println("Fehler beim Verbindungsaufbau. :(");
+		 System.out.println("Fehler beim Verbindungsaufbau. :("+ ex.getMessage());
 		 return false;
       }
   }

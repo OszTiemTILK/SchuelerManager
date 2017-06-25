@@ -106,11 +106,12 @@ public class BeruflicheBildungVorbereitungBefähigung
 	}
 	public String getBezirk()
 	{
-		return bezirk;
+		return bezirk; 
 	}
 	public void setBezirk(String pBezirk)
 	{
 		this.bezirk = pBezirk;
+	}
 
 	public void ausgeben()
 	{
