@@ -1,5 +1,7 @@
 package anwendungslogik;
 
+import allgemeinedaten.AngabenZurPerson;
+
 public class MaintestBryan 
 {
 	private static ErziehungsberechtigteR ErziehungsberechtigteRTest = new ErziehungsberechtigteR();

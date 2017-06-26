@@ -10,10 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Sprache.sprechen;
 import anwendungslogik.SchülerID;
 import datenbank.Datenbankverbindung;
-import javafx.collections.ObservableList;
 
 public class sprechen {
 	IDSprechen IDSprechen;
@@ -55,7 +53,7 @@ public class sprechen {
 		  try {
 			lBefehl = lConnection.createStatement();
 			//lBefehl.execute("INSERT INTO sprache VALUES ( "+IDSprache.getID()+","+ sprachenNiveau+",\""+sprachenName+"\")");
-			lBefehl.execute("INSERT INTO db_schulprojekt.sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES ("+IDSprechen.getID()+","+holenIDSprache(sprachenName)+","+pIDSchüler.getSchülerID()+",'"+sprachenNiveau+"')");
+			lBefehl.execute("INSERT INTO sprachkompetenz (IDSprachkompetenz, IDSprache, IDSchüler, SprachenNiveau) VALUES ("+IDSprechen.getID()+","+holenIDSprache(sprachenName)+","+pIDSchüler.getSchülerID()+",'"+sprachenNiveau+"')");
 
 
 		  } catch (SQLException e)
@@ -76,7 +74,7 @@ public class sprechen {
 		try
 		{
 			stmt = lConnection.createStatement();
-			result = stmt.executeQuery("SELECT idsprachen FROM db_schulprojekt.idsprachen WHERE Sprachenniveau LIKE '" +pSprachenName+"'");
+			result = stmt.executeQuery("SELECT idsprachen FROM idsprachen WHERE Sprachenniveau LIKE '" +pSprachenName+"'");
 			result.first();
 			lID = result.getInt("idsprachen");
 		}
@@ -101,7 +99,7 @@ public class sprechen {
 		  try {
 		  lBefehl = lConnection.createStatement();
 
-		  lErgebnis = lBefehl.executeQuery("SELECT * FROM db_schulprojekt.sprachkompetenz where IDSchüler="+ pSchülerID.getSchülerID() +";");
+		  lErgebnis = lBefehl.executeQuery("SELECT * FROM sprachkompetenz where IDSchüler="+ pSchülerID.getSchülerID() +";");
 		  lErgebnis.first();  //Zeigt auf den ersten Datensatz in lErgebnis
 
 		  while(! lErgebnis.isAfterLast())   //Solange das Ende nicht erreicht ist....
@@ -130,7 +128,7 @@ public class sprechen {
 			try
 			{
 				stmt = lConnection.createStatement();
-				result = stmt.executeQuery("SELECT sprachenniveau FROM db_schulprojekt.idsprachen WHERE IDSprachen = " +pSprachID+"");
+				result = stmt.executeQuery("SELECT sprachenniveau FROM idsprachen WHERE IDSprachen = " +pSprachID+"");
 				result.first();
 				name = result.getString("sprachenniveau");
 			}

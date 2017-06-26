@@ -5,7 +5,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import allgemeinedaten.AngabenZurPerson;
-import anwendungslogik.Geschlecht;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +12,6 @@ import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 
 public class AdresseController {
