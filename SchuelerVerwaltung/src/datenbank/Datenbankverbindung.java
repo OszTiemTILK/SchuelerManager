@@ -50,7 +50,6 @@ public class Datenbankverbindung
 	}catch (Exception ex)
 	  {				//Fehlerbehandlung
 		 System.out.println("Fehler beim Verbindungsaufbau. :("+ ex.getMessage());
-		 return false;
       }
   }
   /**
@@ -63,7 +62,11 @@ public class Datenbankverbindung
   {
 	if (connection == null)
 	{
-	  herstellen();
+	  boolean success = herstellen();
+	  if(!success){
+		  // DB ist ein Wichtiger teil des Programms. Problem melden und verweigern hoch zu fahren. 
+		  throw new RuntimeException("Konnte kein Datenbenkverbindung herstellen. Bitte Benutzername, Password und Hostnamen ueberpruefen.");
+	  }
 	}
 	return connection;
   }
