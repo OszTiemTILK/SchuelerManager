@@ -12,7 +12,7 @@ public class Datenbankverbindung
   private static String     hostrechner = "localhost";
   private static String     datenbank = "sprachen";
   private static String     benutzer = "root";
-  private static String     passwort = "";
+  private static String     passwort = "putzerfenster42";
 
 
   /**

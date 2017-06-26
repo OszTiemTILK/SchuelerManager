@@ -17,7 +17,7 @@ CREATE TABLE  `sprachen`.`sprachkompetenz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-INSERT INTO idsprachen VALUES (1, 'deutsch');
-INSERT INTO idsprachen VALUES (2, 'englisch');
-INSERT INTO idsprachen VALUES (3, 'tuerkisch');
-INSERT INTO idsprachen VALUES (4, 'arabisch');
+INSERT INTO `sprachen`.`idsprachen` VALUES (1, 'deutsch');
+INSERT INTO `sprachen`.`idsprachen` VALUES (2, 'englisch');
+INSERT INTO `sprachen`.`idsprachen` VALUES (3, 'tuerkisch');
+INSERT INTO `sprachen`.`idsprachen` VALUES (4, 'arabisch');
