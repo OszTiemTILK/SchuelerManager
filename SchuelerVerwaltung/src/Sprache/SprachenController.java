@@ -103,7 +103,7 @@ public class SprachenController {
 
 	    	if(ckTürkisch.isSelected() && cbTürkischNiveau.getValue()!= null)
 	    	{
-	    		sprechen lsprechen = new sprechen(cbTürkischNiveau.getValue(),"türkisch");
+	    		sprechen lsprechen = new sprechen(cbTürkischNiveau.getValue(),"tuerkisch");
 	    		SchülerID lID = new SchülerID();
 	    		lID.setSchülerID(Integer.parseInt(tfSchülerID.getText()));
 	    		lsprechen.speichernDB(lID);

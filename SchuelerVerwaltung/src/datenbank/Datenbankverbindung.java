@@ -12,7 +12,7 @@ public class Datenbankverbindung
   private static String     hostrechner = "localhost";
   private static String     datenbank = "sprachen";
   private static String     benutzer = "root";
-  private static String     passwort = "";
+  private static String     passwort = "putzerfenster42";
 
 
   /**
@@ -50,6 +50,7 @@ public class Datenbankverbindung
 	}catch (Exception ex)
 	  {				//Fehlerbehandlung
 		 System.out.println("Fehler beim Verbindungsaufbau. :("+ ex.getMessage());
+		 return false;
       }
   }
   /**
