@@ -1,13 +1,10 @@
 package anwendungslogik;
 
-import lehrmittel.AusgeliehenLehrmittel;
-
-import lehrmittel.Lehrmittel;
-import adresse.Adresse;
 import Sprache.sprechen;
-
+import adresse.Adresse;
 import allgemeinedaten.AngabenZurPerson;
 import kontaktdaten.Kontaktdaten;
+import lehrmittel.AusgeliehenLehrmittel;
 
 public class SchülerIn
 {

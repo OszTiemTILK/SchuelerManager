@@ -1,7 +1,8 @@
 
 package datenbank;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 
 public class Datenbankverbindung
@@ -11,7 +12,7 @@ public class Datenbankverbindung
   private static String     hostrechner = "localhost";
   private static String     datenbank = "sprachen";
   private static String     benutzer = "root";
-  private static String     passwort = "putzerfenster42";
+  private static String     passwort = "";
 
 
   /**

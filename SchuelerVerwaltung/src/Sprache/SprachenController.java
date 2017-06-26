@@ -1,31 +1,22 @@
 package Sprache;
 
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import anwendungslogik.SchülerID;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.NodeOrientation;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import java.lang.Object;
-import javax.accessibility.Accessible;
-
-import anwendungslogik.SchülerID;
-
-import java.awt.Component;
-import java.awt.GridLayout;
-import java.awt.ItemSelectable;
-import java.awt.event.ItemListener;
-import java.io.IOException;
-import java.sql.Connection;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 
 public class SprachenController {

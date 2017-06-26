@@ -1,9 +1,6 @@
 
 package Schullaufbahn;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class IDSchule
 {
     private static int aktuelleIDSchule = getAktuelleIDSchule(); //letzte vergebene SchülerID
