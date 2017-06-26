@@ -50,6 +50,7 @@ public class Datenbankverbindung
 	}catch (Exception ex)
 	  {				//Fehlerbehandlung
 		 System.out.println("Fehler beim Verbindungsaufbau. :("+ ex.getMessage());
+		 return false;
       }
   }
   /**
