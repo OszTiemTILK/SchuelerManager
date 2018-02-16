@@ -1,4 +1,6 @@
-
+/**
+ * Hier fehlt ein Kommentar
+ */
 package datenbank;
 
 import java.sql.Connection;
